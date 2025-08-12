@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class Minigame : MonoBehaviour
 {
-    protected virtual void Initialize()
+    public virtual void Initialize()
     {
 
     }
