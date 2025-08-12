@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (18)
+      value: MinigameHolder_x3_y3
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -299,7 +299,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (17)
+      value: MinigameHolder_x3_y2
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -493,7 +493,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (3)
+      value: MinigameHolder_x0_y3
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -966,7 +966,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (24)
+      value: MinigameHolder_x4_y4
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -1068,7 +1068,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (22)
+      value: MinigameHolder_x4_y2
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -1170,7 +1170,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (7)
+      value: MinigameHolder_x1_y2
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -1272,7 +1272,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (10)
+      value: MinigameHolder_x2_y0
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -1405,7 +1405,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (9)
+      value: MinigameHolder_x1_y4
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -1507,7 +1507,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (12)
+      value: MinigameHolder_x2_y2
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -1609,7 +1609,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (4)
+      value: MinigameHolder_x0_y4
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -1849,7 +1849,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (14)
+      value: MinigameHolder_x2_y4
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -1951,7 +1951,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (23)
+      value: MinigameHolder_x4_y3
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -2053,7 +2053,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder
+      value: MinigameHolder_x0_y0
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -2155,7 +2155,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (6)
+      value: MinigameHolder_x1_y1
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -2257,7 +2257,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (19)
+      value: MinigameHolder_x3_y4
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -2359,7 +2359,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (15)
+      value: MinigameHolder_x3_y0
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -2461,7 +2461,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (21)
+      value: MinigameHolder_x4_y1
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -2563,7 +2563,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (16)
+      value: MinigameHolder_x3_y1
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -2965,7 +2965,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -696, y: 407}
+  m_AnchoredPosition: {x: -698.7, y: 407}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1714813224
@@ -3004,7 +3004,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (11)
+      value: MinigameHolder_x2_y1
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -3106,7 +3106,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (2)
+      value: MinigameHolder_x0_y2
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -3316,7 +3316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (1)
+      value: MinigameHolder_x0_y1
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -3503,7 +3503,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (20)
+      value: MinigameHolder_x4_y0
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -3708,7 +3708,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (8)
+      value: MinigameHolder_x1_y3
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -3810,7 +3810,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (13)
+      value: MinigameHolder_x2_y3
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
@@ -3912,7 +3912,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2880581910028275575, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Name
-      value: MinigameHolder (5)
+      value: MinigameHolder_x1_y0
       objectReference: {fileID: 0}
     - target: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: m_Pivot.x
