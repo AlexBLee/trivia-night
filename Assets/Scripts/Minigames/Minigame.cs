@@ -4,7 +4,7 @@ public abstract class Minigame : MonoBehaviour
 {
     public virtual void Initialize()
     {
-
+        gameObject.SetActive(true);
     }
 
     protected virtual void Play()
@@ -14,6 +14,6 @@ public abstract class Minigame : MonoBehaviour
 
     protected virtual void FinishGame()
     {
-
+        gameObject.SetActive(false);
     }
 }
