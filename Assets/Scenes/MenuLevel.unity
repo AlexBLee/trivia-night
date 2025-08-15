@@ -483,6 +483,64 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &366072716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 366072718}
+  - component: {fileID: 366072717}
+  - component: {fileID: 366072719}
+  m_Layer: 0
+  m_Name: Server
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &366072717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366072716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b01e61898d20ce4493b59482c72d3da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _messageReceiver: {fileID: 1592205889}
+--- !u!4 &366072718
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366072716}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 899.70355, y: 687.94507, z: -1500.3151}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &366072719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366072716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e2d70f5cfd650448a91173452d9469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &389052968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -922,6 +980,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4389803392951425784, guid: ba9e896712281914084536bbc8789ea0, type: 3}
+      propertyPath: _messageReceiver
+      value: 
+      objectReference: {fileID: 1592205889}
     - target: {fileID: 7765839667504049896, guid: ba9e896712281914084536bbc8789ea0, type: 3}
       propertyPath: m_Name
       value: MusicGuessing_MiniGame
@@ -2512,6 +2574,10 @@ PrefabInstance:
       propertyPath: _word
       value: Czech Republic
       objectReference: {fileID: 0}
+    - target: {fileID: 5310200708161732273, guid: 5d6cf53c6fb16c8469602a631a66c85d, type: 3}
+      propertyPath: _messageReceiver
+      value: 
+      objectReference: {fileID: 1592205889}
     - target: {fileID: 7765839667504049896, guid: 5d6cf53c6fb16c8469602a631a66c85d, type: 3}
       propertyPath: m_Name
       value: Hangman_Minigame
@@ -3221,6 +3287,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472165708}
   m_CullTransparentMesh: 1
+--- !u!1 &1592205888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592205890}
+  - component: {fileID: 1592205889}
+  m_Layer: 0
+  m_Name: MessageReceiver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1592205889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592205888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e766bfddd17494e4db280c2b7eb9acb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1592205890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592205888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 899.70355, y: 687.94507, z: -1500.3151}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1714813222
 GameObject:
   m_ObjectHideFlags: 0
@@ -4393,6 +4503,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4181495412394352234, guid: 7b19759acb0351f41ae63e1218164858, type: 3}
+      propertyPath: _messageReceiver
+      value: 
+      objectReference: {fileID: 1592205889}
     - target: {fileID: 7765839667504049896, guid: 7b19759acb0351f41ae63e1218164858, type: 3}
       propertyPath: m_Name
       value: BasicQuestion_MiniGame
@@ -4432,3 +4546,5 @@ SceneRoots:
   - {fileID: 140136843}
   - {fileID: 2024927723}
   - {fileID: 1906962059}
+  - {fileID: 366072718}
+  - {fileID: 1592205890}

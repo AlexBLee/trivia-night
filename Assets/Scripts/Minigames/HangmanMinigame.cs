@@ -49,6 +49,11 @@ public class HangmanMinigame : Minigame
         }
     }
 
+    protected override void ReceiveMessage(string message)
+    {
+        base.ReceiveMessage(message);
+    }
+
     protected override void FinishGame()
     {
         base.FinishGame();

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Server : MonoBehaviour
 {
+    [SerializeField] private MessageReceiver _messageReceiver;
+
     private WebSocketServer _server;
     private List<IWebSocketConnection> _clients = new();
 
@@ -32,6 +34,7 @@ public class Server : MonoBehaviour
             socket.OnMessage = message =>
             {
                 Debug.Log("Server message: " + message);
+                _messageReceiver.ReceiveMessage(message);
             };
 
             socket.OnError = (e) =>
