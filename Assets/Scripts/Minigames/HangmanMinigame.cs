@@ -19,7 +19,7 @@ public class HangmanMinigame : Minigame
             }
             else
             {
-                hiddenText += "_";
+                hiddenText += "-";
             }
         }
 
