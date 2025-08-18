@@ -9,6 +9,8 @@ public class HangmanMinigame : Minigame
     public override void Initialize()
     {
         base.Initialize();
+        SendMessage("hangman");
+
         string hiddenText = "";
 
         foreach (var ch in _word)
@@ -52,6 +54,11 @@ public class HangmanMinigame : Minigame
     protected override void ReceiveMessage(string message)
     {
         base.ReceiveMessage(message);
+    }
+
+    protected override void SendMessage(string message)
+    {
+        _messageManager.SendMessageToServer(message);
     }
 
     protected override void FinishGame()

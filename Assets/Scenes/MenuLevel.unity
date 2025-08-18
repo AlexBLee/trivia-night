@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b01e61898d20ce4493b59482c72d3da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _messageReceiver: {fileID: 1592205889}
+  messageManager: {fileID: 1592205889}
 --- !u!4 &366072718
 Transform:
   m_ObjectHideFlags: 0
@@ -980,6 +980,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4389803392951425784, guid: ba9e896712281914084536bbc8789ea0, type: 3}
+      propertyPath: _messageManager
+      value: 
+      objectReference: {fileID: 1592205889}
     - target: {fileID: 4389803392951425784, guid: ba9e896712281914084536bbc8789ea0, type: 3}
       propertyPath: _messageReceiver
       value: 
@@ -2575,6 +2579,10 @@ PrefabInstance:
       value: Czech Republic
       objectReference: {fileID: 0}
     - target: {fileID: 5310200708161732273, guid: 5d6cf53c6fb16c8469602a631a66c85d, type: 3}
+      propertyPath: _messageManager
+      value: 
+      objectReference: {fileID: 1592205889}
+    - target: {fileID: 5310200708161732273, guid: 5d6cf53c6fb16c8469602a631a66c85d, type: 3}
       propertyPath: _messageReceiver
       value: 
       objectReference: {fileID: 1592205889}
@@ -3316,6 +3324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e766bfddd17494e4db280c2b7eb9acb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _server: {fileID: 366072717}
 --- !u!4 &1592205890
 Transform:
   m_ObjectHideFlags: 0
@@ -4503,6 +4512,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4181495412394352234, guid: 7b19759acb0351f41ae63e1218164858, type: 3}
+      propertyPath: _messageManager
+      value: 
+      objectReference: {fileID: 1592205889}
     - target: {fileID: 4181495412394352234, guid: 7b19759acb0351f41ae63e1218164858, type: 3}
       propertyPath: _messageReceiver
       value: 

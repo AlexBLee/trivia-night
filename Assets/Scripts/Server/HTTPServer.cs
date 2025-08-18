@@ -1,5 +1,5 @@
-using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading;
@@ -20,7 +20,7 @@ public class HTTPServer : MonoBehaviour
     private void StartHttpServer()
     {
         _listener = new HttpListener();
-        _listener.Prefixes.Add("http://192.168.1.77:8081/");
+        _listener.Prefixes.Add($"http://{GetLocalIpv4Address()}:8081/");
         _listener.Start();
         Debug.Log("HTTP server started");
 
@@ -28,6 +28,13 @@ public class HTTPServer : MonoBehaviour
         listenTask.GetAwaiter().GetResult();
 
         _listener.Close();
+    }
+
+    private string GetLocalIpv4Address()
+    {
+        return Dns.GetHostEntry(Dns.GetHostName()).AddressList.First(f =>
+                f.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            .ToString();
     }
 
     private async Task HandleConnection()
@@ -47,7 +54,7 @@ public class HTTPServer : MonoBehaviour
 
             if (File.Exists(filePath))
             {
-                byte[] buffer = File.ReadAllBytes(filePath);
+                byte[] buffer = await File.ReadAllBytesAsync(filePath);
                 response.ContentType = "text/html";
                 response.ContentLength64 = buffer.Length;
                 await response.OutputStream.WriteAsync(buffer, 0, buffer.Length);

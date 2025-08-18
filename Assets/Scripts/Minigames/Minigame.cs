@@ -1,16 +1,22 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public abstract class Minigame : MonoBehaviour
 {
-    [SerializeField] private MessageReceiver _messageReceiver;
+    [SerializeField] protected MessageManager _messageManager;
 
     public virtual void Initialize()
     {
-        _messageReceiver.OnMessageReceived += ReceiveMessage;
+        _messageManager.OnMessageReceived += ReceiveMessage;
         gameObject.SetActive(true);
     }
 
     protected virtual void ReceiveMessage(string message)
+    {
+
+    }
+
+    protected virtual void SendMessage(string message)
     {
 
     }
@@ -22,7 +28,7 @@ public abstract class Minigame : MonoBehaviour
 
     protected virtual void FinishGame()
     {
-        _messageReceiver.OnMessageReceived -= ReceiveMessage;
+        _messageManager.OnMessageReceived -= ReceiveMessage;
         gameObject.SetActive(false);
     }
 }

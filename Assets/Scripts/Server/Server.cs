@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Server : MonoBehaviour
 {
-    [SerializeField] private MessageReceiver _messageReceiver;
+    [SerializeField] private MessageManager _messageManager;
 
     private WebSocketServer _server;
     private List<IWebSocketConnection> _clients = new();
@@ -14,7 +14,7 @@ public class Server : MonoBehaviour
 
     public void Start()
     {
-        _server = new WebSocketServer("ws://0.0.0.0:8080");
+        _server = new WebSocketServer("ws://192.168.1.77:8080");
 
         _server.Start(socket =>
         {
@@ -34,7 +34,7 @@ public class Server : MonoBehaviour
             socket.OnMessage = message =>
             {
                 Debug.Log("Server message: " + message);
-                _messageReceiver.ReceiveMessage(message);
+                _messageManager.ReceiveMessage(message);
             };
 
             socket.OnError = (e) =>
@@ -44,6 +44,14 @@ public class Server : MonoBehaviour
                 socket.Close();
             };
         });
+    }
+
+    public void SendMessageToAll(string message)
+    {
+        foreach (var client in _clients)
+        {
+            client.Send(message);
+        }
     }
 
     private void OnDestroy()
