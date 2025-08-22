@@ -521,5 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f1f301c1d2e4f408c4589c84f0d0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _messageManager: {fileID: 0}
   _word: Canada
   _text: {fileID: 7543745447237867287}
+  _finishButton: {fileID: 2319645012898293176}

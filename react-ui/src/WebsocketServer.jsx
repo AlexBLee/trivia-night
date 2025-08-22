@@ -19,10 +19,10 @@ export function WebSocketServer({ children })
             const message = event.data;
             console.log("Received:", message);
 
-            // Dynamically update which view is shown
             if (message === "home") setView("home");
             if (message === "question") setView("question");
             if (message === "hangman") setView("hangman");
+            if (message === "music") setView("music");
         };
 
         socket.onclose = () => {

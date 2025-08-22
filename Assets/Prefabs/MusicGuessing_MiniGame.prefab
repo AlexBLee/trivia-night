@@ -1238,6 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae7161308c2ae649949cb05940a6b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _messageManager: {fileID: 0}
   _audioSource: {fileID: 4865889649239899566}
   _audioClips:
   - {fileID: 8300000, guid: 1747ddfb725de8f43be328a82deb8c93, type: 3}
@@ -1247,6 +1248,7 @@ MonoBehaviour:
   - {fileID: 1928655069266474195}
   - {fileID: 3893879254190357554}
   - {fileID: 362852235477269178}
+  _finishButton: {fileID: 2319645012898293176}
 --- !u!82 &4865889649239899566
 AudioSource:
   m_ObjectHideFlags: 0

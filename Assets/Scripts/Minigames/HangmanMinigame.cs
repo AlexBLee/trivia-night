@@ -1,10 +1,12 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HangmanMinigame : Minigame
 {
     [SerializeField] private string _word;
     [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] private Button _finishButton;
 
     public override void Initialize()
     {
@@ -26,6 +28,8 @@ public class HangmanMinigame : Minigame
         }
 
         _text.text = hiddenText;
+
+        _finishButton.onClick.AddListener(FinishGame);
     }
 
     private void Update()
@@ -56,14 +60,9 @@ public class HangmanMinigame : Minigame
         base.ReceiveMessage(message);
     }
 
-    protected override void SendMessage(string message)
-    {
-        _messageManager.SendMessageToServer(message);
-    }
-
     protected override void FinishGame()
     {
         base.FinishGame();
+        _finishButton.onClick.RemoveListener(FinishGame);
     }
-
 }

@@ -3,6 +3,7 @@ import './App.css'
 import Home from './Home';
 import Hangman from './Hangman';
 import QuestionMinigame from './QuestionMinigame';
+import MusicGame from './MusicGame';
 
 function App() {
   const { view } = useWebSocket();
@@ -11,6 +12,7 @@ function App() {
     home: <Home />,
     hangman: <Hangman />,
     question: <QuestionMinigame />,
+    music: <MusicGame />,
   };
 
   return (

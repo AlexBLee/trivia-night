@@ -7,6 +7,7 @@ public class MusicGuessingMinigame : Minigame
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private List<AudioClip> _audioClips;
     [SerializeField] private List<Button> _playAudioButtons;
+    [SerializeField] private Button _finishButton;
 
     public override void Initialize()
     {
@@ -22,6 +23,15 @@ public class MusicGuessingMinigame : Minigame
             var audioIndex = i;
             _playAudioButtons[i].onClick.AddListener(() => PlayAudioClip(_audioClips[audioIndex]));
         }
+
+        SendMessage("music");
+
+        _finishButton.onClick.AddListener(FinishGame);
+    }
+
+    private void PlayAudioClip(AudioClip audioClip)
+    {
+        _audioSource.PlayOneShot(audioClip);
     }
 
     protected override void FinishGame()
@@ -31,10 +41,7 @@ public class MusicGuessingMinigame : Minigame
         {
             audioButton.onClick.RemoveAllListeners();
         }
-    }
 
-    private void PlayAudioClip(AudioClip audioClip)
-    {
-        _audioSource.PlayOneShot(audioClip);
+        _finishButton.onClick.RemoveListener(FinishGame);
     }
 }

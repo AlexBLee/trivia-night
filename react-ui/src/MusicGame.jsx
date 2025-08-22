@@ -1,8 +1,7 @@
-import { useState } from 'react'
 import { useWebSocket } from './WebsocketServer'
 import './App.css'
 
-function QuestionMinigame() {
+function MusicGame() {
   const { socket } = useWebSocket();
 
   const handleClick = () => {
@@ -23,4 +22,4 @@ function QuestionMinigame() {
   )
 }
 
-export default QuestionMinigame
+export default MusicGame

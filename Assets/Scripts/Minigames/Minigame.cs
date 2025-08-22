@@ -18,7 +18,7 @@ public abstract class Minigame : MonoBehaviour
 
     protected virtual void SendMessage(string message)
     {
-
+        _messageManager.SendMessageToServer(message);
     }
 
     protected virtual void Play()
@@ -30,5 +30,6 @@ public abstract class Minigame : MonoBehaviour
     {
         _messageManager.OnMessageReceived -= ReceiveMessage;
         gameObject.SetActive(false);
+        SendMessage("home");
     }
 }

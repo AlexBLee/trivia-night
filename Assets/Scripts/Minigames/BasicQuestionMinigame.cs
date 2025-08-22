@@ -8,7 +8,7 @@ public class BasicQuestionMinigame : Minigame
     public override void Initialize()
     {
         base.Initialize();
-
+        SendMessage("question");
         _finishButton.onClick.AddListener(FinishGame);
     }
 
