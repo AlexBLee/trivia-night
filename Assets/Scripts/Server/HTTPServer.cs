@@ -50,12 +50,12 @@ public class HTTPServer : MonoBehaviour
                 localPath = "index.html";
             }
 
-            string filePath = Path.Combine(Application.streamingAssetsPath, localPath);
+            string filePath = Path.Combine(Application.streamingAssetsPath, "dist/" + localPath);
 
             if (File.Exists(filePath))
             {
                 byte[] buffer = await File.ReadAllBytesAsync(filePath);
-                response.ContentType = "text/html";
+                response.ContentType = GetExtensionType(Path.GetExtension(filePath));
                 response.ContentLength64 = buffer.Length;
                 await response.OutputStream.WriteAsync(buffer, 0, buffer.Length);
             }
@@ -67,6 +67,20 @@ public class HTTPServer : MonoBehaviour
             }
 
             response.OutputStream.Close();
+        }
+    }
+
+    string GetExtensionType(string ext)
+    {
+        switch (ext.ToLower())
+        {
+            case ".html": return "text/html";
+            case ".css": return "text/css";
+            case ".js": return "application/javascript";
+            case ".png": return "image/png";
+            case ".jpg":
+            case ".jpeg": return "image/jpeg";
+            default: return "application/octet-stream";
         }
     }
 }
