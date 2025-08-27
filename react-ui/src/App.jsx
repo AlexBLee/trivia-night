@@ -1,11 +1,11 @@
-import { WebSocketServer, useWebSocket } from './WebsocketServer';
+import { useWebSocket } from './WebsocketServer';
 import './App.css'
 import Home from './Home';
 import Hangman from './Hangman';
 import QuestionMinigame from './QuestionMinigame';
 import MusicGame from './MusicGame';
 
-function App() {
+export default function App() {
   const { view } = useWebSocket();
 
   const views = {
@@ -22,5 +22,3 @@ function App() {
     </div>
   );
 }
-
-export default App

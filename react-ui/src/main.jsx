@@ -5,9 +5,7 @@ import App from './App.jsx'
 import { WebSocketServer } from './WebsocketServer.jsx'
 
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
     <WebSocketServer>
       <App />
     </WebSocketServer>
-  // </StrictMode>,
 )

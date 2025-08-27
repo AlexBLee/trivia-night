@@ -3,5 +3,17 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    private Dictionary<string, int> _scores = new();
+    private List<Team> _teams = new List<Team>();
+
+    public void GrantScore(Team team, int score)
+    {
+        team.AddScore(score);
+    }
+
+    public void RemoveScore(Team team, int score)
+    {
+        team.RemoveScore(score);
+    }
+
+    
 }
