@@ -35,6 +35,7 @@ export function WebSocketServer({ children }) {
             if (message === "hangman") setView("hangman");
             if (message === "music") setView("music");
             if (message === "geoguessr") setView("geoguessr");
+            if (message === "zoomin") setView("zoomin");
 
             // Notify all registered listeners
             messageListenersRef.current.forEach(callback => {
