@@ -4,6 +4,7 @@ import Home from './Home';
 import Hangman from './Hangman';
 import QuestionMinigame from './QuestionMinigame';
 import MusicGame from './MusicGame';
+import GeoguessrGame from './GeoguessrGame';
 
 export default function App() {
   const { view } = useWebSocket();
@@ -13,6 +14,7 @@ export default function App() {
     hangman: <Hangman />,
     question: <QuestionMinigame />,
     music: <MusicGame />,
+    geoguessr: <GeoguessrGame />,
   };
 
   return (
