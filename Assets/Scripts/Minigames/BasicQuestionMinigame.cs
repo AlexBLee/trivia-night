@@ -12,7 +12,6 @@ public class BasicQuestionMinigame : Minigame
         _finishButton.onClick.AddListener(FinishGame);
     }
 
-    [ContextMenu("AAAA")]
     public void ReenableGuess()
     {
         SendMessage("reenable");

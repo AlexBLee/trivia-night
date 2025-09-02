@@ -1,0 +1,102 @@
+[
+  {
+    "type": "Question",
+    "input": "How much could a wood chuck?"
+  },
+  {
+    "type": "Question",
+    "input": "How much could a wood chuck 2 logs?"
+  },
+  {
+    "type": "Question",
+    "input": "How much could a wood chuck 3 logs?"
+  },
+  {
+    "type": "Question",
+    "input": "How much could a wood chuck 4 logs?"
+  },
+  {
+    "type": "Question",
+    "input": "How much could a wood chuck 5 logs?"
+  },
+  {
+    "type": "Hangman",
+    "input": "Czech Republic"
+  },
+  {
+    "type": "Hangman",
+    "input": "Canada"
+  },
+  {
+    "type": "Hangman",
+    "input": "USA"
+  },
+  {
+    "type": "Hangman",
+    "input": "Lituania"
+  },
+  {
+    "type": "Hangman",
+    "input": "Germany"
+  },
+  {
+    "type": "Music",
+    "input": "1,2,3"
+  },
+  {
+    "type": "Music",
+    "input": "4,5,6"
+  },
+  {
+    "type": "Music",
+    "input": "7,8,9"
+  },
+  {
+    "type": "Music",
+    "input": "10,11,12"
+  },
+  {
+    "type": "Music",
+    "input": "13,14,15"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "-11.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "-21.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "-31.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "-41.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "-51.234,51.771"
+  },
+  {
+    "type": "ZoomIn",
+    "input": "banana.png"
+  },
+  {
+    "type": "ZoomIn",
+    "input": "apple.png"
+  },
+  {
+    "type": "ZoomIn",
+    "input": "lemon.png"
+  },
+  {
+    "type": "ZoomIn",
+    "input": "citrus.png"
+  },
+  {
+    "type": "ZoomIn",
+    "input": "peach.png"
+  }
+]
