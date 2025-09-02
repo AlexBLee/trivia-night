@@ -32,11 +32,12 @@ public class MinigameSpawner : MonoBehaviour
         }
     }
 
-    public void OpenMinigame(MinigameType type)
+    public void OpenMinigame(MinigameType type, int index)
     {
         var minigame = _minigames[type];
+        MinigameData minigameData = _minigameData[index];
 
         minigame.gameObject.SetActive(true);
-        _minigames[type].Initialize();
+        _minigames[type].Initialize(minigameData);
     }
 }

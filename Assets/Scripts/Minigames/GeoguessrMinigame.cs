@@ -5,9 +5,9 @@ public class GeoguessrMinigame : Minigame
 {
     [SerializeField] private Button _finishButton;
 
-    public override void Initialize()
+    public override void Initialize(MinigameData minigameData)
     {
-        base.Initialize();
+        base.Initialize(minigameData);
         SendMessage("geoguessr");
         _finishButton.onClick.AddListener(FinishGame);
     }

@@ -8,9 +8,9 @@ public class HangmanMinigame : Minigame
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Button _finishButton;
 
-    public override void Initialize()
+    public override void Initialize(MinigameData minigameData)
     {
-        base.Initialize();
+        base.Initialize(minigameData);
         SendMessage("hangman");
 
         string hiddenText = "";

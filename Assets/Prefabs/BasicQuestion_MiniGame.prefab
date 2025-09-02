@@ -521,4 +521,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bcccd5bd44d274682a2e49b0d584c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _messageManager: {fileID: 0}
   _finishButton: {fileID: 2319645012898293176}
+  _questionText: {fileID: 7543745447237867287}

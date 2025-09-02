@@ -266,6 +266,7 @@ MonoBehaviour:
       Value: {fileID: 505306944}
     - Key: 5
       Value: {fileID: 820509278}
+  _minigameJson: {fileID: 0}
 --- !u!4 &83781194
 Transform:
   m_ObjectHideFlags: 0
@@ -4126,6 +4127,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1942101684}
     m_Modifications:
     - target: {fileID: 1948867163088129753, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
+      propertyPath: _minigameType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1948867163088129753, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
       propertyPath: _minigameSpawner
       value: 
       objectReference: {fileID: 83781193}
@@ -4253,29 +4258,29 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1052583553}
-  - {fileID: 2111757247}
-  - {fileID: 749068108}
-  - {fileID: 1344693635}
-  - {fileID: 1962339032}
   - {fileID: 1928621019}
-  - {fileID: 1116200707}
-  - {fileID: 1759086015}
-  - {fileID: 1415203801}
-  - {fileID: 1383880680}
   - {fileID: 1860735893}
-  - {fileID: 644045703}
-  - {fileID: 848725703}
-  - {fileID: 208017872}
-  - {fileID: 620595154}
   - {fileID: 389052969}
-  - {fileID: 2030631126}
-  - {fileID: 2080012601}
-  - {fileID: 16146703}
-  - {fileID: 1036673928}
   - {fileID: 973545197}
+  - {fileID: 2111757247}
+  - {fileID: 1116200707}
+  - {fileID: 644045703}
+  - {fileID: 2030631126}
   - {fileID: 835274712}
+  - {fileID: 749068108}
+  - {fileID: 1759086015}
+  - {fileID: 848725703}
+  - {fileID: 2080012601}
   - {fileID: 1017132069}
+  - {fileID: 1344693635}
+  - {fileID: 1415203801}
+  - {fileID: 208017872}
+  - {fileID: 16146703}
   - {fileID: 1342892060}
+  - {fileID: 1962339032}
+  - {fileID: 1383880680}
+  - {fileID: 620595154}
+  - {fileID: 1036673928}
   - {fileID: 555043337}
   m_Father: {fileID: 2024927723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4303,7 +4308,7 @@ MonoBehaviour:
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
-  m_StartAxis: 0
+  m_StartAxis: 1
   m_CellSize: {x: 177.3, y: 82.9}
   m_Spacing: {x: 143.3, y: 64.62}
   m_Constraint: 0

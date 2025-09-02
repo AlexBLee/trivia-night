@@ -9,9 +9,9 @@ public class MusicGuessingMinigame : Minigame
     [SerializeField] private List<Button> _playAudioButtons;
     [SerializeField] private Button _finishButton;
 
-    public override void Initialize()
+    public override void Initialize(MinigameData minigameData)
     {
-        base.Initialize();
+        base.Initialize(minigameData);
 
         for (int i = 0; i < _playAudioButtons.Count; i++)
         {

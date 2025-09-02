@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public abstract class Minigame : MonoBehaviour
 {
     [SerializeField] protected MessageManager _messageManager;
 
-    public virtual void Initialize()
+    public virtual void Initialize(MinigameData minigameData)
     {
         _messageManager.OnMessageReceived += ReceiveMessage;
         gameObject.SetActive(true);

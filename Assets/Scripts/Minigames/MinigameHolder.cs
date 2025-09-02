@@ -24,7 +24,7 @@ public class MinigameHolder : MonoBehaviour
 
     private void Start()
     {
-        _callback = () => _minigameSpawner.OpenMinigame(_minigameType);
+        _callback = () => _minigameSpawner.OpenMinigame(_minigameType, transform.GetSiblingIndex());
 
         if (_minigameType != MinigameType.None)
         {
