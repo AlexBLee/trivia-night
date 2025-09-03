@@ -11,6 +11,7 @@ public class MinigameData
     [JsonConverter(typeof(StringEnumConverter))]
     public MinigameType Type { get; set; }
     public string Input { get; set; }
+    public string Answer { get; set; }
 }
 
 public class MinigameSpawner : MonoBehaviour

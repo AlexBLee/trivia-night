@@ -1,102 +1,127 @@
 [
   {
     "type": "Question",
-    "input": "How much could a wood chuck?"
+    "input": "How much could a wood chuck?",
+    "answer": "1"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 2 logs?"
+    "input": "How much could a wood chuck 2 logs?",
+    "answer": "2"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 3 logs?"
+    "input": "How much could a wood chuck 3 logs?",
+    "answer": "3"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 4 logs?"
+    "input": "How much could a wood chuck 4 logs?",
+    "answer": "4"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 5 logs?"
+    "input": "How much could a wood chuck 5 logs?",
+    "answer": "5"
   },
   {
     "type": "Hangman",
-    "input": "Czech Republic"
+    "input": "Czech Republic",
+    "answer": ""
   },
   {
     "type": "Hangman",
-    "input": "Canada"
+    "input": "Canada",
+    "answer": ""
   },
   {
     "type": "Hangman",
-    "input": "USA"
+    "input": "USA",
+    "answer": ""
   },
   {
     "type": "Hangman",
-    "input": "Lituania"
+    "input": "Lituania",
+    "answer": ""
   },
   {
     "type": "Hangman",
-    "input": "Germany"
+    "input": "Germany",
+    "answer": ""
   },
   {
     "type": "Music",
-    "input": "1,2,3"
+    "input": "1,2,3",
+    "answer": "music1"
   },
   {
     "type": "Music",
-    "input": "4,5,6"
+    "input": "4,5,6",
+    "answer": "music2"
   },
   {
     "type": "Music",
-    "input": "7,8,9"
+    "input": "7,8,9",
+    "answer": "music3"
   },
   {
     "type": "Music",
-    "input": "10,11,12"
+    "input": "10,11,12",
+    "answer": "music4"
   },
   {
     "type": "Music",
-    "input": "13,14,15"
+    "input": "13,14,15",
+    "answer": "music5"
   },
   {
     "type": "Geoguessr",
-    "input": "-11.234,51.771"
+    "input": "guess1.png",
+    "answer": "-11.234,51.771"
   },
   {
     "type": "Geoguessr",
-    "input": "-21.234,51.771"
+    "input": "guess2.png",
+    "answer": "-21.234,51.771"
   },
   {
     "type": "Geoguessr",
-    "input": "-31.234,51.771"
+    "input": "guess3.png",
+    "answer": "-31.234,51.771"
   },
   {
     "type": "Geoguessr",
-    "input": "-41.234,51.771"
+    "input": "guess4.png",
+    "answer": "-41.234,51.771"
   },
   {
     "type": "Geoguessr",
-    "input": "-51.234,51.771"
+    "input": "guess5.png",
+    "answer": "-51.234,51.771"
   },
   {
     "type": "ZoomIn",
-    "input": "banana.png"
+    "input": "banana.png",
+    "answer": "banana"
   },
   {
     "type": "ZoomIn",
-    "input": "apple.png"
+    "input": "apple.png",
+    "answer": "apple"
   },
   {
     "type": "ZoomIn",
-    "input": "lemon.png"
+    "input": "lemon.png",
+    "answer": "lemon"
   },
   {
     "type": "ZoomIn",
-    "input": "citrus.png"
+    "input": "citrus.png",
+    "answer": "citrus"
   },
   {
     "type": "ZoomIn",
-    "input": "peach.png"
+    "input": "peach.png",
+    "answer": "peach"
   }
 ]
