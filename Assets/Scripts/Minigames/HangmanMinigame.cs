@@ -4,15 +4,17 @@ using UnityEngine.UI;
 
 public class HangmanMinigame : Minigame
 {
-    [SerializeField] private string _word;
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Button _finishButton;
+
+    private string _word;
 
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
         SendMessage("hangman");
 
+        _word = minigameData.Input;
         string hiddenText = "";
 
         foreach (var ch in _word)
