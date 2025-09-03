@@ -5,13 +5,23 @@ using UnityEngine.UI;
 public class MusicGuessingMinigame : Minigame
 {
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private List<AudioClip> _audioClips;
     [SerializeField] private List<Button> _playAudioButtons;
     [SerializeField] private Button _finishButton;
+
+    private List<AudioClip> _audioClips = new();
 
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
+
+        _audioClips.Clear();
+
+        string[] audioClips = minigameData.Input.Split(',');
+        for (int i = 0; i < audioClips.Length; i++)
+        {
+            var clip = Resources.Load<AudioClip>(audioClips[i]);
+            _audioClips.Add(clip);
+        }
 
         for (int i = 0; i < _playAudioButtons.Count; i++)
         {
@@ -25,7 +35,6 @@ public class MusicGuessingMinigame : Minigame
         }
 
         SendMessage("music");
-
         _finishButton.onClick.AddListener(FinishGame);
     }
 

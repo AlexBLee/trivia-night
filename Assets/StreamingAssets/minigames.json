@@ -76,7 +76,7 @@
   },
   {
     "type": "Music",
-    "input": "1,2,3",
+    "input": "goodmorning,goodbye,thankyou",
     "answer": "music1"
   },
   {
