@@ -101,27 +101,27 @@
   },
   {
     "type": "ZoomIn",
-    "input": "banana.png",
+    "input": "banana",
     "answer": "banana"
   },
   {
     "type": "ZoomIn",
-    "input": "apple.png",
+    "input": "apple",
     "answer": "apple"
   },
   {
     "type": "ZoomIn",
-    "input": "lemon.png",
+    "input": "lemon",
     "answer": "lemon"
   },
   {
     "type": "ZoomIn",
-    "input": "citrus.png",
+    "input": "citrus",
     "answer": "citrus"
   },
   {
     "type": "ZoomIn",
-    "input": "peach.png",
+    "input": "peach",
     "answer": "peach"
   }
 ]
