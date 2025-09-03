@@ -599,3 +599,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _messageManager: {fileID: 0}
   _finishButton: {fileID: 2319645012898293176}
+  _image: {fileID: 7580999499279646654}

@@ -50,6 +50,31 @@
     "answer": ""
   },
   {
+    "type": "Geoguessr",
+    "input": "guess1",
+    "answer": "-11.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "guess2",
+    "answer": "-21.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "guess3",
+    "answer": "-31.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "guess4",
+    "answer": "-41.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "guess5",
+    "answer": "-51.234,51.771"
+  },
+  {
     "type": "Music",
     "input": "1,2,3",
     "answer": "music1"
@@ -73,31 +98,6 @@
     "type": "Music",
     "input": "13,14,15",
     "answer": "music5"
-  },
-  {
-    "type": "Geoguessr",
-    "input": "guess1.png",
-    "answer": "-11.234,51.771"
-  },
-  {
-    "type": "Geoguessr",
-    "input": "guess2.png",
-    "answer": "-21.234,51.771"
-  },
-  {
-    "type": "Geoguessr",
-    "input": "guess3.png",
-    "answer": "-31.234,51.771"
-  },
-  {
-    "type": "Geoguessr",
-    "input": "guess4.png",
-    "answer": "-41.234,51.771"
-  },
-  {
-    "type": "Geoguessr",
-    "input": "guess5.png",
-    "answer": "-51.234,51.771"
   },
   {
     "type": "ZoomIn",
