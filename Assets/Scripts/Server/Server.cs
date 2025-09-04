@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using Fleck;
@@ -19,51 +20,56 @@ public class Server : MonoBehaviour
 
         _server.Start(socket =>
         {
-            socket.OnOpen = () =>
-            {
-                var clientId = GetClientId(socket);
-
-                if (string.IsNullOrEmpty(clientId))
-                {
-                    Debug.Log("No client ID provided, closing connection");
-                    socket.Close();
-                    return;
-                }
-
-                if (_clients.TryGetValue(clientId, out var existingSocket))
-                {
-                    Debug.Log($"Closing existing connection for client: {clientId}");
-                    existingSocket.Close();
-                    _clients.TryRemove(clientId, out _);
-                }
-
-                _clients.TryAdd(clientId, socket);
-                _clientHistory.TryAdd(clientId, socket);
-                Debug.Log($"Client connected: {clientId} (Total: {_clients.Count})");
-            };
-
-            socket.OnClose = () =>
-            {
-                var clientId = GetClientId(socket);
-                if (!string.IsNullOrEmpty(clientId))
-                {
-                    _clients.TryRemove(clientId, out _);
-                    Debug.Log($"Client disconnected: {clientId} (Total: {_clients.Count})");
-                }
-            };
-
-            socket.OnMessage = message =>
-            {
-                Debug.Log("Server message: " + message);
-                _messageManager.ReceiveMessage(message);
-            };
-
-            socket.OnError = (e) =>
-            {
-                var clientId = GetClientId(socket);
-                Debug.Log($"Error from {clientId}: {e.Message}");
-            };
+            socket.OnOpen = () => { OnClientConnected(socket); };
+            socket.OnClose = () => { OnClientDisconnected(socket); };
+            socket.OnMessage = OnMessageReceived;
+            socket.OnError = (e) => { OnClientError(socket, e); };
         });
+    }
+
+    private void OnClientConnected(IWebSocketConnection socket)
+    {
+        var clientId = GetClientId(socket);
+
+        if (string.IsNullOrEmpty(clientId))
+        {
+            Debug.Log("No client ID provided, closing connection");
+            socket.Close();
+            return;
+        }
+
+        if (_clients.TryGetValue(clientId, out var existingSocket))
+        {
+            Debug.Log($"Closing existing connection for client: {clientId}");
+            existingSocket.Close();
+            _clients.TryRemove(clientId, out _);
+        }
+
+        _clients.TryAdd(clientId, socket);
+        _clientHistory.TryAdd(clientId, socket);
+        Debug.Log($"Client connected: {clientId} (Total: {_clients.Count})");
+    }
+
+    private void OnClientDisconnected(IWebSocketConnection socket)
+    {
+        var clientId = GetClientId(socket);
+        if (!string.IsNullOrEmpty(clientId))
+        {
+            _clients.TryRemove(clientId, out _);
+            Debug.Log($"Client disconnected: {clientId} (Total: {_clients.Count})");
+        }
+    }
+
+    private void OnMessageReceived(string message)
+    {
+        Debug.Log("Server message: " + message);
+        _messageManager.ReceiveMessage(message);
+    }
+
+    private void OnClientError(IWebSocketConnection socket, Exception e)
+    {
+        var clientId = GetClientId(socket);
+        Debug.Log($"Error from {clientId}: {e.Message}");
     }
 
     public void SendMessageToAll(string message)
