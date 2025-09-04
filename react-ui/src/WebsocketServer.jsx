@@ -47,8 +47,8 @@ export function WebSocketServer({ children }) {
             });
         };
 
-        socket.onclose = () => {
-            console.log("WebSocket closed");
+        socket.onclose = (event) => {
+            console.log("WebSocket closed", event.code, event.reason);
         };
 
         setSocket(socket);

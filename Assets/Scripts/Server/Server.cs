@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using Fleck;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class Server : MonoBehaviour
     [SerializeField] private MessageManager _messageManager;
 
     private WebSocketServer _server;
-    private List<IWebSocketConnection> _clients = new();
+    private ConcurrentDictionary<string, IWebSocketConnection> _clients = new();
 
     // keeping a persistent list for any possible disconnect/recoveries.
     private Dictionary<string, IWebSocketConnection> _clientHistory = new();
@@ -20,15 +21,35 @@ public class Server : MonoBehaviour
         {
             socket.OnOpen = () =>
             {
-                Debug.Log($"Client connected: {socket.ConnectionInfo.ClientIpAddress}");
-                _clients.Add(socket);
-                _clientHistory.Add(socket.ConnectionInfo.ClientIpAddress, socket);
+                var clientId = GetClientId(socket);
+
+                if (string.IsNullOrEmpty(clientId))
+                {
+                    Debug.Log("No client ID provided, closing connection");
+                    socket.Close();
+                    return;
+                }
+
+                if (_clients.TryGetValue(clientId, out var existingSocket))
+                {
+                    Debug.Log($"Closing existing connection for client: {clientId}");
+                    existingSocket.Close();
+                    _clients.TryRemove(clientId, out _);
+                }
+
+                _clients.TryAdd(clientId, socket);
+                _clientHistory.TryAdd(clientId, socket);
+                Debug.Log($"Client connected: {clientId} (Total: {_clients.Count})");
             };
 
             socket.OnClose = () =>
             {
-                Debug.Log("Client Disconnected");
-                _clients.Remove(socket);
+                var clientId = GetClientId(socket);
+                if (!string.IsNullOrEmpty(clientId))
+                {
+                    _clients.TryRemove(clientId, out _);
+                    Debug.Log($"Client disconnected: {clientId} (Total: {_clients.Count})");
+                }
             };
 
             socket.OnMessage = message =>
@@ -39,9 +60,8 @@ public class Server : MonoBehaviour
 
             socket.OnError = (e) =>
             {
-                Debug.LogError("Exception: " + e);
-                _clients.Remove(socket);
-                socket.Close();
+                var clientId = GetClientId(socket);
+                Debug.Log($"Error from {clientId}: {e.Message}");
             };
         });
     }
@@ -50,16 +70,22 @@ public class Server : MonoBehaviour
     {
         foreach (var client in _clients)
         {
-            client.Send(message);
+            client.Value.Send(message);
         }
+    }
+    
+    private string GetClientId(IWebSocketConnection socket)
+    {
+        return socket.ConnectionInfo.ClientIpAddress.ToString();
+
     }
 
     private void OnDestroy()
     {
         foreach (var client in _clients)
         {
-            client.Send("Closing.");
-            client.Close();
+            client.Value.Send("Closing.");
+            client.Value.Close();
         }
 
         _clients.Clear();
