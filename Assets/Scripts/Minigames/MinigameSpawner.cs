@@ -17,7 +17,6 @@ public class MinigameData
 public class MinigameSpawner : MonoBehaviour
 {
     [SerializeField] private SerializedDictionary<MinigameType, Minigame> _minigames;
-    [SerializeField] private TextAsset _minigameJson;
 
     private MinigameData[] _minigameData;
 

@@ -20,7 +20,7 @@ public class HTTPServer : MonoBehaviour
     private void StartHttpServer()
     {
         _listener = new HttpListener();
-        _listener.Prefixes.Add($"http://{GetLocalIpv4Address()}:8081/");
+        _listener.Prefixes.Add($"http://{ServerExtensions.GetLocalIpv4Address()}:8081/");
         _listener.Start();
         Debug.Log("HTTP server started");
 
@@ -28,13 +28,6 @@ public class HTTPServer : MonoBehaviour
         listenTask.GetAwaiter().GetResult();
 
         _listener.Close();
-    }
-
-    private string GetLocalIpv4Address()
-    {
-        return Dns.GetHostEntry(Dns.GetHostName()).AddressList.First(f =>
-                f.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-            .ToString();
     }
 
     private async Task HandleConnection()

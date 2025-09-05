@@ -14,9 +14,12 @@ public class Server : MonoBehaviour
     // keeping a persistent list for any possible disconnect/recoveries.
     private Dictionary<string, IWebSocketConnection> _clientHistory = new();
 
+    public Action<string> OnConnected;
+    public Action<string> OnDisconnected;
+
     public void Start()
     {
-        _server = new WebSocketServer("ws://192.168.1.77:8080");
+        _server = new WebSocketServer($"ws://{ServerExtensions.GetLocalIpv4Address()}:8080");
 
         _server.Start(socket =>
         {
@@ -45,6 +48,8 @@ public class Server : MonoBehaviour
             _clients.TryRemove(clientId, out _);
         }
 
+
+        OnConnected?.Invoke(clientId);
         _clients.TryAdd(clientId, socket);
         _clientHistory.TryAdd(clientId, socket);
         Debug.Log($"Client connected: {clientId} (Total: {_clients.Count})");
@@ -55,6 +60,7 @@ public class Server : MonoBehaviour
         var clientId = GetClientId(socket);
         if (!string.IsNullOrEmpty(clientId))
         {
+            OnDisconnected?.Invoke(clientId);
             _clients.TryRemove(clientId, out _);
             Debug.Log($"Client disconnected: {clientId} (Total: {_clients.Count})");
         }
@@ -82,8 +88,7 @@ public class Server : MonoBehaviour
     
     private string GetClientId(IWebSocketConnection socket)
     {
-        return socket.ConnectionInfo.ClientIpAddress.ToString();
-
+        return socket.ConnectionInfo.ClientIpAddress;
     }
 
     private void OnDestroy()
