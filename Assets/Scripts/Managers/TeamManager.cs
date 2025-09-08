@@ -20,6 +20,11 @@ public class TeamManager : MonoBehaviour
         }
     }
 
+    public Team GetTeam(IWebSocketConnection connection)
+    {
+        return _teams[connection];
+    }
+
     public void GrantScore(IWebSocketConnection team, int score)
     {
         _teams[team].AddScore(score);
@@ -29,6 +34,4 @@ public class TeamManager : MonoBehaviour
     {
         _teams[team].RemoveScore(score);
     }
-
-    
 }
