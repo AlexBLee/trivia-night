@@ -1,3 +1,4 @@
+using Fleck;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,9 +17,9 @@ public class GeoguessrMinigame : Minigame
         _image.sprite = image;
     }
 
-    protected override void ReceiveMessage(string message)
+    protected override void ReceiveMessage(IWebSocketConnection socket, string message)
     {
-        base.ReceiveMessage(message);
+        base.ReceiveMessage(socket, message);
     }
 
     protected override void FinishGame()

@@ -1,8 +1,10 @@
+using Fleck;
 using UnityEngine;
 
 public abstract class Minigame : MonoBehaviour
 {
     [SerializeField] protected MessageManager _messageManager;
+    [SerializeField] protected TeamManager _teamManager;
 
     public virtual void Initialize(MinigameData minigameData)
     {
@@ -10,19 +12,13 @@ public abstract class Minigame : MonoBehaviour
         gameObject.SetActive(true);
     }
 
-    protected virtual void ReceiveMessage(string message)
+    protected virtual void ReceiveMessage(IWebSocketConnection socket, string message)
     {
-
     }
 
     protected virtual void SendMessage(string message)
     {
         _messageManager.SendMessageToServer(message);
-    }
-
-    protected virtual void Play()
-    {
-
     }
 
     protected virtual void FinishGame()

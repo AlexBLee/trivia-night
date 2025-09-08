@@ -1,3 +1,4 @@
+using Fleck;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -43,9 +44,9 @@ public class BasicQuestionMinigame : Minigame
         _answerText.gameObject.SetActive(true);
     }
 
-    protected override void ReceiveMessage(string message)
+    protected override void ReceiveMessage(IWebSocketConnection socket, string message)
     {
-        base.ReceiveMessage(message);
+        base.ReceiveMessage(socket, message);
     }
 
     protected override void FinishGame()

@@ -1,14 +1,20 @@
 using System;
 using System.Collections.Generic;
+using Fleck;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviour
 {
     [SerializeField] private List<TextMeshProUGUI> _teamText;
-    [SerializeField] private Server _server;
+    [SerializeField] private Button _startButton;
+    [SerializeField] private GameObject _gamePanel;
 
-    private List<string> _connectedPlayers = new(new string[4]);
+    [SerializeField] private Server _server;
+    [SerializeField] private TeamManager _teamManager;
+
+    private List<IWebSocketConnection> _connectedPlayers = new(new IWebSocketConnection[4]);
 
     private Queue<int> _connectingPlayers = new();
     private Queue<int> _disconnectingPlayers = new();
@@ -19,6 +25,8 @@ public class LobbyManager : MonoBehaviour
     {
         _server.OnConnected += OnConnected;
         _server.OnDisconnected += OnDisconnected;
+
+        _startButton.onClick.AddListener(StartGame);
     }
 
     private void Update()
@@ -35,23 +43,35 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
-    private void OnConnected(string clientId)
+    private void OnConnected(IWebSocketConnection player)
     {
         for (int i = 0; i < _connectedPlayers.Count; i++)
         {
-            if (string.IsNullOrEmpty(_connectedPlayers[i]))
+            if (_connectedPlayers[i] == null)
             {
-                _connectedPlayers[i] = clientId;
+                _connectedPlayers[i] = player;
                 _connectingPlayers.Enqueue(i);
                 return;
             }
         }
     }
 
-    private void OnDisconnected(string clientId)
+    private void OnDisconnected(IWebSocketConnection player)
     {
-        var index = _connectedPlayers.IndexOf(clientId);
-        _connectedPlayers[index] = string.Empty;
+        var index = _connectedPlayers.IndexOf(player);
+        _connectedPlayers[index] = null;
         _disconnectingPlayers.Enqueue(index);
+    }
+
+    private void StartGame()
+    {
+        _teamManager.AssignTeams(_connectedPlayers);
+        gameObject.SetActive(false);
+        _gamePanel.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        _startButton.onClick.RemoveAllListeners();
     }
 }

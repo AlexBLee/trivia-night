@@ -2,15 +2,9 @@ using Fleck;
 
 public class Team
 {
-    private IWebSocketConnection _socketConnection;
     private int _score;
 
     public int CurrentScore => _score;
-
-    public void AssignSocketConnection(IWebSocketConnection socketConnection)
-    {
-        _socketConnection = socketConnection;
-    }
 
     public void AddScore(int score)
     {

@@ -14,8 +14,8 @@ public class Server : MonoBehaviour
     // keeping a persistent list for any possible disconnect/recoveries.
     private Dictionary<string, IWebSocketConnection> _clientHistory = new();
 
-    public Action<string> OnConnected;
-    public Action<string> OnDisconnected;
+    public Action<IWebSocketConnection> OnConnected;
+    public Action<IWebSocketConnection> OnDisconnected;
 
     public void Start()
     {
@@ -25,7 +25,7 @@ public class Server : MonoBehaviour
         {
             socket.OnOpen = () => { OnClientConnected(socket); };
             socket.OnClose = () => { OnClientDisconnected(socket); };
-            socket.OnMessage = OnMessageReceived;
+            socket.OnMessage = (msg) => { OnMessageReceived(socket, msg); };
             socket.OnError = (e) => { OnClientError(socket, e); };
         });
     }
@@ -49,7 +49,7 @@ public class Server : MonoBehaviour
         }
 
 
-        OnConnected?.Invoke(clientId);
+        OnConnected?.Invoke(socket);
         _clients.TryAdd(clientId, socket);
         _clientHistory.TryAdd(clientId, socket);
         Debug.Log($"Client connected: {clientId} (Total: {_clients.Count})");
@@ -60,16 +60,16 @@ public class Server : MonoBehaviour
         var clientId = GetClientId(socket);
         if (!string.IsNullOrEmpty(clientId))
         {
-            OnDisconnected?.Invoke(clientId);
+            OnDisconnected?.Invoke(socket);
             _clients.TryRemove(clientId, out _);
             Debug.Log($"Client disconnected: {clientId} (Total: {_clients.Count})");
         }
     }
 
-    private void OnMessageReceived(string message)
+    private void OnMessageReceived(IWebSocketConnection socket, string message)
     {
         Debug.Log("Server message: " + message);
-        _messageManager.ReceiveMessage(message);
+        _messageManager.ReceiveMessage(socket, message);
     }
 
     private void OnClientError(IWebSocketConnection socket, Exception e)
