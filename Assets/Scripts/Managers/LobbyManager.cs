@@ -13,6 +13,7 @@ public class LobbyManager : MonoBehaviour
 
     [SerializeField] private Server _server;
     [SerializeField] private TeamManager _teamManager;
+    [SerializeField] private TextMeshProUGUI _ipText;
 
     private List<IWebSocketConnection> _connectedPlayers = new(new IWebSocketConnection[4]);
 
@@ -27,6 +28,8 @@ public class LobbyManager : MonoBehaviour
         _server.OnDisconnected += OnDisconnected;
 
         _startButton.onClick.AddListener(StartGame);
+
+        _ipText.text = $"{ServerExtensions.GetLocalIpv4Address()}:8080";
     }
 
     private void Update()
