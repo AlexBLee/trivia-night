@@ -10,7 +10,8 @@ public enum MinigameType
     Hangman,
     Geoguessr,
     Music,
-    ZoomIn
+    ZoomIn,
+    RandomizedWord
 }
 
 public class MinigameHolder : MonoBehaviour

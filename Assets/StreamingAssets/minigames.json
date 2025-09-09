@@ -25,27 +25,27 @@
     "answer": "5"
   },
   {
-    "type": "Hangman",
+    "type": "RandomizedWord",
     "input": "Czech Republic",
     "answer": ""
   },
   {
-    "type": "Hangman",
+    "type": "RandomizedWord",
     "input": "Canada",
     "answer": ""
   },
   {
-    "type": "Hangman",
+    "type": "RandomizedWord",
     "input": "USA",
     "answer": ""
   },
   {
-    "type": "Hangman",
+    "type": "RandomizedWord",
     "input": "Lituania",
     "answer": ""
   },
   {
-    "type": "Hangman",
+    "type": "RandomizedWord",
     "input": "Germany",
     "answer": ""
   },
