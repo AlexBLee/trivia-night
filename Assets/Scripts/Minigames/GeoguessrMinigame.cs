@@ -1,13 +1,23 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Fleck;
+using Mapbox.Examples;
+using Mapbox.Unity.Map;
+using Mapbox.Utils;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GeoguessrMinigame : Minigame
 {
+    [SerializeField] private GameObject _uiParent;
     [SerializeField] private Button _finishButton;
     [SerializeField] private Image _image;
+
+    [SerializeField] private AbstractMap _map;
+    [SerializeField] private Camera _mapCamera;
+    [SerializeField] private SpawnMarkersOnMap _spawnMarkersOnMap;
 
     private Dictionary<Team, string> _guesses = new();
     private Dictionary<Team, int> _results = new();
@@ -17,11 +27,16 @@ public class GeoguessrMinigame : Minigame
     private int _maxPoints = 500;
     private float _maxDistance = 10;
 
+    private float _zoomOutAmount = 15f;
+    private float _zoomOutDuration = 2f;
+    private float _timeBeforeZoomOut = 3f;
+
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
         SendMessage("geoguessr");
-        _finishButton.onClick.AddListener(FinishGame);
+        _finishButton.onClick.AddListener(DisplayGuesses);
+        _uiParent.gameObject.SetActive(true);
 
         var image = Resources.Load<Sprite>(minigameData.Input);
         _image.sprite = image;
@@ -48,7 +63,6 @@ public class GeoguessrMinigame : Minigame
         }
     }
 
-    [ContextMenu("Finish Game")]
     private void DisplayGuesses()
     {
         foreach (var guess in _guesses)
@@ -60,8 +74,17 @@ public class GeoguessrMinigame : Minigame
                 _results[guess.Key] = score;
             }
 
-            Debug.Log(score);
+            _spawnMarkersOnMap.SetMarker(guess.Value);
         }
+
+        _uiParent.gameObject.SetActive(false);
+        _map.gameObject.SetActive(true);
+        _mapCamera.gameObject.SetActive(true);
+
+        Vector2d coordinatePoint = new Vector2d(_point.Item1, _point.Item2);
+        _map.SetCenterLatitudeLongitude(coordinatePoint);
+
+        StartCoroutine(ZoomOutCoroutine(_zoomOutAmount, _zoomOutDuration));
     }
 
     private double GetDistanceInKm(string answer)
@@ -96,9 +119,33 @@ public class GeoguessrMinigame : Minigame
         return Mathf.Max(0, (int)(_maxPoints * (1 - (km / _maxDistance))));
     }
 
+    private IEnumerator ZoomOutCoroutine(float targetZoom, float duration)
+    {
+        float startZoom = _map.AbsoluteZoom;
+        Vector2d coord = new Vector2d(_point.Item1, _point.Item2);
+        float elapsed = 0f;
+
+        yield return new WaitForSeconds(_timeBeforeZoomOut);
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            float easedT = Mathf.SmoothStep(0f, 1f, t);
+
+            float currentZoom = Mathf.Lerp(startZoom, targetZoom, easedT);
+            _map.UpdateMap(coord, currentZoom);
+
+            yield return null;
+        }
+
+        _map.UpdateMap(coord, targetZoom);
+    }
+
     protected override void FinishGame()
     {
         base.FinishGame();
-        _finishButton.onClick.RemoveListener(FinishGame);
+        _finishButton.onClick.RemoveListener(DisplayGuesses);
     }
 }
