@@ -27,9 +27,9 @@ public class GeoguessrMinigame : Minigame
     private int _maxPoints = 500;
     private float _maxDistance = 10;
 
-    private float _zoomOutAmount = 15f;
-    private float _zoomOutDuration = 2f;
-    private float _timeBeforeZoomOut = 3f;
+    private float _zoomAmount = 16f;
+    private float _zoomDuration = 2f;
+    private float _timeBeforeZoom = 3f;
 
     public override void Initialize(MinigameData minigameData)
     {
@@ -83,8 +83,9 @@ public class GeoguessrMinigame : Minigame
 
         Vector2d coordinatePoint = new Vector2d(_point.Item1, _point.Item2);
         _map.SetCenterLatitudeLongitude(coordinatePoint);
+        _spawnMarkersOnMap.SetMarker(coordinatePoint);
 
-        StartCoroutine(ZoomOutCoroutine(_zoomOutAmount, _zoomOutDuration));
+        StartCoroutine(ZoomCoroutine(_zoomAmount, _zoomDuration));
     }
 
     private double GetDistanceInKm(string answer)
@@ -119,13 +120,13 @@ public class GeoguessrMinigame : Minigame
         return Mathf.Max(0, (int)(_maxPoints * (1 - (km / _maxDistance))));
     }
 
-    private IEnumerator ZoomOutCoroutine(float targetZoom, float duration)
+    private IEnumerator ZoomCoroutine(float targetZoom, float duration)
     {
         float startZoom = _map.AbsoluteZoom;
         Vector2d coord = new Vector2d(_point.Item1, _point.Item2);
         float elapsed = 0f;
 
-        yield return new WaitForSeconds(_timeBeforeZoomOut);
+        yield return new WaitForSeconds(_timeBeforeZoom);
 
         while (elapsed < duration)
         {

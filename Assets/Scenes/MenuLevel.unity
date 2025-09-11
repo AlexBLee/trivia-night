@@ -635,7 +635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 151991542}
   m_Layer: 5
-  m_Name: Game
+  m_Name: GameSelection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,12 +655,6 @@ RectTransform:
   m_Children:
   - {fileID: 1942101684}
   - {fileID: 1714813223}
-  - {fileID: 563374479}
-  - {fileID: 7784031850621407928}
-  - {fileID: 505306943}
-  - {fileID: 1144335612}
-  - {fileID: 820509277}
-  - {fileID: 1257646069}
   m_Father: {fileID: 2024927723}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1296,7 +1290,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 1
-  m_Color: {r: 0.31458983, g: 0.3207547, b: 0.28898183, a: 1}
+  m_Color: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
@@ -1620,7 +1614,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 151991542}
+    m_TransformParent: {fileID: 881809267}
     m_Modifications:
     - target: {fileID: 727234380410017468, guid: ba9e896712281914084536bbc8789ea0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1719,6 +1713,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4389803392951425784, guid: ba9e896712281914084536bbc8789ea0, type: 3}
+      propertyPath: _uiManager
+      value: 
+      objectReference: {fileID: 507716166}
+    - target: {fileID: 4389803392951425784, guid: ba9e896712281914084536bbc8789ea0, type: 3}
       propertyPath: _teamManager
       value: 
       objectReference: {fileID: 1178040111}
@@ -1791,6 +1789,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae7161308c2ae649949cb05940a6b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &507716165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 507716167}
+  - component: {fileID: 507716166}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &507716166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507716165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8100d62376c01c4aa4f8b9b0861bd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  _gameSelectionContainer: {fileID: 151991541}
+--- !u!4 &507716167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 507716165}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 28.00152, y: 14.60309, z: 3.64158}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &544642156
 GameObject:
   m_ObjectHideFlags: 0
@@ -2041,7 +2084,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 151991542}
+    m_TransformParent: {fileID: 881809267}
     m_Modifications:
     - target: {fileID: 1410650790392468356, guid: beeb97985d32dab40b45eddd7002cd12, type: 3}
       propertyPath: m_Pivot.x
@@ -2123,6 +2166,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3528422945443228299, guid: beeb97985d32dab40b45eddd7002cd12, type: 3}
+      propertyPath: _uiManager
+      value: 
+      objectReference: {fileID: 507716166}
     - target: {fileID: 3528422945443228299, guid: beeb97985d32dab40b45eddd7002cd12, type: 3}
       propertyPath: _teamManager
       value: 
@@ -2645,7 +2692,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 151991542}
+    m_TransformParent: {fileID: 881809267}
     m_Modifications:
     - target: {fileID: 1410650790392468356, guid: 726a1adaf75122545ab74ccbb908a3be, type: 3}
       propertyPath: m_Pivot.x
@@ -2731,6 +2778,10 @@ PrefabInstance:
       propertyPath: _zoomStep
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5802774316376157259, guid: 726a1adaf75122545ab74ccbb908a3be, type: 3}
+      propertyPath: _uiManager
+      value: 
+      objectReference: {fileID: 507716166}
     - target: {fileID: 5802774316376157259, guid: 726a1adaf75122545ab74ccbb908a3be, type: 3}
       propertyPath: _teamManager
       value: 
@@ -3094,6 +3145,47 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5030032100495876242, guid: a8e55fa4e90825b43a69f8fa93e285df, type: 3}
   m_PrefabInstance: {fileID: 848725702}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &881809266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 881809267}
+  m_Layer: 5
+  m_Name: Minigames
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &881809267
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881809266}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 563374479}
+  - {fileID: 7784031850621407928}
+  - {fileID: 505306943}
+  - {fileID: 1144335612}
+  - {fileID: 820509277}
+  - {fileID: 1257646069}
+  m_Father: {fileID: 2024927723}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &885682945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4520,7 +4612,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 151991542}
+    m_TransformParent: {fileID: 881809267}
     m_Modifications:
     - target: {fileID: 1410650790392468356, guid: 5d6cf53c6fb16c8469602a631a66c85d, type: 3}
       propertyPath: m_Pivot.x
@@ -4606,6 +4698,10 @@ PrefabInstance:
       propertyPath: _word
       value: Czech Republic
       objectReference: {fileID: 0}
+    - target: {fileID: 5310200708161732273, guid: 5d6cf53c6fb16c8469602a631a66c85d, type: 3}
+      propertyPath: _uiManager
+      value: 
+      objectReference: {fileID: 507716166}
     - target: {fileID: 5310200708161732273, guid: 5d6cf53c6fb16c8469602a631a66c85d, type: 3}
       propertyPath: _teamManager
       value: 
@@ -5120,8 +5216,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 151991542}
+    m_TransformParent: {fileID: 881809267}
     m_Modifications:
+    - target: {fileID: 1273224926473758094, guid: 1988f249401108049ab51d6ed76914df, type: 3}
+      propertyPath: _uiManager
+      value: 
+      objectReference: {fileID: 507716166}
     - target: {fileID: 1273224926473758094, guid: 1988f249401108049ab51d6ed76914df, type: 3}
       propertyPath: _teamManager
       value: 
@@ -7681,6 +7781,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 151991542}
+  - {fileID: 881809267}
   - {fileID: 1265802309}
   m_Father: {fileID: 436470439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8246,7 +8347,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 151991542}
+    m_TransformParent: {fileID: 881809267}
     m_Modifications:
     - target: {fileID: 1410650790392468356, guid: 7b19759acb0351f41ae63e1218164858, type: 3}
       propertyPath: m_Pivot.x
@@ -8329,6 +8430,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4181495412394352234, guid: 7b19759acb0351f41ae63e1218164858, type: 3}
+      propertyPath: _uiManager
+      value: 
+      objectReference: {fileID: 507716166}
+    - target: {fileID: 4181495412394352234, guid: 7b19759acb0351f41ae63e1218164858, type: 3}
       propertyPath: _teamManager
       value: 
       objectReference: {fileID: 1178040111}
@@ -8379,3 +8484,4 @@ SceneRoots:
   - {fileID: 1592205890}
   - {fileID: 83781194}
   - {fileID: 1178040112}
+  - {fileID: 507716167}

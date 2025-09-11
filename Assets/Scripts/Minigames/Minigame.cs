@@ -5,11 +5,13 @@ public abstract class Minigame : MonoBehaviour
 {
     [SerializeField] protected MessageManager _messageManager;
     [SerializeField] protected TeamManager _teamManager;
+    [SerializeField] protected UIManager _uiManager;
 
     public virtual void Initialize(MinigameData minigameData)
     {
         _messageManager.OnMessageReceived += ReceiveMessage;
         gameObject.SetActive(true);
+        _uiManager.ShowGameSelection(false);
     }
 
     protected virtual void ReceiveMessage(IWebSocketConnection socket, string message)
@@ -25,6 +27,7 @@ public abstract class Minigame : MonoBehaviour
     {
         _messageManager.OnMessageReceived -= ReceiveMessage;
         gameObject.SetActive(false);
+        _uiManager.ShowGameSelection(true);
         SendMessage("home");
     }
 }

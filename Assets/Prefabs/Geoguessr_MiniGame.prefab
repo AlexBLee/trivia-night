@@ -488,8 +488,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _map: {fileID: 5660619291640370141}
+  _mapCamera: {fileID: 8885863315453275006}
   _spawnScale: 20
-  _markerPrefab: {fileID: 1839187062704024, guid: 9b5b1b761a8994c07affd0a05396633b, type: 3}
+  _mapMarker: {fileID: -6877502188794534872, guid: 9eac29b813225a3478bbb64b250389e4, type: 3}
 --- !u!1 &6012935853060334513
 GameObject:
   m_ObjectHideFlags: 0

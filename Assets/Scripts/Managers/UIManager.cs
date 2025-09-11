@@ -2,15 +2,10 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject _gameSelectionContainer;
 
-    // Update is called once per frame
-    void Update()
+    public void ShowGameSelection(bool show)
     {
-        
+        _gameSelectionContainer.gameObject.SetActive(show);
     }
 }
