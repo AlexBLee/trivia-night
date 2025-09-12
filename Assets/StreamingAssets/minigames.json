@@ -123,5 +123,30 @@
     "type": "ZoomIn",
     "input": "peach",
     "answer": "peach"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "guess1",
+    "answer": "49.273162, -123.100321"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "guess2",
+    "answer": "-21.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "guess3",
+    "answer": "-31.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "guess4",
+    "answer": "-41.234,51.771"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "guess5",
+    "answer": "-51.234,51.771"
   }
 ]
