@@ -10,7 +10,7 @@ public class ZoomInMinigame : Minigame
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
-        SendMessage("zoomin");
+        SendMessageToServer("zoomin");
         _finishButton.onClick.AddListener(FinishGame);
 
         var image = Resources.Load<Sprite>(minigameData.Input);

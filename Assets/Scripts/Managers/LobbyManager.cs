@@ -73,8 +73,10 @@ public class LobbyManager : MonoBehaviour
         _gamePanel.SetActive(true);
     }
 
-    private void OnDestroy()
+    private void OnDisable()
     {
         _startButton.onClick.RemoveAllListeners();
+        _server.OnConnected -= OnConnected;
+        _server.OnDisconnected -= OnDisconnected;
     }
 }

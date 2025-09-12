@@ -14,7 +14,7 @@ public class RandomizedWordMinigame : Minigame
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
-        SendMessage("randomize");
+        SendMessageToServer("randomize");
 
         _word = minigameData.Answer;
         _text.text = minigameData.Input;

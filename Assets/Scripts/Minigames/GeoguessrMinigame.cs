@@ -33,7 +33,7 @@ public class GeoguessrMinigame : Minigame
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
-        SendMessage("geoguessr");
+        SendMessageToServer("geoguessr");
         _finishButton.onClick.AddListener(DisplayGuesses);
         _uiParent.gameObject.SetActive(true);
 

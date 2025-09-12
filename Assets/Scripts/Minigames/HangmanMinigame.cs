@@ -13,7 +13,7 @@ public class HangmanMinigame : Minigame
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
-        SendMessage("hangman");
+        SendMessageToServer("hangman");
 
         _word = minigameData.Input;
         string hiddenText = "";

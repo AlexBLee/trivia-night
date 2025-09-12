@@ -12,7 +12,7 @@ public class BasicQuestionMinigame : Minigame
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
-        SendMessage("question");
+        SendMessageToServer("question");
         _finishButton.onClick.AddListener(FinishGame);
 
         _questionText.text = minigameData.Input;
@@ -36,7 +36,7 @@ public class BasicQuestionMinigame : Minigame
 
     private void ReenableGuess()
     {
-        SendMessage("reenable");
+        SendMessageToServer("reenable");
     }
 
     private void RevealAnswer()
