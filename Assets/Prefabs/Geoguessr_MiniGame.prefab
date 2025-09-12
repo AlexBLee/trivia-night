@@ -1,5 +1,42 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2183188293834508746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7532438544374420525}
+  m_Layer: 5
+  m_Name: MapContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7532438544374420525
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2183188293834508746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 240948626681636847}
+  - {fileID: 6237660824858303734}
+  m_Father: {fileID: 1410650790392468356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2300053474860451393
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,7 +67,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1410650790392468356}
+  m_Father: {fileID: 7532438544374420525}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!20 &8885863315453275006
 Camera:
@@ -326,7 +363,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1410650790392468356}
+  m_Father: {fileID: 7532438544374420525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5660619291640370141
 MonoBehaviour:
@@ -855,8 +892,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2280029107205032702}
-  - {fileID: 240948626681636847}
-  - {fileID: 6237660824858303734}
+  - {fileID: 7532438544374420525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -878,12 +914,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _messageManager: {fileID: 0}
   _teamManager: {fileID: 0}
+  _uiManager: {fileID: 0}
   _uiParent: {fileID: 9180486846141969514}
   _finishButton: {fileID: 2319645012898293176}
   _image: {fileID: 7580999499279646654}
   _map: {fileID: 5660619291640370141}
   _mapCamera: {fileID: 8885863315453275006}
   _spawnMarkersOnMap: {fileID: 6363146605902720176}
+  _mapContainer: {fileID: 2183188293834508746}
 --- !u!1 &9180486846141969514
 GameObject:
   m_ObjectHideFlags: 0

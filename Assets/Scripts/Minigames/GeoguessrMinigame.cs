@@ -2,11 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Fleck;
-using Mapbox.Examples;
 using Mapbox.Unity.Map;
 using Mapbox.Utils;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GeoguessrMinigame : Minigame
@@ -18,6 +16,7 @@ public class GeoguessrMinigame : Minigame
     [SerializeField] private AbstractMap _map;
     [SerializeField] private Camera _mapCamera;
     [SerializeField] private SpawnMarkersOnMap _spawnMarkersOnMap;
+    [SerializeField] private GameObject _mapContainer;
 
     private Dictionary<Team, string> _guesses = new();
     private Dictionary<Team, int> _results = new();
@@ -65,6 +64,10 @@ public class GeoguessrMinigame : Minigame
 
     private void DisplayGuesses()
     {
+        Vector2d coordinatePoint = new Vector2d(_point.Item1, _point.Item2);
+        _map.SetCenterLatitudeLongitude(coordinatePoint);
+        _spawnMarkersOnMap.SetMarker(coordinatePoint);
+
         foreach (var guess in _guesses)
         {
             var score = GetScoreFromDistance(GetDistanceInKm(guess.Value));
@@ -74,16 +77,12 @@ public class GeoguessrMinigame : Minigame
                 _results[guess.Key] = score;
             }
 
-            _spawnMarkersOnMap.SetMarker(guess.Value);
+            _spawnMarkersOnMap.SetMarker(guess.Value, guess.Key.TeamName);
+            guess.Key.AddScore(score);
         }
 
         _uiParent.gameObject.SetActive(false);
-        _map.gameObject.SetActive(true);
-        _mapCamera.gameObject.SetActive(true);
-
-        Vector2d coordinatePoint = new Vector2d(_point.Item1, _point.Item2);
-        _map.SetCenterLatitudeLongitude(coordinatePoint);
-        _spawnMarkersOnMap.SetMarker(coordinatePoint);
+        _mapContainer.gameObject.SetActive(true);
 
         StartCoroutine(ZoomCoroutine(_zoomAmount, _zoomDuration));
     }

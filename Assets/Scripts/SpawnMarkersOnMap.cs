@@ -14,25 +14,28 @@ public class SpawnMarkersOnMap : MonoBehaviour
 	private List<GameObject> _spawnedObjects = new();
 	private List<Vector2d> _markerPositions = new();
 
-	public void SetMarker(string coordinate)
+	public void SetMarker(string coordinate, string teamName = "")
 	{
 		Vector2d vectorCoordinate = Conversions.StringToLatLon(coordinate);
-		SpawnMarker(vectorCoordinate);
+		SpawnMarker(vectorCoordinate, teamName);
 	}
 
-	public void SetMarker(Vector2d coordinate)
+	public void SetMarker(Vector2d coordinate, string teamName = "")
 	{
-		SpawnMarker(coordinate);
+		SpawnMarker(coordinate, teamName);
 	}
 
-	private void SpawnMarker(Vector2d coordinate)
+	private void SpawnMarker(Vector2d coordinate, string teamName = "")
 	{
+		var mapMarker = Instantiate(_mapMarker);
+		mapMarker.Initialize(_mapCamera, teamName);
+		mapMarker.transform.localPosition = _map.GeoToWorldPosition(coordinate, true);
+		mapMarker.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
+
 		_markerPositions.Add(coordinate);
-		var instance = Instantiate(_mapMarker);
-		instance.Initialize(_mapCamera, "AAAAA");
-		instance.transform.localPosition = _map.GeoToWorldPosition(coordinate, true);
-		instance.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
-		_spawnedObjects.Add(instance.gameObject);
+		_spawnedObjects.Add(mapMarker.gameObject);
+
+		mapMarker.RenderLineTowards(_spawnedObjects[0]);
 	}
 
 	private void Update()
