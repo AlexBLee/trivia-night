@@ -12,8 +12,6 @@ public class UIManager : MonoBehaviour
 
     public void ShowFinalJeopardy(bool show)
     {
-        _gameSelectionContainer.gameObject.SetActive(!show);
-
         foreach (var button in _finalJeopardyButtons)
         {
             button.SetActive(show);

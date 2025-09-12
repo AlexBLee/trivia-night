@@ -1273,7 +1273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -331.84, y: 90}
+  m_AnchoredPosition: {x: -331.84, y: -438}
   m_SizeDelta: {x: 177.29999, y: 82.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &362961793
@@ -1308,7 +1308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25437632dd825a345ad031c0a0ab6f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minigameType: 0
+  _minigameType: 3
   _minigameSpawner: {fileID: 83781193}
   _button: {fileID: 362961795}
   _text: {fileID: 968734500}
@@ -2173,7 +2173,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.6, y: 90}
+  m_AnchoredPosition: {x: 24.6, y: -438}
   m_SizeDelta: {x: 177.29999, y: 82.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &511068340
@@ -2208,7 +2208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25437632dd825a345ad031c0a0ab6f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minigameType: 0
+  _minigameType: 3
   _minigameSpawner: {fileID: 83781193}
   _button: {fileID: 511068342}
   _text: {fileID: 922882343}
@@ -2332,7 +2332,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -153.4, y: 90}
+  m_AnchoredPosition: {x: -153.4, y: -438}
   m_SizeDelta: {x: 177.29999, y: 82.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &512825070
@@ -2367,7 +2367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25437632dd825a345ad031c0a0ab6f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minigameType: 0
+  _minigameType: 3
   _minigameSpawner: {fileID: 83781193}
   _button: {fileID: 512825072}
   _text: {fileID: 2023294360}
@@ -4290,7 +4290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 201.4, y: 90}
+  m_AnchoredPosition: {x: 201.4, y: -438}
   m_SizeDelta: {x: 177.29999, y: 82.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &934947485
@@ -4325,7 +4325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25437632dd825a345ad031c0a0ab6f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minigameType: 0
+  _minigameType: 3
   _minigameSpawner: {fileID: 83781193}
   _button: {fileID: 934947487}
   _text: {fileID: 1140113343}
@@ -7593,7 +7593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 380.1, y: 90}
+  m_AnchoredPosition: {x: 380.1, y: -438}
   m_SizeDelta: {x: 177.29999, y: 82.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1485716071
@@ -7628,7 +7628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25437632dd825a345ad031c0a0ab6f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minigameType: 0
+  _minigameType: 3
   _minigameSpawner: {fileID: 83781193}
   _button: {fileID: 1485716073}
   _text: {fileID: 319972686}
