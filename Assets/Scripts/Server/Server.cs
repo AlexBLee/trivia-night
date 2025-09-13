@@ -7,12 +7,15 @@ using UnityEngine;
 public class Server : MonoBehaviour
 {
     [SerializeField] private MessageManager _messageManager;
+    [SerializeField] private TeamManager _teamManager;
 
     private WebSocketServer _server;
     private ConcurrentDictionary<string, IWebSocketConnection> _clients = new();
 
     // keeping a persistent list for any possible disconnect/recoveries.
     private Dictionary<string, IWebSocketConnection> _clientHistory = new();
+
+    private string _lastMessageReceived = string.Empty;
 
     public Action<IWebSocketConnection> OnConnected;
     public Action<IWebSocketConnection> OnDisconnected;
@@ -48,6 +51,11 @@ public class Server : MonoBehaviour
             _clients.TryRemove(clientId, out _);
         }
 
+        if (_lastMessageReceived != String.Empty)
+        {
+            SendMessageToSocket(socket, _lastMessageReceived);
+            _teamManager.ReassignTeam(socket);
+        }
 
         OnConnected?.Invoke(socket);
         _clients.TryAdd(clientId, socket);
@@ -75,7 +83,12 @@ public class Server : MonoBehaviour
     private void OnClientError(IWebSocketConnection socket, Exception e)
     {
         var clientId = GetClientId(socket);
-        Debug.Log($"Error from {clientId}: {e.Message}");
+        Debug.Log($"Error from {clientId}: {e.StackTrace}");
+    }
+
+    public void SendMessageToSocket(IWebSocketConnection socket, string message)
+    {
+        socket.Send(message);
     }
 
     public void SendMessageToAll(string message)
@@ -84,6 +97,8 @@ public class Server : MonoBehaviour
         {
             client.Value.Send(message);
         }
+
+        _lastMessageReceived = message;
     }
     
     private string GetClientId(IWebSocketConnection socket)

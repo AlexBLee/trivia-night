@@ -22,7 +22,6 @@ export function WebSocketServer({ children }) {
         const socket = new WebSocket("ws://192.168.1.77:8080");
 
         socket.onopen = () => {
-            socket.send("Hello Server!");
         };
 
         socket.onmessage = (event) => {

@@ -1425,6 +1425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _messageManager: {fileID: 1592205889}
+  _teamManager: {fileID: 1178040111}
 --- !u!4 &366072718
 Transform:
   m_ObjectHideFlags: 0

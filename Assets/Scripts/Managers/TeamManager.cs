@@ -27,6 +27,27 @@ public class TeamManager : MonoBehaviour
         _adminPanel.AssignTeams(teams);
     }
 
+    public void ReassignTeam(IWebSocketConnection connection)
+    {
+        IWebSocketConnection connectionToRemove = null;
+        Team teamToAssign = null;
+
+        foreach (var team in _teams)
+        {
+            if (team.Key.ConnectionInfo.ClientIpAddress == connection.ConnectionInfo.ClientIpAddress)
+            {
+                connectionToRemove = team.Key;
+                teamToAssign = team.Value;
+            }
+        }
+
+        if (connectionToRemove != null && teamToAssign != null)
+        {
+            _teams.Remove(connectionToRemove);
+            _teams.Add(connection, teamToAssign);
+        }
+    }
+
     public Team GetTeam(IWebSocketConnection connection)
     {
         return _teams[connection];
