@@ -9691,6 +9691,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 567475252759585604, guid: 1f97d87c21b8c0f4ca309961c14fa5d4, type: 3}
+      propertyPath: _messageManager
+      value: 
+      objectReference: {fileID: 1592205889}
     - target: {fileID: 1031954749904322949, guid: 1f97d87c21b8c0f4ca309961c14fa5d4, type: 3}
       propertyPath: m_Name
       value: TeamOptions1

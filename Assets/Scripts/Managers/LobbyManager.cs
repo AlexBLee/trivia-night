@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Fleck;
 using TMPro;
 using UnityEngine;
@@ -13,12 +14,14 @@ public class LobbyManager : MonoBehaviour
 
     [SerializeField] private Server _server;
     [SerializeField] private TeamManager _teamManager;
+    [SerializeField] private MessageManager _messageManager;
     [SerializeField] private TextMeshProUGUI _ipText;
 
     private List<IWebSocketConnection> _connectedPlayers = new(new IWebSocketConnection[4]);
 
     private Queue<int> _connectingPlayers = new();
     private Queue<int> _disconnectingPlayers = new();
+    private Queue<(int, string)> _namingTeamQueue = new();
 
     private int _playerCount = 0;
 
@@ -27,9 +30,22 @@ public class LobbyManager : MonoBehaviour
         _server.OnConnected += OnConnected;
         _server.OnDisconnected += OnDisconnected;
 
+        _messageManager.OnMessageReceived += OnMessageReceived;
         _startButton.onClick.AddListener(StartGame);
 
-        _ipText.text = $"{ServerExtensions.GetLocalIpv4Address()}:8080";
+        _ipText.text = $"{ServerExtensions.GetLocalIpv4Address()}:8081";
+    }
+
+    private void OnMessageReceived(IWebSocketConnection socket, string teamName)
+    {
+        if (_connectedPlayers.Contains(socket))
+        {
+            int index = _connectedPlayers.IndexOf(socket);
+            if (index > -1)
+            {
+                _namingTeamQueue.Enqueue((index, teamName));
+            }
+        }
     }
 
     private void Update()
@@ -43,6 +59,14 @@ public class LobbyManager : MonoBehaviour
         if (_disconnectingPlayers.Count > 0)
         {
             _teamText[_disconnectingPlayers.Dequeue()].color = Color.white;
+        }
+
+        if (_namingTeamQueue.Count > 0)
+        {
+            var team = _namingTeamQueue.Dequeue();
+            var teamName = team.Item2.Split(':')[1];
+
+            _teamText[team.Item1].text = teamName;
         }
     }
 
@@ -68,6 +92,7 @@ public class LobbyManager : MonoBehaviour
 
     private void StartGame()
     {
+        _messageManager.SendMessageToServer("home");
         _teamManager.AssignTeams(_connectedPlayers);
         gameObject.SetActive(false);
         _gamePanel.SetActive(true);
@@ -78,5 +103,6 @@ public class LobbyManager : MonoBehaviour
         _startButton.onClick.RemoveAllListeners();
         _server.OnConnected -= OnConnected;
         _server.OnDisconnected -= OnDisconnected;
+        _messageManager.OnMessageReceived -= OnMessageReceived;
     }
 }

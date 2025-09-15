@@ -6,11 +6,13 @@ import QuestionMinigame from './QuestionMinigame';
 import MusicGame from './MusicGame';
 import GeoguessrGame from './GeoguessrGame';
 import ZoomInMinigame from './ZoomInMinigame';
+import Lobby from './Lobby';
 
 export default function App() {
   const { view } = useWebSocket();
 
   const views = {
+    lobby: <Lobby />,
     home: <Home />,
     hangman: <Hangman />,
     question: <QuestionMinigame />,

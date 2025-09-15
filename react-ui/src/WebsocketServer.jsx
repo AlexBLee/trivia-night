@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useState, useCallback, useRef } f
 const WebSocketContext = createContext();
 
 export function WebSocketServer({ children }) {
-    const [view, setView] = useState("home");
+    const [view, setView] = useState("lobby");
     const [socket, setSocket] = useState(null);
     const messageListenersRef = useRef(new Set());
 
@@ -29,6 +29,7 @@ export function WebSocketServer({ children }) {
             console.log("Received:", message);
 
             // Handle view changes in the main component
+            if (message === "lobby") setView("lobby");
             if (message === "home") setView("home");
             if (message === "question") setView("question");
             if (message === "hangman") setView("hangman");
