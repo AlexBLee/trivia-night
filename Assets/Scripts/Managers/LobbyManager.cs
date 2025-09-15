@@ -18,6 +18,7 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _ipText;
 
     private List<IWebSocketConnection> _connectedPlayers = new(new IWebSocketConnection[4]);
+    private List<string> _teamNames = new();
 
     private Queue<int> _connectingPlayers = new();
     private Queue<int> _disconnectingPlayers = new();
@@ -43,7 +44,9 @@ public class LobbyManager : MonoBehaviour
             int index = _connectedPlayers.IndexOf(socket);
             if (index > -1)
             {
+                teamName = teamName.Split(':')[1];
                 _namingTeamQueue.Enqueue((index, teamName));
+                _teamNames.Add(teamName);
             }
         }
     }
@@ -64,9 +67,7 @@ public class LobbyManager : MonoBehaviour
         if (_namingTeamQueue.Count > 0)
         {
             var team = _namingTeamQueue.Dequeue();
-            var teamName = team.Item2.Split(':')[1];
-
-            _teamText[team.Item1].text = teamName;
+            _teamText[team.Item1].text = team.Item2;
         }
     }
 
@@ -93,7 +94,7 @@ public class LobbyManager : MonoBehaviour
     private void StartGame()
     {
         _messageManager.SendMessageToServer("home");
-        _teamManager.AssignTeams(_connectedPlayers);
+        _teamManager.AssignTeams(_connectedPlayers, _teamNames);
         gameObject.SetActive(false);
         _gamePanel.SetActive(true);
     }

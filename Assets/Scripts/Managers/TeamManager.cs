@@ -9,18 +9,24 @@ public class TeamManager : MonoBehaviour
 
     private Dictionary<IWebSocketConnection, Team> _teams = new();
 
-    public void AssignTeams(List<IWebSocketConnection> connections)
+    public Dictionary<IWebSocketConnection, Team> Teams => _teams;
+
+    public void AssignTeams(List<IWebSocketConnection> connections, List<string> teamNames)
     {
         List<Team> teams = new();
 
-        foreach (var connection in connections)
+        for (int i = 0; i < connections.Count; i++)
         {
+            var connection = connections[i];
+
             if (connection == null)
             {
                 continue;
             }
 
             var team = new Team();
+            team.AssignTeamName(teamNames[i]);
+
             _teams.Add(connection, team);
             teams.Add(team);
         }
