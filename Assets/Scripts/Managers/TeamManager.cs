@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Fleck;
 using UnityEngine;
 
@@ -27,6 +28,11 @@ public class TeamManager : MonoBehaviour
         _adminPanel.AssignTeams(teams);
     }
 
+    public bool TrySearchForExistingTeamByIp(IWebSocketConnection connection)
+    {
+        return _teams.Any(team => team.Key.ConnectionInfo.ClientIpAddress == connection.ConnectionInfo.ClientIpAddress);
+    }
+
     public void ReassignTeam(IWebSocketConnection connection)
     {
         IWebSocketConnection connectionToRemove = null;
@@ -45,6 +51,7 @@ public class TeamManager : MonoBehaviour
         {
             _teams.Remove(connectionToRemove);
             _teams.Add(connection, teamToAssign);
+            Debug.Log("Reconnecting Team: " + connection.ConnectionInfo.ClientIpAddress + " - " + teamToAssign.TeamName);
         }
     }
 

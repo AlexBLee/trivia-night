@@ -51,7 +51,7 @@ public class Server : MonoBehaviour
             _clients.TryRemove(clientId, out _);
         }
 
-        if (_lastMessageReceived != String.Empty)
+        if (_teamManager.TrySearchForExistingTeamByIp(socket))
         {
             SendMessageToSocket(socket, _lastMessageReceived);
             _teamManager.ReassignTeam(socket);
