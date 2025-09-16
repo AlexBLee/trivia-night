@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Mapbox.Utils;
 using Mapbox.Unity.Map;
 using Mapbox.Unity.Utilities;
@@ -48,5 +49,16 @@ public class SpawnMarkersOnMap : MonoBehaviour
 			spawnedObject.transform.localPosition = _map.GeoToWorldPosition(location, true);
 			spawnedObject.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 		}
+	}
+
+	private void OnDisable()
+	{
+		foreach (var spawnedObject in _spawnedObjects)
+		{
+			Destroy(spawnedObject);
+		}
+
+		_spawnedObjects.Clear();
+		_markerPositions.Clear();
 	}
 }

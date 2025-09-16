@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Fleck;
 using Mapbox.Unity.Map;
 using Mapbox.Utils;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +20,11 @@ public class GeoguessrMinigame : Minigame
     [SerializeField] private Camera _mapCamera;
     [SerializeField] private SpawnMarkersOnMap _spawnMarkersOnMap;
     [SerializeField] private GameObject _mapContainer;
+    [SerializeField] private GameObject _endResultContainer;
+
+    [SerializeField] private TextMeshProUGUI[] _teamNames;
+    [SerializeField] private TextMeshProUGUI[] _teamScores;
+    [SerializeField] private Button _closeButton;
 
     private Dictionary<Team, string> _guesses = new();
     private Dictionary<Team, int> _results = new();
@@ -35,9 +42,13 @@ public class GeoguessrMinigame : Minigame
     {
         base.Initialize(minigameData);
         SendMessageToServer("geoguessr");
+
         _finishButton.onClick.AddListener(DisplayGuesses);
         _finishDisplayingMapButton.onClick.AddListener(FinishDisplayingMap);
+        _closeButton.onClick.AddListener(FinishGame);
+
         _uiParent.gameObject.SetActive(true);
+        _endResultContainer.gameObject.SetActive(false);
 
         var image = Resources.Load<Sprite>(minigameData.Input);
         _image.sprite = image;
@@ -149,9 +160,18 @@ public class GeoguessrMinigame : Minigame
     {
         _uiParent.gameObject.SetActive(true);
         _mapContainer.gameObject.SetActive(false);
-        
-    }
+        _endResultContainer.gameObject.SetActive(true);
 
+        var resultsList = _results
+            .OrderBy(score => score.Value)
+            .ToList();
+
+        for (int i = 0; i < resultsList.Count; i++)
+        {
+            _teamNames[i].text = resultsList[i].Key.TeamName;
+            _teamScores[i].text = resultsList[i].Value.ToString();
+        }
+    }
 
     protected override void FinishGame()
     {
