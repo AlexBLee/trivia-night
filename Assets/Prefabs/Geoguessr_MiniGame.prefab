@@ -1175,6 +1175,7 @@ MonoBehaviour:
   _uiManager: {fileID: 0}
   _uiParent: {fileID: 9180486846141969514}
   _finishButton: {fileID: 2319645012898293176}
+  _finishDisplayingMapButton: {fileID: 4735394386273886895}
   _image: {fileID: 7580999499279646654}
   _map: {fileID: 5660619291640370141}
   _mapCamera: {fileID: 8885863315453275006}

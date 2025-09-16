@@ -44,5 +44,6 @@ public class AdminPanel : MonoBehaviour
     private void OnDestroy()
     {
         _openFinalJeopardyButton.onClick.RemoveAllListeners();
+        _openEndGameScreenButton.onClick.RemoveAllListeners();
     }
 }

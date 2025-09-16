@@ -11,6 +11,7 @@ public class GeoguessrMinigame : Minigame
 {
     [SerializeField] private GameObject _uiParent;
     [SerializeField] private Button _finishButton;
+    [SerializeField] private Button _finishDisplayingMapButton;
     [SerializeField] private Image _image;
 
     [SerializeField] private AbstractMap _map;
@@ -35,6 +36,7 @@ public class GeoguessrMinigame : Minigame
         base.Initialize(minigameData);
         SendMessageToServer("geoguessr");
         _finishButton.onClick.AddListener(DisplayGuesses);
+        _finishDisplayingMapButton.onClick.AddListener(FinishDisplayingMap);
         _uiParent.gameObject.SetActive(true);
 
         var image = Resources.Load<Sprite>(minigameData.Input);
@@ -142,6 +144,14 @@ public class GeoguessrMinigame : Minigame
 
         _map.UpdateMap(coord, targetZoom);
     }
+
+    private void FinishDisplayingMap()
+    {
+        _uiParent.gameObject.SetActive(true);
+        _mapContainer.gameObject.SetActive(false);
+        
+    }
+
 
     protected override void FinishGame()
     {
