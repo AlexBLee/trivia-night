@@ -25,6 +25,31 @@
     "answer": "5"
   },
   {
+    "type": "Question",
+    "input": "How much could a wood chuck?",
+    "answer": "1"
+  },
+  {
+    "type": "Question",
+    "input": "How much could a wood chuck 2 logs?",
+    "answer": "2"
+  },
+  {
+    "type": "Question",
+    "input": "How much could a wood chuck 3 logs?",
+    "answer": "3"
+  },
+  {
+    "type": "Question",
+    "input": "How much could a wood chuck 4 logs?",
+    "answer": "4"
+  },
+  {
+    "type": "Question",
+    "input": "How much could a wood chuck 5 logs?",
+    "answer": "5"
+  },
+  {
     "type": "RandomizedWord",
     "input": "Czech Republic",
     "answer": ""
@@ -50,29 +75,29 @@
     "answer": ""
   },
   {
-    "type": "Geoguessr",
-    "input": "guess1",
-    "answer": "49.273162, -123.100321"
+    "type": "ZoomIn",
+    "input": "banana",
+    "answer": "banana"
   },
   {
-    "type": "Geoguessr",
-    "input": "guess2",
-    "answer": "-21.234,51.771"
+    "type": "ZoomIn",
+    "input": "apple",
+    "answer": "apple"
   },
   {
-    "type": "Geoguessr",
-    "input": "guess3",
-    "answer": "-31.234,51.771"
+    "type": "ZoomIn",
+    "input": "lemon",
+    "answer": "lemon"
   },
   {
-    "type": "Geoguessr",
-    "input": "guess4",
-    "answer": "-41.234,51.771"
+    "type": "ZoomIn",
+    "input": "citrus",
+    "answer": "citrus"
   },
   {
-    "type": "Geoguessr",
-    "input": "guess5",
-    "answer": "-51.234,51.771"
+    "type": "ZoomIn",
+    "input": "peach",
+    "answer": "peach"
   },
   {
     "type": "Music",
@@ -98,31 +123,6 @@
     "type": "Music",
     "input": "13,14,15",
     "answer": "music5"
-  },
-  {
-    "type": "ZoomIn",
-    "input": "banana",
-    "answer": "banana"
-  },
-  {
-    "type": "ZoomIn",
-    "input": "apple",
-    "answer": "apple"
-  },
-  {
-    "type": "ZoomIn",
-    "input": "lemon",
-    "answer": "lemon"
-  },
-  {
-    "type": "ZoomIn",
-    "input": "citrus",
-    "answer": "citrus"
-  },
-  {
-    "type": "ZoomIn",
-    "input": "peach",
-    "answer": "peach"
   },
   {
     "type": "Geoguessr",
