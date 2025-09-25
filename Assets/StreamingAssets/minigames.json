@@ -1,78 +1,78 @@
 [
   {
     "type": "Question",
-    "input": "How much could a wood chuck?",
-    "answer": "1"
+    "input": "What major sporting event did Vancouver co-host in 2010?",
+    "answer": "The Winter Olympics"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 2 logs?",
-    "answer": "2"
+    "input": "What is the name of the historic neighborhood that survived a major 1886 fire and retains many Victorian-era buildings?",
+    "answer": "Gastown"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 3 logs?",
-    "answer": "3"
+    "input": "Vancouver hosts one of the largest dragon boat festivals in North America, what is it called?",
+    "answer": "Vancouver International Dragon Boat Festival"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 4 logs?",
-    "answer": "4"
+    "input": "Approximately how many trees are in Stanley Park? Everyone can guess once.",
+    "answer": "230,000 trees"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 5 logs?",
-    "answer": "5"
+    "input": "The Stanley Park seawall holds a world record - what is it?",
+    "answer": "The longest uninterrupted waterfront path in the world - stretching over 28km."
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck?",
-    "answer": "1"
+    "input": "What is the fastest land animal in the world?",
+    "answer": "Cheetah"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 2 logs?",
-    "answer": "2"
+    "input": "What is the largest organ inside the human body?",
+    "answer": "Liver"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 3 logs?",
-    "answer": "3"
+    "input": "Which planet is sometimes called Earth’s twin because of its similar size and composition?",
+    "answer": "Venus"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 4 logs?",
-    "answer": "4"
+    "input": "Which country made chocolate?",
+    "answer": "Mexico"
   },
   {
     "type": "Question",
-    "input": "How much could a wood chuck 5 logs?",
-    "answer": "5"
+    "input": "How many elements are there on the periodic table?",
+    "answer": "118"
   },
   {
     "type": "RandomizedWord",
-    "input": "Czech Republic",
-    "answer": ""
+    "input": "SIMO",
+    "answer": "Miso"
   },
   {
     "type": "RandomizedWord",
-    "input": "Canada",
-    "answer": ""
+    "input": "RENMA",
+    "answer": "Ramen"
   },
   {
     "type": "RandomizedWord",
-    "input": "USA",
-    "answer": ""
+    "input": "CHIMIK",
+    "answer": "Kimchi"
   },
   {
     "type": "RandomizedWord",
-    "input": "Lituania",
-    "answer": ""
+    "input": "TRACONSIS",
+    "answer": "Croissant"
   },
   {
     "type": "RandomizedWord",
-    "input": "Germany",
-    "answer": ""
+    "input": "SOTRTOI",
+    "answer": "Risotto"
   },
   {
     "type": "ZoomIn",
@@ -81,48 +81,48 @@
   },
   {
     "type": "ZoomIn",
-    "input": "apple",
-    "answer": "apple"
+    "input": "iceberg",
+    "answer": "iceberg"
   },
   {
     "type": "ZoomIn",
-    "input": "lemon",
-    "answer": "lemon"
+    "input": "gastownclock",
+    "answer": "gastown clock"
   },
   {
     "type": "ZoomIn",
-    "input": "citrus",
-    "answer": "citrus"
+    "input": "minion",
+    "answer": "minion"
   },
   {
     "type": "ZoomIn",
-    "input": "peach",
-    "answer": "peach"
+    "input": "dimsum",
+    "answer": "dimsum"
   },
   {
     "type": "Music",
-    "input": "goodmorning,goodbye,thankyou",
-    "answer": "music1"
+    "input": "dynamite1,dynamite2,dynamite3",
+    "answer": "BTS - Dynamite"
   },
   {
     "type": "Music",
-    "input": "4,5,6",
-    "answer": "music2"
+    "input": "gods1,gods2,gods3",
+    "answer": "Riot Games - GODS ft. NewJeans"
   },
   {
     "type": "Music",
-    "input": "7,8,9",
-    "answer": "music3"
+    "input": "creep1,creep2,creep3",
+    "answer": "Radiohead - Creep"
   },
   {
     "type": "Music",
-    "input": "10,11,12",
-    "answer": "music4"
+    "input": "omg1,omg2,omg3",
+    "answer": "New Jeans - OMG"
   },
   {
     "type": "Music",
-    "input": "13,14,15",
-    "answer": "music5"
+    "input": "campanella1,campanella2,campanella3",
+    "answer": "Lizst - La Campanella"
   },
   {
     "type": "Geoguessr",
@@ -132,21 +132,21 @@
   {
     "type": "Geoguessr",
     "input": "guess2",
-    "answer": "-21.234,51.771"
+    "answer": "49.2870575,-123.1119877"
   },
   {
     "type": "Geoguessr",
     "input": "guess3",
-    "answer": "-31.234,51.771"
+    "answer": "49.1626446,-123.158738"
   },
   {
     "type": "Geoguessr",
     "input": "guess4",
-    "answer": "-41.234,51.771"
+    "answer": "49.3093472,-123.0792739"
   },
   {
     "type": "Geoguessr",
     "input": "guess5",
-    "answer": "-51.234,51.771"
+    "answer": "49.2350715,-122.864719"
   }
 ]

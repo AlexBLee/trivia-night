@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Fleck;
 using TMPro;
@@ -16,10 +17,18 @@ public class RandomizedWordMinigame : Minigame
         base.Initialize(minigameData);
         SendMessageToServer("randomize");
 
-        _word = minigameData.Answer;
         _text.text = minigameData.Input;
+        _word = minigameData.Answer;
 
         _finishButton.onClick.AddListener(FinishGame);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            _text.text = _word;
+        }
     }
 
     protected override void ReceiveMessage(IWebSocketConnection socket, string message)
