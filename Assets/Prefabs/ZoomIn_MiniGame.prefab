@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 7580999499279646654}
-  _zoomStep: 0.1
+  _zoomStep: 2
 --- !u!1 &7765839667504049896
 GameObject:
   m_ObjectHideFlags: 0

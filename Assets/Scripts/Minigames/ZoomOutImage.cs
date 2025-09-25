@@ -7,9 +7,16 @@ public class ZoomOutImage : MonoBehaviour
     [SerializeField] private Image _image;
     [SerializeField] private float _zoomStep = 0.1f;
     private float _currentScale = 15f;
+    private float _minimumScale = 15f;
 
-    void Start()
+    private void Start()
     {
+        _minimumScale = _currentScale;
+    }
+
+    void OnEnable()
+    {
+        _currentScale = _minimumScale;
         ApplyZoom();
     }
 
