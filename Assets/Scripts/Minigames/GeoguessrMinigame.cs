@@ -15,6 +15,7 @@ public class GeoguessrMinigame : Minigame
     [SerializeField] private Button _finishButton;
     [SerializeField] private Button _finishDisplayingMapButton;
     [SerializeField] private Image _image;
+    [SerializeField] private Image _background;
 
     [SerializeField] private AbstractMap _map;
     [SerializeField] private Camera _mapCamera;
@@ -77,6 +78,8 @@ public class GeoguessrMinigame : Minigame
 
     private void DisplayGuesses()
     {
+        _background.gameObject.SetActive(false);
+
         Vector2d coordinatePoint = new Vector2d(_point.Item1, _point.Item2);
         _map.SetCenterLatitudeLongitude(coordinatePoint);
         _spawnMarkersOnMap.SetMarker(coordinatePoint);
@@ -158,6 +161,7 @@ public class GeoguessrMinigame : Minigame
 
     private void FinishDisplayingMap()
     {
+        _background.gameObject.SetActive(true);
         _uiParent.gameObject.SetActive(true);
         _mapContainer.gameObject.SetActive(false);
         _endResultContainer.gameObject.SetActive(true);
