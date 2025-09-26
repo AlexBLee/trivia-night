@@ -374,7 +374,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
+  m_TargetDisplay: 1
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -1196,6 +1196,7 @@ MonoBehaviour:
   _finishButton: {fileID: 1578081221066028838}
   _finishDisplayingMapButton: {fileID: 4735394386273886895}
   _image: {fileID: 7580999499279646654}
+  _background: {fileID: 0}
   _map: {fileID: 5660619291640370141}
   _mapCamera: {fileID: 8885863315453275006}
   _spawnMarkersOnMap: {fileID: 6363146605902720176}
