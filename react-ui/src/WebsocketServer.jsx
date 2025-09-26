@@ -19,7 +19,8 @@ export function WebSocketServer({ children }) {
 
     useEffect(() => {
         console.log("Connecting to Websocket..");
-        const socket = new WebSocket("ws://192.168.1.77:8080");
+        console.log(window.location.hostname);
+        const socket = new WebSocket(`ws://${window.location.hostname}:8080`);
 
         socket.onopen = () => {
         };
