@@ -11,7 +11,8 @@ public enum MinigameType
     Geoguessr,
     Music,
     ZoomIn,
-    RandomizedWord
+    RandomizedWord,
+    ChimpTest,
 }
 
 public class MinigameHolder : MonoBehaviour

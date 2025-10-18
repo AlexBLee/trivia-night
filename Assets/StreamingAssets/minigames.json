@@ -50,29 +50,29 @@
     "answer": "118"
   },
   {
-    "type": "RandomizedWord",
-    "input": "SIMO",
-    "answer": "Miso"
+    "type": "ChimpTest",
+    "input": "5",
+    "answer": ""
   },
   {
-    "type": "RandomizedWord",
-    "input": "RENMA",
-    "answer": "Ramen"
+    "type": "ChimpTest",
+    "input": "7",
+    "answer": ""
   },
   {
-    "type": "RandomizedWord",
-    "input": "CHIMIK",
-    "answer": "Kimchi"
+    "type": "ChimpTest",
+    "input": "8",
+    "answer": ""
   },
   {
-    "type": "RandomizedWord",
-    "input": "TRACONSIS",
-    "answer": "Croissant"
+    "type": "ChimpTest",
+    "input": "10",
+    "answer": ""
   },
   {
-    "type": "RandomizedWord",
-    "input": "SOTRTOI",
-    "answer": "Risotto"
+    "type": "ChimpTest",
+    "input": "12",
+    "answer": ""
   },
   {
     "type": "ZoomIn",
