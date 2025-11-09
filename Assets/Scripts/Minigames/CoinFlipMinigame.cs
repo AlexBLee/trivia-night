@@ -10,6 +10,10 @@ public class CoinFlipMinigame : Minigame
     [SerializeField] private Button _finishButton;
     [SerializeField] private float _flipTime = 5f;
 
+    private const string FlipAnimation = "Flipping";
+    private const string HeadsAnimation = "Heads";
+    private const string TailsAnimation = "Tails";
+
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
@@ -33,13 +37,14 @@ public class CoinFlipMinigame : Minigame
             yield return null;
         }
 
-        _animator.Play("Flipping");
+        _animator.Play(FlipAnimation);
 
         yield return new WaitForSeconds(_flipTime);
 
-        var decider = Random.Range(0, 2);
+        var maxRandomValue = 2;
+        var decider = Random.Range(0, maxRandomValue);
 
-        _animator.Play(decider == 0 ? "Heads" : "Tails");
+        _animator.Play(decider == 0 ? HeadsAnimation : TailsAnimation);
     }
 
     protected override void ReceiveMessage(IWebSocketConnection socket, string message)
