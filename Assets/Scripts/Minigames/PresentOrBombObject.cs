@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -18,12 +20,7 @@ public class PresentOrBombObject : MonoBehaviour, IPointerClickHandler
     {
         if (_isBomb)
         {
-            if (_explosionImage == null)
-            {
-                return;
-            }
-
-            _explosionImage.gameObject.SetActive(true);
+            StartCoroutine(StartHiding());
         }
         else
         {
@@ -34,6 +31,25 @@ public class PresentOrBombObject : MonoBehaviour, IPointerClickHandler
 
             _presentImage.enabled = false;
         }
+    }
 
+    private IEnumerator StartHiding()
+    {
+        if (_explosionImage == null)
+        {
+            yield return null;
+        }
+
+        _explosionImage.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        _explosionImage.gameObject.SetActive(false);
+        _presentImage.enabled = false;
+    }
+
+    private void OnDestroy()
+    {
+        StopCoroutine(StartHiding());
     }
 }

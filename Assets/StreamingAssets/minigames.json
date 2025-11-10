@@ -75,29 +75,29 @@
     "answer": ""
   },
   {
-    "type": "ZoomIn",
-    "input": "banana",
-    "answer": "banana"
+    "type": "CoinFlip",
+    "input": "",
+    "answer": ""
   },
   {
-    "type": "ZoomIn",
-    "input": "iceberg",
-    "answer": "iceberg"
+    "type": "Wheel",
+    "input": "",
+    "answer": ""
   },
   {
-    "type": "ZoomIn",
-    "input": "gastownclock",
-    "answer": "gastown clock"
+    "type": "Wheel",
+    "input": "",
+    "answer": ""
   },
   {
-    "type": "ZoomIn",
-    "input": "minion",
-    "answer": "minion"
+    "type": "BombOrBonus",
+    "input": "5,2",
+    "answer": ""
   },
   {
-    "type": "ZoomIn",
-    "input": "dimsum",
-    "answer": "dimsum"
+    "type": "BombOrBonus",
+    "input": "10,3",
+    "answer": ""
   },
   {
     "type": "Music",

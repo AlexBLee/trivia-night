@@ -16,6 +16,8 @@ public enum MinigameType
     ChimpTest,
     CoinFlip,
     BombOrBonus,
+    Wheel,
+
 }
 
 public class MinigameHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler

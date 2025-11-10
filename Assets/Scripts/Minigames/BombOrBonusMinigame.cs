@@ -11,14 +11,16 @@ public class BombOrBonusMinigame : Minigame
     [SerializeField] private int _numberOfPresents;
     [SerializeField] private int _numberOfBombs;
 
-    private float _spawnGap = 2f;
-
     private List<PresentOrBombObject> _spawnedPresents = new();
 
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
         SendMessageToServer("gambling");
+
+        var data = minigameData.Input.Split(",");
+        _numberOfPresents = int.Parse(data[0]);
+        _numberOfBombs = int.Parse(data[1]);
 
         _finishButton.onClick.AddListener(FinishGame);
         CreatePresents();
@@ -66,6 +68,8 @@ public class BombOrBonusMinigame : Minigame
         {
             Destroy(present.gameObject);
         }
+
+        _spawnedPresents.Clear();
 
         _finishButton.onClick.RemoveListener(FinishGame);
     }
