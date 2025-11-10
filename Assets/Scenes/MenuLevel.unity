@@ -788,6 +788,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minigames:
     _serializedList:
+    - Key: 11
+      Value: {fileID: 1120184751}
     - Key: 10
       Value: {fileID: 2109185465}
     - Key: 9
@@ -2280,7 +2282,7 @@ MonoBehaviour:
   m_margin: {x: -60.61194, y: 0, z: -87.30762, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &504732930
@@ -2651,7 +2653,7 @@ MonoBehaviour:
   m_margin: {x: -62.856567, y: 0, z: -74.0437, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &544642159
@@ -3968,6 +3970,7 @@ RectTransform:
   m_Children:
   - {fileID: 1093919101}
   - {fileID: 563374479}
+  - {fileID: 1120184750}
   - {fileID: 7784031850621407928}
   - {fileID: 505306943}
   - {fileID: 1144335612}
@@ -4557,7 +4560,7 @@ MonoBehaviour:
   m_margin: {x: -58.23877, y: 0, z: -81.83801, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &990317004
@@ -5130,6 +5133,135 @@ RectTransform:
   m_AnchoredPosition: {x: 99, y: -64.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1120184749
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 881809267}
+    m_Modifications:
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765839667504049896, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_Name
+      value: CardFlip_Minigame
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765839667504049896, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932147505238972227, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: _uiManager
+      value: 
+      objectReference: {fileID: 507716166}
+    - target: {fileID: 8932147505238972227, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: _teamManager
+      value: 
+      objectReference: {fileID: 1178040111}
+    - target: {fileID: 8932147505238972227, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+      propertyPath: _messageManager
+      value: 
+      objectReference: {fileID: 1592205889}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+--- !u!224 &1120184750 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1410650790392468356, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+  m_PrefabInstance: {fileID: 1120184749}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1120184751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8932147505238972227, guid: ccbfd655ba463814ba4f8ba3a6bffb74, type: 3}
+  m_PrefabInstance: {fileID: 1120184749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5b518709a1440b48aabafcbcbd10d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardFlipMinigame
 --- !u!1001 &1144335611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6853,7 +6985,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1416983862
@@ -7286,7 +7418,7 @@ MonoBehaviour:
   m_margin: {x: -44.614716, y: 0, z: -37.986877, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1472165711
@@ -10369,7 +10501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8617799351121141134, guid: bea4258122cef2845bc08d003442bff9, type: 3}
       propertyPath: _minigameType
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8617799351121141134, guid: bea4258122cef2845bc08d003442bff9, type: 3}
       propertyPath: _minigameSpawner
