@@ -26,28 +26,28 @@
   },
   {
     "type": "Question",
-    "input": "What is the fastest land animal in the world?",
-    "answer": "Cheetah"
+    "input": "What colour is the 'black box' on an airplane?",
+    "answer": "Orange"
   },
   {
     "type": "Question",
-    "input": "What is the largest organ inside the human body?",
-    "answer": "Liver"
+    "input": "How many months have 28 days?",
+    "answer": "All of them."
   },
   {
     "type": "Question",
-    "input": "Which planet is sometimes called Earth’s twin because of its similar size and composition?",
-    "answer": "Venus"
+    "input": "A doctor gives you 3 pills and tells you to take one every half hour. How long will the pills last?",
+    "answer": "One hour"
   },
   {
     "type": "Question",
-    "input": "Which country made chocolate?",
-    "answer": "Mexico"
+    "input": "A plane crashes exactly on the border between two countries. Where do you bury the survivors?",
+    "answer": "You don't bury survivors."
   },
   {
     "type": "Question",
-    "input": "How many elements are there on the periodic table?",
-    "answer": "118"
+    "input": "If you answer this question wrong, you’re in a paradox, what should you answer to avoid contradiction?",
+    "answer": "Nothing"
   },
   {
     "type": "ChimpTest",
@@ -80,7 +80,7 @@
     "answer": ""
   },
   {
-    "type": "Wheel",
+    "type": "CardFlip",
     "input": "",
     "answer": ""
   },
