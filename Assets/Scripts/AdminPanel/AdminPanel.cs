@@ -10,6 +10,7 @@ public class AdminPanel : MonoBehaviour
 
     [SerializeField] private Button _openFinalJeopardyButton;
     [SerializeField] private Button _openEndGameScreenButton;
+    [SerializeField] private Button _addPlayersToLobbyButton;
 
     private bool _showFinalJeopardy = false;
     private bool _showEndGameScreen = false;
@@ -30,6 +31,11 @@ public class AdminPanel : MonoBehaviour
         {
             _showEndGameScreen = !_showEndGameScreen;
             _uiManager.ShowEndGameScreen(_showEndGameScreen);
+        });
+
+        _addPlayersToLobbyButton.onClick.AddListener(() =>
+        {
+            _uiManager.AddLobbyLabel();
         });
     }
 

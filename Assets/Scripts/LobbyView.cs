@@ -6,15 +6,31 @@ using UnityEngine.UI;
 
 public class LobbyView : MonoBehaviour
 {
-    [SerializeField] private List<TextMeshProUGUI> _teamText;
+    [SerializeField] private TeamLobbyLabel _teamLobbyLabelPrefab;
+    [SerializeField] private GameObject _layoutGroupParent;
+
     [SerializeField] private Button _startButton;
     [SerializeField] private GameObject _gamePanel;
     [SerializeField] private TextMeshProUGUI _ipText;
+
+    private List<TeamLobbyLabel> _teamTexts = new();
+    private int _defaultNumberOfLabels = 4;
 
     private void Start()
     {
         _startButton.onClick.AddListener(StartGame);
         _ipText.text = $"{ServerExtensions.GetLocalIpv4Address()}:8081";
+
+        CreateTeamLabels(_defaultNumberOfLabels);
+    }
+
+    public void CreateTeamLabels(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            var label = Instantiate(_teamLobbyLabelPrefab, _layoutGroupParent.transform);
+            _teamTexts.Add(label);
+        }
     }
 
     public void AddStartGameCallback(UnityAction callback)
@@ -24,15 +40,12 @@ public class LobbyView : MonoBehaviour
 
     public void ChangeLabel(int index, string nameText, Color color)
     {
-        if (index > _teamText.Count - 1)
+        if (index > _teamTexts.Count - 1)
         {
             return;
         }
 
-        var teamText = _teamText[index];
-
-        teamText.color = color;
-        teamText.text = nameText;
+        _teamTexts[index].ChangeLabel(nameText, color);
     }
 
     private void StartGame()
@@ -44,5 +57,11 @@ public class LobbyView : MonoBehaviour
     private void OnDisable()
     {
         _startButton.onClick.RemoveAllListeners();
+
+        foreach (var label in _teamTexts)
+        {
+            Destroy(label.gameObject);
+        }
+        _teamTexts.Clear();
     }
 }

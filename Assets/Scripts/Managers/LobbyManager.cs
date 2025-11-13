@@ -37,6 +37,8 @@ public class LobbyManager : MonoBehaviour
                 return;
             }
         }
+
+        _connectedPlayers.Add(player);
     }
 
     private void OnDisconnected(IWebSocketConnection player)

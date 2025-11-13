@@ -145,6 +145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6532583940911527817}
+  - component: {fileID: 3553282079404461660}
   m_Layer: 5
   m_Name: TeamLobbyLabel
   m_TagString: Untagged
@@ -173,6 +174,19 @@ RectTransform:
   m_AnchoredPosition: {x: 99, y: 394.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3553282079404461660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534761269882348881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d0889c2f183d8842a81c031b4f99eeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeamLobbyLabel
+  _text: {fileID: 2619070789838230996}
 --- !u!1 &5483758878120433665
 GameObject:
   m_ObjectHideFlags: 0
