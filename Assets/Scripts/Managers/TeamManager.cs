@@ -36,7 +36,7 @@ public class TeamManager : MonoBehaviour
 
     public bool TrySearchForExistingTeamByIp(IWebSocketConnection connection)
     {
-        return _teams.Any(team => team.Key.ConnectionInfo.ClientIpAddress == connection.ConnectionInfo.ClientIpAddress);
+        return _teams.Any(team => Server.GetClientId(team.Key) == Server.GetClientId(connection));
     }
 
     public void ReassignTeam(IWebSocketConnection connection)
@@ -46,7 +46,7 @@ public class TeamManager : MonoBehaviour
 
         foreach (var team in _teams)
         {
-            if (team.Key.ConnectionInfo.ClientIpAddress == connection.ConnectionInfo.ClientIpAddress)
+            if (Server.GetClientId(team.Key) == Server.GetClientId(connection))
             {
                 connectionToRemove = team.Key;
                 teamToAssign = team.Value;
@@ -59,7 +59,7 @@ public class TeamManager : MonoBehaviour
             _teams.Add(connection, teamToAssign);
 
             teamToAssign.SetConnectionStatus(true);
-            Debug.Log("Reconnecting Team: " + connection.ConnectionInfo.ClientIpAddress + " - " + teamToAssign.TeamName);
+            Debug.Log("Reconnecting Team: " + Server.GetClientId(connection) + " - " + teamToAssign.TeamName);
         }
     }
 

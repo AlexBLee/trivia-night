@@ -10,7 +10,18 @@ export function WebSocketServer({ children }) {
     const reconnectTimeoutRef = useRef(null);
     const messageListenersRef = useRef(new Set());
 
-    const fakeId = useRef("player_" + Math.floor(Math.random() * 100000));
+    const fakeId = useRef(null);
+
+    useEffect(() => {
+        const savedId = sessionStorage.getItem("clientId");
+        if (savedId) {
+            fakeId.current = savedId;
+        } else {
+            const newId = "player_" + Math.floor(Math.random() * 100000);
+            fakeId.current = newId;
+            sessionStorage.setItem("clientId", newId);
+        }
+    }, []);
 
     // Function to add a message listener
     const addMessageListener = useCallback((callback) => {
@@ -67,6 +78,11 @@ export function WebSocketServer({ children }) {
 
         socket.onclose = (event) => {
             console.log("WebSocket closed", event.code, event.reason);
+
+            if (view === "lobby")
+            {
+                return;
+            }
 
             reconnectTimeoutRef.current = setTimeout(() => {
                 connect();

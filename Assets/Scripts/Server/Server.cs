@@ -108,7 +108,7 @@ public class Server : MonoBehaviour
         _lastMessageReceived = message;
     }
     
-    private string GetClientId(IWebSocketConnection socket)
+    public static string GetClientId(IWebSocketConnection socket)
     {
 #if UNITY_EDITOR
         return socket.ConnectionInfo.ClientIpAddress + socket.ConnectionInfo.Path;
