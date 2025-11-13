@@ -838,6 +838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5747013629650146703}
     m_Modifications:
+    - target: {fileID: 1709342671122542059, guid: e8cc868a6257f044e9c0ff038ca8695b, type: 3}
+      propertyPath: _gamePanel
+      value: 
+      objectReference: {fileID: 8693764366793167963}
     - target: {fileID: 2803112374159965091, guid: e8cc868a6257f044e9c0ff038ca8695b, type: 3}
       propertyPath: m_Name
       value: Lobby
