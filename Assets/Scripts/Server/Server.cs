@@ -103,7 +103,11 @@ public class Server : MonoBehaviour
     
     private string GetClientId(IWebSocketConnection socket)
     {
+#if UNITY_EDITOR
+        return socket.ConnectionInfo.ClientIpAddress + socket.ConnectionInfo.Path;
+#else
         return socket.ConnectionInfo.ClientIpAddress;
+#endif
     }
 
     private void OnDestroy()

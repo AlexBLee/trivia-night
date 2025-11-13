@@ -20,7 +20,9 @@ export function WebSocketServer({ children }) {
     useEffect(() => {
         console.log("Connecting to Websocket..");
         console.log(window.location.hostname);
-        const socket = new WebSocket(`ws://${window.location.hostname}:8080`);
+
+        const fakeId = "player_" + Math.floor(Math.random() * 1000);
+        const socket = new WebSocket(`ws://${window.location.hostname}:8080/?id=${fakeId}`);
 
         socket.onopen = () => {
         };
