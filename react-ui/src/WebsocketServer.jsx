@@ -5,43 +5,57 @@ const WebSocketContext = createContext();
 export function WebSocketServer({ children }) {
     const [view, setView] = useState("lobby");
     const [socket, setSocket] = useState(null);
+
+    const reconnectDelayRef = useRef(1000);
+    const reconnectTimeoutRef = useRef(null);
     const messageListenersRef = useRef(new Set());
+
+    const fakeId = useRef("player_" + Math.floor(Math.random() * 100000));
 
     // Function to add a message listener
     const addMessageListener = useCallback((callback) => {
         messageListenersRef.current.add(callback);
         
-        // Return cleanup function
         return () => {
             messageListenersRef.current.delete(callback);
         };
     }, []);
 
-    useEffect(() => {
+    const connect = useCallback(() => {
         console.log("Connecting to Websocket..");
         console.log(window.location.hostname);
 
-        const fakeId = "player_" + Math.floor(Math.random() * 1000);
-        const socket = new WebSocket(`ws://${window.location.hostname}:8080/?id=${fakeId}`);
+        const socket = new WebSocket(`ws://${window.location.hostname}:8080/?id=${fakeId.current}`);
 
         socket.onopen = () => {
+            console.log("WebSocket connected!");
+
+            reconnectDelayRef.current = 1000;
+
+            if (reconnectTimeoutRef.current) {
+                clearTimeout(reconnectTimeoutRef.current);
+                reconnectTimeoutRef.current = null;
+            }
         };
 
         socket.onmessage = (event) => {
             const message = event.data;
             console.log("Received:", message);
 
-            // Handle view changes in the main component
-            if (message === "lobby") setView("lobby");
-            if (message === "home") setView("home");
-            if (message === "question") setView("question");
-            if (message === "hangman") setView("hangman");
-            if (message === "music") setView("music");
-            if (message === "geoguessr") setView("geoguessr");
-            if (message === "zoomin") setView("zoomin");
-            if (message === "chimpTest") setView("chimpTest");
+            setView((prev) => {
+                switch (message) {
+                    case "lobby": return "lobby";
+                    case "home": return "home";
+                    case "question": return "question";
+                    case "hangman": return "hangman";
+                    case "music": return "music";
+                    case "geoguessr": return "geoguessr";
+                    case "zoomin": return "zoomin";
+                    case "chimpTest": return "chimpTest";
+                    default: return prev;
+                }
+            });
 
-            // Notify all registered listeners
             messageListenersRef.current.forEach(callback => {
                 try {
                     callback(message, event);
@@ -53,12 +67,40 @@ export function WebSocketServer({ children }) {
 
         socket.onclose = (event) => {
             console.log("WebSocket closed", event.code, event.reason);
+
+            reconnectTimeoutRef.current = setTimeout(() => {
+                connect();
+                reconnectDelayRef.current = Math.min(10000, reconnectDelayRef.current * 1.5);
+            }, reconnectDelayRef.current);
         };
 
         setSocket(socket);
 
         return () => socket.close();
-    }, []); // No dependencies - only run once
+    }, []);
+
+    useEffect(() => {
+        connect();
+        return () => {
+            if (reconnectTimeoutRef.current) clearTimeout(reconnectTimeoutRef.current);
+            if (socket) socket.close();
+        };
+    }, []);
+
+    useEffect(() => {
+        const onVisible = () => {
+            if (document.visibilityState === "visible") {
+                console.log("Tab visible again — ensuring WebSocket is connected.");
+                if (!socket || socket.readyState !== WebSocket.OPEN) {
+                    connect();
+                }
+            }
+        };
+
+        document.addEventListener("visibilitychange", onVisible);
+        return () => document.removeEventListener("visibilitychange", onVisible);
+    });
+
 
     return (
         <WebSocketContext.Provider value={{ 
