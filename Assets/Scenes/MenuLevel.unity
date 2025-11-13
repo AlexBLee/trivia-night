@@ -2008,7 +2008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 436470439}
   m_Layer: 0
-  m_Name: Display1
+  m_Name: Display1 (Main Game)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8827,7 +8827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1717152964}
   m_Layer: 0
-  m_Name: Display2
+  m_Name: Display2 (Admin Panel)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
