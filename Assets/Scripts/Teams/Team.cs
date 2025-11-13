@@ -9,6 +9,7 @@ public class Team
     public int CurrentScore => _score;
 
     public Action<int> OnScoreChanged;
+    public Action<bool> OnConnectionStatusChanged;
 
     public void AssignTeamName(string teamName)
     {
@@ -31,5 +32,10 @@ public class Team
     {
         _score -= score;
         OnScoreChanged?.Invoke(_score);
+    }
+
+    public void SetConnectionStatus(bool status)
+    {
+        OnConnectionStatusChanged?.Invoke(status);
     }
 }

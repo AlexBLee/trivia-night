@@ -57,6 +57,8 @@ public class TeamManager : MonoBehaviour
         {
             _teams.Remove(connectionToRemove);
             _teams.Add(connection, teamToAssign);
+
+            teamToAssign.SetConnectionStatus(true);
             Debug.Log("Reconnecting Team: " + connection.ConnectionInfo.ClientIpAddress + " - " + teamToAssign.TeamName);
         }
     }

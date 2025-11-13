@@ -4,13 +4,16 @@ using UnityEngine.UI;
 
 public class AdminPanel : MonoBehaviour
 {
-    [SerializeField] private List<TeamOptions> _teamOptions;
+    [SerializeField] private TeamOptions _teamOptionsPrefab;
+    [SerializeField] private GameObject _teamOptionsParent;
 
     [SerializeField] private UIManager _uiManager;
 
     [SerializeField] private Button _openFinalJeopardyButton;
     [SerializeField] private Button _openEndGameScreenButton;
     [SerializeField] private Button _addPlayersToLobbyButton;
+
+    private List<TeamOptions> _teamOptions = new();
 
     private bool _showFinalJeopardy = false;
     private bool _showEndGameScreen = false;
@@ -41,9 +44,12 @@ public class AdminPanel : MonoBehaviour
 
     public void AssignTeams(List<Team> team)
     {
-        for (int i = 0; i < team.Count; i++)
+        foreach (var t in team)
         {
-            _teamOptions[i].AssignTeam(team[i]);
+            var teamOptions = Instantiate(_teamOptionsPrefab, _teamOptionsParent.transform);
+            teamOptions.AssignTeam(t);
+            
+            _teamOptions.Add(teamOptions);
         }
     }
 
@@ -51,5 +57,11 @@ public class AdminPanel : MonoBehaviour
     {
         _openFinalJeopardyButton.onClick.RemoveAllListeners();
         _openEndGameScreenButton.onClick.RemoveAllListeners();
+
+        foreach (var teamOption in _teamOptions)
+        {
+            Destroy(teamOption.gameObject);
+        }
+        _teamOptions.Clear();
     }
 }

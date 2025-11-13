@@ -70,6 +70,10 @@ public class Server : MonoBehaviour
         {
             OnDisconnected?.Invoke(socket);
             _clients.TryRemove(clientId, out _);
+
+            var team = _teamManager.GetTeam(socket);
+            team.SetConnectionStatus(false);
+
             Debug.Log($"Client disconnected: {clientId} (Total: {_clients.Count})");
         }
     }
@@ -84,6 +88,9 @@ public class Server : MonoBehaviour
     {
         var clientId = GetClientId(socket);
         Debug.Log($"Error from {clientId}: {e.StackTrace}");
+
+        var team = _teamManager.GetTeam(socket);
+        team.SetConnectionStatus(false);
     }
 
     public void SendMessageToSocket(IWebSocketConnection socket, string message)
