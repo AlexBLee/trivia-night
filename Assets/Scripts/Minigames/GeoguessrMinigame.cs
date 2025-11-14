@@ -5,12 +5,14 @@ using System.Linq;
 using Fleck;
 using Mapbox.Unity.Map;
 using Mapbox.Utils;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GeoguessrMinigame : Minigame
 {
+    [SerializeField] private GeoguessrResult _geoguessrResultPrefab;
+    [SerializeField] private GameObject _resultParent;
+
     [SerializeField] private GameObject _uiParent;
     [SerializeField] private Button _finishButton;
     [SerializeField] private Button _finishDisplayingMapButton;
@@ -23,9 +25,9 @@ public class GeoguessrMinigame : Minigame
     [SerializeField] private GameObject _mapContainer;
     [SerializeField] private GameObject _endResultContainer;
 
-    [SerializeField] private TextMeshProUGUI[] _teamNames;
-    [SerializeField] private TextMeshProUGUI[] _teamScores;
     [SerializeField] private Button _closeButton;
+
+    private List<GeoguessrResult> _resultPrefabs = new List<GeoguessrResult>();
 
     private Dictionary<Team, string> _guesses = new();
     private Dictionary<Team, int> _results = new();
@@ -168,18 +170,32 @@ public class GeoguessrMinigame : Minigame
 
         var resultsList = _results
             .OrderBy(score => score.Value)
+            .Reverse()
             .ToList();
 
         for (int i = 0; i < resultsList.Count; i++)
         {
-            _teamNames[i].text = resultsList[i].Key.TeamName;
-            _teamScores[i].text = resultsList[i].Value.ToString();
+            var resultPrefab = Instantiate(_geoguessrResultPrefab, _resultParent.transform);
+            var result = resultsList[i];
+
+            resultPrefab.SetLabel(result.Key.TeamName, result.Value);
+
+            _resultPrefabs.Add(resultPrefab);
         }
     }
 
     protected override void FinishGame()
     {
         base.FinishGame();
+
+        foreach (var resultPrefab in _resultPrefabs)
+        {
+            Destroy(resultPrefab.gameObject);
+        }
+        _resultPrefabs.Clear();
+
         _finishButton.onClick.RemoveListener(DisplayGuesses);
+        _finishDisplayingMapButton.onClick.RemoveListener(FinishDisplayingMap);
+        _closeButton.onClick.RemoveListener(FinishGame);
     }
 }
