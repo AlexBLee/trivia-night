@@ -34,7 +34,7 @@ public class MinigameHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         _callback = () =>
         {
-            _minigameSpawner.OpenMinigame(_minigameType, transform.GetSiblingIndex());
+            _minigameSpawner.OpenMinigame(transform.GetSiblingIndex());
             _button.interactable = false;
             _text.enabled = false;
         };
