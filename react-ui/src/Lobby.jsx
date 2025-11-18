@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 function Lobby() {
     const [value, setValue] = useState('');
+    const [heading, setHeading] = useState('Choose a team name!');
     const { socket } = useWebSocket();
 
     const handleChange = (e) => {
@@ -13,12 +14,15 @@ function Lobby() {
     const handleClick = () => {
         if (socket && socket.readyState === WebSocket.OPEN) {
             socket.send(`teamname:${value}`);
+            setHeading(`Current team name: ${value}`);
+            
         }
     };
 
     return (
     <>
-    <h2>Choose a team name!</h2>
+    <h1>Welcome to Trivia Night!</h1>
+    <h2>{heading}</h2>
 
     <input
         type="text"
@@ -26,7 +30,7 @@ function Lobby() {
         onChange={handleChange}
         placeholder="Enter text here" />
 
-    <button onClick={handleClick}>
+    <button name onClick={handleClick}>
         Submit!
     </button>
     </>

@@ -1,7 +1,10 @@
 import './App.css'
 
 function Home() {
-    <p>yada</p>
+
+    return(
+        <h2>Waiting for game..</h2>
+    );
 }
 
 export default Home
