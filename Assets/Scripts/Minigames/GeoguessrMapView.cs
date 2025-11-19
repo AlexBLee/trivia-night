@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Mapbox.Unity.Map;
 using Mapbox.Utils;
 using UnityEngine;
@@ -18,21 +19,23 @@ public class GeoguessrMapView : MonoBehaviour
     private float _timeBeforeZoom = 3f;
 
     private Vector2d _point;
+    private List<Vector2d> _points = new();
 
     public void Initialize(string[] coords)
     {
         var latitude = Convert.ToDouble(coords[0]);
         var longitude = Convert.ToDouble(coords[1]);
         _point = new Vector2d(latitude, longitude);
+        _points.Clear();
 
         _map.SetCenterLatitudeLongitude(_point);
-        _spawnMarkersOnMap.SetMarker(_point);
-        _map.UpdateMap();
+        SpawnMarkerOnMap(_point);
     }
 
-    public void SpawnMarkerOnMap(string point, string teamName = "")
+    public void SpawnMarkerOnMap(Vector2d point, string teamName = "")
     {
         _spawnMarkersOnMap.SetMarker(point, teamName);
+        _points.Add(point);
     }
 
     public int GetScore(string coord)
@@ -75,6 +78,53 @@ public class GeoguessrMapView : MonoBehaviour
         if (km < 0.1f) return _maxPoints;
         if (km > _maxDistance) return 0;
         return Mathf.Max(0, (int)(_maxPoints * (1 - (km / _maxDistance))));
+    }
+
+    private Vector2dBounds GetBoundsFromPoints()
+    {
+        if (_points.Count == 0)
+        {
+            return new Vector2dBounds();
+        }
+
+        double minLat = double.MaxValue;
+        double maxLat = double.MinValue;
+        double minLon = double.MaxValue;
+        double maxLon = double.MinValue;
+
+        foreach (var point in _points)
+        {
+            minLat = Math.Min(minLat, point.x);
+            maxLat = Math.Max(maxLat, point.x);
+            minLon = Math.Min(minLon, point.y);
+            maxLon = Math.Max(maxLon, point.y);
+        }
+
+        Vector2d southwest = new Vector2d(minLat, minLon);
+        Vector2d northeast = new Vector2d(maxLat, maxLon);
+
+        return new Vector2dBounds(southwest, northeast);
+    }
+
+    public void FitCameraBounds()
+    {
+        var bounds = GetBoundsFromPoints();
+        var center = bounds.Center;
+
+        _map.SetCenterLatitudeLongitude(center);
+        _map.SetZoom(GetZoomToFit(bounds));
+        _map.UpdateMap();
+    }
+
+    private int GetZoomToFit(Vector2dBounds bounds)
+    {
+        double latSpan = bounds.North - bounds.South;
+        double lonSpan = bounds.East - bounds.West;
+
+        double maxSpan = Mathf.Max((float)latSpan, (float)lonSpan);
+
+        double zoom = Math.Log(360.0 / maxSpan, 2);
+        return Mathf.Clamp((int)zoom + 1, 0, 20);
     }
 
     private IEnumerator ZoomCoroutine(float targetZoom, float duration)

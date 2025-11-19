@@ -388,8 +388,15 @@ namespace Mapbox.Unity.Map
 
 			//Set Center in Latitude Longitude and Mercator.
 			SetCenterLatitudeLongitude(new Vector2d(xDelta, zDelta));
-			Options.scalingOptions.scalingStrategy.SetUpScaling(this);
-			Options.placementOptions.placementStrategy.SetUpPlacement(this);
+			if (Options.scalingOptions.scalingStrategy != null)
+			{
+				Options.scalingOptions.scalingStrategy.SetUpScaling(this);
+			}
+
+			if (Options.placementOptions.placementStrategy != null)
+			{
+				Options.placementOptions.placementStrategy.SetUpPlacement(this);
+			}
 
 			//Scale the map accordingly.
 			if (Math.Abs(differenceInZoom) > Constants.EpsilonFloatingPoint || isAtInitialZoom)

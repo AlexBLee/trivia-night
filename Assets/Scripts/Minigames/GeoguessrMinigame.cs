@@ -1,10 +1,7 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Fleck;
-using Mapbox.Unity.Map;
-using Mapbox.Utils;
+using Mapbox.Unity.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,6 +40,7 @@ public class GeoguessrMinigame : Minigame
 
         _uiParent.gameObject.SetActive(true);
         _endResultContainer.gameObject.SetActive(false);
+        _finishDisplayingMapButton.gameObject.SetActive(false);
 
         var image = Resources.Load<Sprite>(minigameData.Input);
         _image.sprite = image;
@@ -54,7 +52,7 @@ public class GeoguessrMinigame : Minigame
     private void DisplayGuesses()
     {
         _mapContainer.SetActive(true);
-        _geoguessrMapView.StartZoomingIn();
+        _finishDisplayingMapButton.gameObject.SetActive(true);
         _background.gameObject.SetActive(false);
 
         foreach (var guess in _guesses)
@@ -66,10 +64,11 @@ public class GeoguessrMinigame : Minigame
                 _results[guess.Key] = score;
             }
 
-            _geoguessrMapView.SpawnMarkerOnMap(guess.Value, guess.Key.TeamName);
+            _geoguessrMapView.SpawnMarkerOnMap(Conversions.StringToLatLon(guess.Value), guess.Key.TeamName);
             guess.Key.AddScore(score);
         }
 
+        _geoguessrMapView.FitCameraBounds();
         _uiParent.gameObject.SetActive(false);
     }
 
