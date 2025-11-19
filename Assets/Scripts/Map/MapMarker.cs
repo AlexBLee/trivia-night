@@ -25,13 +25,13 @@ public class MapMarker : MonoBehaviour
     {
         transform.LookAt(transform.position + _camera.transform.rotation * Vector3.forward, _camera.transform.rotation * Vector3.up);
 
-        // _lineRenderer.SetPosition(0, transform.localPosition);
-        //
-        // Vector3 position = new Vector3
-        //     (_objectToRenderLineTowards.transform.position.x,
-        //         _objectToRenderLineTowards.transform.position.y + _yPadding,
-        //         _objectToRenderLineTowards.transform.position.z);
-        //
-        // _lineRenderer.SetPosition(1, position);
+        _lineRenderer.SetPosition(0, transform.localPosition);
+
+        Vector3 position = new Vector3
+            (_objectToRenderLineTowards.transform.position.x,
+                _objectToRenderLineTowards.transform.position.y + _yPadding,
+                _objectToRenderLineTowards.transform.position.z);
+
+        _lineRenderer.SetPosition(1, position);
     }
 }
