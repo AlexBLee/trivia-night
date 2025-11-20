@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Cysharp.Threading.Tasks;
 using Fleck;
 using Mapbox.Unity.Utilities;
 using UnityEngine;
@@ -77,7 +78,7 @@ public class GeoguessrMinigame : Minigame
         _uiParent.gameObject.SetActive(false);
     }
 
-    protected override void ReceiveMessage(IWebSocketConnection socket, string message)
+    protected override async void ReceiveMessage(IWebSocketConnection socket, string message)
     {
         base.ReceiveMessage(socket, message);
 
@@ -90,6 +91,8 @@ public class GeoguessrMinigame : Minigame
         {
             _guesses.Add(team, message);
         }
+
+        await UniTask.SwitchToMainThread();
 
         if (!_isFirstGuess)
         {
