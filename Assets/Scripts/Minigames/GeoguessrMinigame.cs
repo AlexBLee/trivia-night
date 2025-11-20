@@ -42,7 +42,7 @@ public class GeoguessrMinigame : Minigame
         _finishButton.onClick.AddListener(DisplayGuesses);
         _finishDisplayingMapButton.onClick.AddListener(FinishDisplayingMap);
         _closeButton.onClick.AddListener(FinishGame);
-        _timer.OnTimerEnd += FinishDisplayingMap;
+        _timer.OnTimerEnd += DisplayGuesses;
 
         _uiParent.gameObject.SetActive(true);
         _endResultContainer.gameObject.SetActive(false);
@@ -139,6 +139,8 @@ public class GeoguessrMinigame : Minigame
         _finishButton.onClick.RemoveListener(DisplayGuesses);
         _finishDisplayingMapButton.onClick.RemoveListener(FinishDisplayingMap);
         _closeButton.onClick.RemoveListener(FinishGame);
-        _timer.OnTimerEnd -= FinishDisplayingMap;
+        _timer.OnTimerEnd -= DisplayGuesses;
+
+        _timer.gameObject.SetActive(false);
     }
 }

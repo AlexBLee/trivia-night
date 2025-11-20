@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -10,11 +11,15 @@ public class Timer : MonoBehaviour
     private float _timeRemaining;
     private float _minuteDivisor = 60f;
     private bool _subscribersNotified = false;
+    private float _animationDuration = 0.5f;
 
     public Action OnTimerEnd;
 
     private void OnEnable()
     {
+        transform.localScale = Vector3.zero;
+        transform.DOScale(Vector3.one, _animationDuration);
+
         _timeRemaining = _defaultTimerDurationInSeconds;
         _subscribersNotified = false;
     }
