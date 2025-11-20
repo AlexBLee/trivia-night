@@ -45,3 +45,42 @@
   height: 100vh;
   width: 100vh;
 }
+
+.map-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.map-fullscreen .leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+.submit-button-overlay {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 1001;
+  transition: background 0.2s;
+}
+
+.submit-button-overlay:hover {
+  background: #45a049;
+}
+
+.submit-button-overlay:active {
+  transform: scale(0.98);
+}
