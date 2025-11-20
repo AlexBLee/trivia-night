@@ -10,6 +10,7 @@ public class GeoguessrMinigame : Minigame
     [SerializeField] private GeoguessrMapView _geoguessrMapView;
     [SerializeField] private GeoguessrResult _geoguessrResultPrefab;
     [SerializeField] private GameObject _resultParent;
+    [SerializeField] private Timer _timer;
 
     [SerializeField] private GameObject _uiParent;
     [SerializeField] private Button _finishButton;
@@ -28,15 +29,19 @@ public class GeoguessrMinigame : Minigame
     private Dictionary<Team, int> _results = new();
 
     private (double, double) _point;
+    private bool _isFirstGuess;
 
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
         SendMessageToServer("geoguessr");
 
+        _isFirstGuess = true;
+
         _finishButton.onClick.AddListener(DisplayGuesses);
         _finishDisplayingMapButton.onClick.AddListener(FinishDisplayingMap);
         _closeButton.onClick.AddListener(FinishGame);
+        _timer.OnTimerEnd += FinishDisplayingMap;
 
         _uiParent.gameObject.SetActive(true);
         _endResultContainer.gameObject.SetActive(false);
@@ -85,6 +90,14 @@ public class GeoguessrMinigame : Minigame
         {
             _guesses.Add(team, message);
         }
+
+        if (!_isFirstGuess)
+        {
+            return;
+        }
+
+        _timer.gameObject.SetActive(true);
+        _isFirstGuess = false;
     }
 
     private void FinishDisplayingMap()
@@ -123,5 +136,6 @@ public class GeoguessrMinigame : Minigame
         _finishButton.onClick.RemoveListener(DisplayGuesses);
         _finishDisplayingMapButton.onClick.RemoveListener(FinishDisplayingMap);
         _closeButton.onClick.RemoveListener(FinishGame);
+        _timer.OnTimerEnd -= FinishDisplayingMap;
     }
 }
