@@ -48,18 +48,21 @@ public class LobbyManager : MonoBehaviour
         _lobbyView.ChangeTeamDisplay(index, "Team", Color.white);
     }
 
-    private async void OnMessageReceived(IWebSocketConnection socket, string teamName)
+    private async void OnMessageReceived(IWebSocketConnection socket, string message)
     {
         if (_connectedPlayers.Contains(socket))
         {
             int index = _connectedPlayers.IndexOf(socket);
             if (index > -1)
             {
-                teamName = teamName.Split(':')[1];
+                var splitMessage = message.Split(':');
+                var teamName = splitMessage[0];
+                var characterName = splitMessage[1];
+
                 _teamNames.Add(teamName);
 
                 await UniTask.SwitchToMainThread();
-                _lobbyView.ChangeTeamDisplay(index, teamName, Color.white, "Stickman");
+                _lobbyView.ChangeTeamDisplay(index, teamName, Color.yellow, characterName);
             }
         }
     }
