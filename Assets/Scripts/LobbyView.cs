@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LobbyView : MonoBehaviour
 {
+    [SerializeField] private CharacterGetter _characterGetter;
     [SerializeField] private TeamLobbyLabel _teamLobbyLabelPrefab;
     [SerializeField] private GameObject _layoutGroupParent;
 
@@ -38,14 +39,17 @@ public class LobbyView : MonoBehaviour
         _startButton.onClick.AddListener(callback);
     }
 
-    public void ChangeLabel(int index, string nameText, Color color)
+    public void ChangeTeamDisplay(int index, string nameText, Color color, string characterName = "")
     {
         if (index > _teamTexts.Count - 1)
         {
             return;
         }
 
-        _teamTexts[index].ChangeLabel(nameText, color);
+        var teamLabel = _teamTexts[index];
+
+        teamLabel.ChangeLabel(nameText, color);
+        teamLabel.SetImage(_characterGetter.GetCharacterSprite(characterName));
     }
 
     private void StartGame()

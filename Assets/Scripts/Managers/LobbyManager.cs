@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using Fleck;
 using UnityEngine;
 
@@ -12,9 +13,6 @@ public class LobbyManager : MonoBehaviour
 
     private List<IWebSocketConnection> _connectedPlayers = new(new IWebSocketConnection[4]);
     private List<string> _teamNames = new();
-
-    private Queue<int> _disconnectingPlayers = new();
-    private Queue<(int, string)> _namingTeamQueue = new();
 
     private int _playerCount = 0;
 
@@ -41,14 +39,16 @@ public class LobbyManager : MonoBehaviour
         _connectedPlayers.Add(player);
     }
 
-    private void OnDisconnected(IWebSocketConnection player)
+    private async void OnDisconnected(IWebSocketConnection player)
     {
         var index = _connectedPlayers.IndexOf(player);
         _connectedPlayers[index] = null;
-        _disconnectingPlayers.Enqueue(index);
+
+        await UniTask.SwitchToMainThread();
+        _lobbyView.ChangeTeamDisplay(index, "Team", Color.white);
     }
 
-    private void OnMessageReceived(IWebSocketConnection socket, string teamName)
+    private async void OnMessageReceived(IWebSocketConnection socket, string teamName)
     {
         if (_connectedPlayers.Contains(socket))
         {
@@ -56,24 +56,11 @@ public class LobbyManager : MonoBehaviour
             if (index > -1)
             {
                 teamName = teamName.Split(':')[1];
-                _namingTeamQueue.Enqueue((index, teamName));
                 _teamNames.Add(teamName);
+
+                await UniTask.SwitchToMainThread();
+                _lobbyView.ChangeTeamDisplay(index, teamName, Color.white, "Stickman");
             }
-        }
-    }
-
-    private void Update()
-    {
-        if (_disconnectingPlayers.Count > 0)
-        {
-            var player = _disconnectingPlayers.Dequeue();
-            _lobbyView.ChangeLabel(player, "Team", Color.white);
-        }
-
-        if (_namingTeamQueue.Count > 0)
-        {
-            var team = _namingTeamQueue.Dequeue();
-            _lobbyView.ChangeLabel(team.Item1, team.Item2, Color.yellow);
         }
     }
 
