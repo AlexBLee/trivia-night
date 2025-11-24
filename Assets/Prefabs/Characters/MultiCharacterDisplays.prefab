@@ -52,6 +52,8 @@ MonoBehaviour:
   _characterGetter: {fileID: 0}
   _teamDisplayPrefab: {fileID: 3553282079404461660, guid: 274c2f2c8e75bee4e80220bf13bc44cd, type: 3}
   _characterDisplayContainer: {fileID: 8581834495121285891}
+  _characterDisplayShowHeight: -275
+  _characterDisplayHideHeight: -650
 --- !u!1 &6274711385896269992
 GameObject:
   m_ObjectHideFlags: 0

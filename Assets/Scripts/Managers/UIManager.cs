@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -27,9 +26,12 @@ public class UIManager : MonoBehaviour
         if (show)
         {
             _multiCharacterDisplay.DisplayCharacters(_teamManager.Teams.Values.ToList(), Character.CharacterDisplay.Back);
+            _multiCharacterDisplay.gameObject.SetActive(true);
         }
-
-        _multiCharacterDisplay.gameObject.SetActive(show);
+        else
+        {
+            _multiCharacterDisplay.HideCharacters();
+        }
     }
 
     public void ShowFinalJeopardy(bool show)

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class MultiCharacterDisplay : MonoBehaviour
@@ -6,6 +7,9 @@ public class MultiCharacterDisplay : MonoBehaviour
     [SerializeField] private CharacterGetter _characterGetter;
     [SerializeField] private TeamDisplay _teamDisplayPrefab;
     [SerializeField] private Transform _characterDisplayContainer;
+
+    [SerializeField] private float _characterDisplayShowHeight;
+    [SerializeField] private float _characterDisplayHideHeight;
 
     private List<TeamDisplay> _teamDisplayList = new List<TeamDisplay>();
 
@@ -18,6 +22,8 @@ public class MultiCharacterDisplay : MonoBehaviour
 
         Clean();
 
+        gameObject.transform.localPosition = new Vector3(0, _characterDisplayHideHeight, 0);
+
         foreach (var team in teams)
         {
             var teamDisplay = Instantiate(_teamDisplayPrefab, _characterDisplayContainer);
@@ -28,6 +34,13 @@ public class MultiCharacterDisplay : MonoBehaviour
 
             _teamDisplayList.Add(teamDisplay);
         }
+
+        gameObject.transform.DOLocalMoveY(_characterDisplayShowHeight, 1f);
+    }
+
+    public void HideCharacters()
+    {
+        gameObject.transform.DOLocalMoveY(_characterDisplayHideHeight, 1f);
     }
 
     private void Clean()

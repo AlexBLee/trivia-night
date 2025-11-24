@@ -157,6 +157,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8693764366793167963, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
   m_PrefabInstance: {fileID: 3642024022477136643}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &155998347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3000145626471320771, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+  m_PrefabInstance: {fileID: 3642024022477136643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83472c9904203c41939efb3c30717b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MultiCharacterDisplay
 --- !u!114 &366072717 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6059441754506712598, guid: 15f05304e1f612849b6ab2e445db853b, type: 3}
@@ -1219,6 +1230,10 @@ PrefabInstance:
       propertyPath: _messageManager
       value: 
       objectReference: {fileID: 1592205889}
+    - target: {fileID: 3000145626471320771, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: _characterGetter
+      value: 
+      objectReference: {fileID: 5490952109748672844}
     - target: {fileID: 3532613956191396541, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
       propertyPath: _minigameSpawner
       value: 
@@ -1666,9 +1681,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1265802311}
     - target: {fileID: 4394484628955811389, guid: 15753d104131938448772ea00c63ab19, type: 3}
+      propertyPath: _teamManager
+      value: 
+      objectReference: {fileID: 1178040111}
+    - target: {fileID: 4394484628955811389, guid: 15753d104131938448772ea00c63ab19, type: 3}
       propertyPath: _endGameContainer
       value: 
       objectReference: {fileID: 758545987}
+    - target: {fileID: 4394484628955811389, guid: 15753d104131938448772ea00c63ab19, type: 3}
+      propertyPath: _multiCharacterDisplay
+      value: 
+      objectReference: {fileID: 155998347}
     - target: {fileID: 4394484628955811389, guid: 15753d104131938448772ea00c63ab19, type: 3}
       propertyPath: _gameSelectionContainer
       value: 

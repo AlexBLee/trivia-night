@@ -54,6 +54,7 @@ public class BasicQuestionMinigame : Minigame
     protected override void FinishGame()
     {
         base.FinishGame();
+        _uiManager.ShowCharacters(false);
         _finishButton.onClick.RemoveListener(FinishGame);
     }
 }
