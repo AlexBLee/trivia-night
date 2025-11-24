@@ -12,7 +12,7 @@ public class LobbyManager : MonoBehaviour
     [SerializeField] private MessageManager _messageManager;
 
     private List<IWebSocketConnection> _connectedPlayers = new(new IWebSocketConnection[4]);
-    private List<string> _teamNames = new();
+    private List<Team> _teams = new();
 
     private int _playerCount = 0;
 
@@ -59,7 +59,11 @@ public class LobbyManager : MonoBehaviour
                 var teamName = splitMessage[0];
                 var characterName = splitMessage[1];
 
-                _teamNames.Add(teamName);
+                var team = new Team();
+                team.AssignTeamName(teamName);
+                team.AssignCharacterName(characterName);
+
+                _teams.Add(team);
 
                 await UniTask.SwitchToMainThread();
                 _lobbyView.ChangeTeamDisplay(index, teamName, Color.yellow, characterName);
@@ -70,7 +74,7 @@ public class LobbyManager : MonoBehaviour
     private void StartGame()
     {
         _messageManager.SendMessageToServer("home");
-        _teamManager.AssignTeams(_connectedPlayers, _teamNames);
+        _teamManager.AssignTeams(_connectedPlayers, _teams);
     }
 
     private void OnDisable()

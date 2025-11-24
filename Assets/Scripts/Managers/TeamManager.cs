@@ -11,10 +11,8 @@ public class TeamManager : MonoBehaviour
 
     public Dictionary<IWebSocketConnection, Team> Teams => _teams;
 
-    public void AssignTeams(List<IWebSocketConnection> connections, List<string> teamNames)
+    public void AssignTeams(List<IWebSocketConnection> connections, List<Team> teamList)
     {
-        List<Team> teams = new();
-
         for (int i = 0; i < connections.Count; i++)
         {
             var connection = connections[i];
@@ -24,14 +22,11 @@ public class TeamManager : MonoBehaviour
                 continue;
             }
 
-            var team = new Team();
-            team.AssignTeamName(teamNames[i]);
-
+            var team = teamList[i];
             _teams.Add(connection, team);
-            teams.Add(team);
         }
 
-        _adminPanel.AssignTeams(teams);
+        _adminPanel.AssignTeams(teamList);
     }
 
     public bool TrySearchForExistingTeamByIp(IWebSocketConnection connection)

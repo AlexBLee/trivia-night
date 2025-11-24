@@ -128,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326eddfdd504aed44ab8685b408fc9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LobbyView
-  _teamLobbyLabelPrefab: {fileID: 3553282079404461660, guid: abb7a90a10058e64b92e9c1e04667ae3, type: 3}
+  _characterGetter: {fileID: 0}
+  teamDisplayPrefab: {fileID: 3553282079404461660, guid: abb7a90a10058e64b92e9c1e04667ae3, type: 3}
   _layoutGroupParent: {fileID: 517675380432051409}
   _startButton: {fileID: 3872706239647047664}
   _gamePanel: {fileID: 2803112374159965091}

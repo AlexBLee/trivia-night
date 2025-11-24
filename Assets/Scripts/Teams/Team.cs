@@ -3,9 +3,11 @@ using System;
 public class Team
 {
     private string _teamName = "Team";
+    private string _characterName = "";
     private int _score;
 
     public string TeamName => _teamName;
+    public string CharacterName => _characterName;
     public int CurrentScore => _score;
 
     public Action<int> OnScoreChanged;
@@ -14,6 +16,11 @@ public class Team
     public void AssignTeamName(string teamName)
     {
         _teamName = teamName;
+    }
+
+    public void AssignCharacterName(string characterName)
+    {
+        _characterName = characterName;
     }
 
     public void AddScore(int score)

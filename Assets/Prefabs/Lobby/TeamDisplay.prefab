@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 6532583940911527817}
   - component: {fileID: 3553282079404461660}
   m_Layer: 5
-  m_Name: TeamLobbyLabel
+  m_Name: TeamDisplay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

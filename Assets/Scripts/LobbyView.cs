@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class LobbyView : MonoBehaviour
 {
     [SerializeField] private CharacterGetter _characterGetter;
-    [SerializeField] private TeamLobbyLabel _teamLobbyLabelPrefab;
+    [SerializeField] private TeamDisplay teamDisplayPrefab;
     [SerializeField] private GameObject _layoutGroupParent;
 
     [SerializeField] private Button _startButton;
     [SerializeField] private GameObject _gamePanel;
     [SerializeField] private TextMeshProUGUI _ipText;
 
-    private List<TeamLobbyLabel> _teamTexts = new();
+    private List<TeamDisplay> _teamTexts = new();
     private int _defaultNumberOfLabels = 4;
 
     private void Start()
@@ -29,7 +29,7 @@ public class LobbyView : MonoBehaviour
     {
         for (int i = 0; i < amount; i++)
         {
-            var label = Instantiate(_teamLobbyLabelPrefab, _layoutGroupParent.transform);
+            var label = Instantiate(teamDisplayPrefab, _layoutGroupParent.transform);
             _teamTexts.Add(label);
         }
     }

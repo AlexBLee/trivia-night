@@ -18,6 +18,8 @@ public class BasicQuestionMinigame : Minigame
         _questionText.text = minigameData.Input;
         _answerText.text = minigameData.Answer;
 
+        _uiManager.ShowCharacters();
+
         _answerText.gameObject.SetActive(false);
     }
 
