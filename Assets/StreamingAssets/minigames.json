@@ -1,28 +1,28 @@
 [
   {
     "type": "Question",
-    "input": "What major sporting event did Vancouver co-host in 2010?",
-    "answer": "The Winter Olympics"
+    "input": "What country produces the most real Christmas trees in the world?",
+    "answer": "The United States"
   },
   {
     "type": "Question",
-    "input": "What is the name of the historic neighborhood that survived a major 1886 fire and retains many Victorian-era buildings?",
-    "answer": "Gastown"
+    "input": "What historical figure is partly responsible for the tradition of Santa coming down the chimney?",
+    "answer": "The Norse god Odin"
   },
   {
     "type": "Question",
-    "input": "Vancouver hosts one of the largest dragon boat festivals in North America, what is it called?",
-    "answer": "Vancouver International Dragon Boat Festival"
+    "input": "The original name of the character later known as Rudolph the Red-Nosed Reindeer was what?",
+    "answer": "Rollo (and later Reginald)"
   },
   {
     "type": "Question",
-    "input": "Approximately how many trees are in Stanley Park? Everyone can guess once.",
-    "answer": "230,000 trees"
+    "input": "What is the minimum temperature at which the classic six-sided snowflake crystal structure begins to form in the atmosphere?",
+    "answer": "-10 C"
   },
   {
     "type": "Question",
-    "input": "The Stanley Park seawall holds a world record - what is it?",
-    "answer": "The longest uninterrupted waterfront path in the world - stretching over 28km."
+    "input": "According to Icelandic folklore, the Yule Cat (Jólakötturinn) eats people who fail to do what before Christmas?",
+    "answer": "Receive new clothes as a gift."
   },
   {
     "type": "Question",
@@ -48,6 +48,31 @@
     "type": "Question",
     "input": "If you answer this question wrong, you’re in a paradox, what should you answer to avoid contradiction?",
     "answer": "Nothing"
+  },
+  {
+    "type": "Question",
+    "input": "What major sporting event did Vancouver co-host in 2010?",
+    "answer": "The Winter Olympics"
+  },
+  {
+    "type": "Question",
+    "input": "What major sporting event did Vancouver co-host in 2010?",
+    "answer": "The Winter Olympics"
+  },
+  {
+    "type": "Question",
+    "input": "What major sporting event did Vancouver co-host in 2010?",
+    "answer": "The Winter Olympics"
+  },
+  {
+    "type": "Question",
+    "input": "What major sporting event did Vancouver co-host in 2010?",
+    "answer": "The Winter Olympics"
+  },
+  {
+    "type": "Question",
+    "input": "What major sporting event did Vancouver co-host in 2010?",
+    "answer": "The Winter Olympics"
   },
   {
     "type": "ChimpTest",
