@@ -263,3 +263,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TeamLobbyLabel
   _text: {fileID: 2619070789838230996}
   _characterImage: {fileID: 8150852238971425749}
+  _jumpHeight: 50

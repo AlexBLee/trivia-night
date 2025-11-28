@@ -27,10 +27,10 @@ public class MultiCharacterDisplay : MonoBehaviour
         foreach (var team in teams)
         {
             var teamDisplay = Instantiate(_teamDisplayPrefab, _characterDisplayContainer);
-            var character = _characterGetter.GetCharacterSprite(team.CharacterName, characterDisplay);
+            var character = _characterGetter.GetCharacter(team.CharacterName);
 
             teamDisplay.ChangeLabel(team.TeamName, Color.white);
-            teamDisplay.SetImage(character);
+            teamDisplay.SetCharacter(character, characterDisplay);
 
             _teamDisplayList.Add(teamDisplay);
         }

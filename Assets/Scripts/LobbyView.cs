@@ -49,7 +49,7 @@ public class LobbyView : MonoBehaviour
         var teamLabel = _teamTexts[index];
 
         teamLabel.ChangeLabel(nameText, color);
-        teamLabel.SetImage(_characterGetter.GetCharacterSprite(characterName));
+        teamLabel.SetCharacter(_characterGetter.GetCharacter(characterName));
     }
 
     private void StartGame()

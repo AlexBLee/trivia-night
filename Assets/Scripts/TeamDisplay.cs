@@ -1,3 +1,5 @@
+using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,21 +9,38 @@ public class TeamDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private Image _characterImage;
 
+    [SerializeField] private float _jumpHeight = 3f;
+    [SerializeField] private float _jumpDuration = 0.5f;
+    private Character _character;
+
     public void ChangeLabel(string nameText, Color color)
     {
         _text.color = color;
         _text.text = nameText;
     }
 
-    public void SetImage(Sprite sprite)
+    public void SetCharacter(Character character, Character.CharacterDisplay display = Character.CharacterDisplay.Front)
     {
-        if (sprite == null)
+        if (character == null)
         {
             _characterImage.gameObject.SetActive(false);
             return;
         }
 
+        _character = character;
+
         _characterImage.gameObject.SetActive(true);
-        _characterImage.sprite = sprite;
+        _characterImage.sprite = character.GetSprite(display);
+    }
+
+    public void AnimateCharacterAnswer()
+    {
+        _characterImage.sprite = _character.GetSprite(Character.CharacterDisplay.Answer);
+
+        transform.DOLocalJump(transform.localPosition, _jumpHeight, 1, _jumpDuration)
+            .OnComplete(() =>
+            {
+                _characterImage.sprite = _character.GetSprite(Character.CharacterDisplay.Back);
+            });
     }
 }
