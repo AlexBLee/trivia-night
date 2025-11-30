@@ -17,7 +17,8 @@ public enum MinigameType
     CoinFlip,
     BombOrBonus,
     Wheel,
-    CardFlip
+    CardFlip,
+    PictureGuessing
 }
 
 public class MinigameHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler

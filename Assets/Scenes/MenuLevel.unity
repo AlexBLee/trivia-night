@@ -1326,6 +1326,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1378585647690756196, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: _uiManager
+      value: 
+      objectReference: {fileID: 507716166}
+    - target: {fileID: 1378585647690756196, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: _teamManager
+      value: 
+      objectReference: {fileID: 1178040111}
+    - target: {fileID: 1378585647690756196, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: _messageManager
+      value: 
+      objectReference: {fileID: 1592205889}
     - target: {fileID: 1475663689566351310, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2263,6 +2275,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+--- !u!114 &3642024022477136644 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1378585647690756196, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+  m_PrefabInstance: {fileID: 3642024022477136643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 190c9aacf94a6b54c850dcbda898fc32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PictureGuessMinigame
 --- !u!1001 &5490952109748672843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2445,47 +2468,103 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[0].Key
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[1].Key
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[2].Key
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[3].Key
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[4].Key
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[5].Key
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[6].Key
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[7].Key
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[8].Key
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[9].Key
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[10].Key
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[11].Key
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[0].Value
       value: 
-      objectReference: {fileID: 1120184751}
+      objectReference: {fileID: 3642024022477136644}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[1].Value
       value: 
-      objectReference: {fileID: 2109185465}
+      objectReference: {fileID: 1120184751}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[2].Value
       value: 
-      objectReference: {fileID: 45466079}
+      objectReference: {fileID: 2109185465}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[3].Value
       value: 
-      objectReference: {fileID: 1944154603}
+      objectReference: {fileID: 45466079}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[4].Value
       value: 
-      objectReference: {fileID: 1093919102}
+      objectReference: {fileID: 1944154603}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[5].Value
       value: 
-      objectReference: {fileID: 7784031850621407929}
+      objectReference: {fileID: 1093919102}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[6].Value
       value: 
-      objectReference: {fileID: 1257646070}
+      objectReference: {fileID: 7784031850621407929}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[7].Value
       value: 
-      objectReference: {fileID: 1144335613}
+      objectReference: {fileID: 1257646070}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[8].Value
       value: 
-      objectReference: {fileID: 563374480}
+      objectReference: {fileID: 1144335613}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[9].Value
       value: 
-      objectReference: {fileID: 505306944}
+      objectReference: {fileID: 563374480}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.data[10].Value
+      value: 
+      objectReference: {fileID: 505306944}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _minigames._serializedList.Array.data[11].Value
       value: 
       objectReference: {fileID: 820509278}
     m_RemovedComponents: []

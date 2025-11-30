@@ -100,29 +100,29 @@
     "answer": ""
   },
   {
-    "type": "CoinFlip",
-    "input": "",
-    "answer": ""
+    "type": "PictureGuessing",
+    "input": "guess1",
+    "answer": "guess2"
   },
   {
-    "type": "CardFlip",
-    "input": "",
-    "answer": ""
+    "type": "PictureGuessing",
+    "input": "3.png",
+    "answer": "4.png"
   },
   {
-    "type": "Wheel",
-    "input": "",
-    "answer": ""
+    "type": "PictureGuessing",
+    "input": "5.png",
+    "answer": "6.png"
   },
   {
-    "type": "BombOrBonus",
-    "input": "5,2",
-    "answer": ""
+    "type": "PictureGuessing",
+    "input": "7.png",
+    "answer": "8.png"
   },
   {
-    "type": "BombOrBonus",
-    "input": "10,3",
-    "answer": ""
+    "type": "PictureGuessing",
+    "input": "9.png",
+    "answer": "10.png"
   },
   {
     "type": "Music",
