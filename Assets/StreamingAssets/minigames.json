@@ -100,31 +100,6 @@
     "answer": "10.png"
   },
   {
-    "type": "ChimpTest",
-    "input": "5",
-    "answer": ""
-  },
-  {
-    "type": "ChimpTest",
-    "input": "7",
-    "answer": ""
-  },
-  {
-    "type": "ChimpTest",
-    "input": "8",
-    "answer": ""
-  },
-  {
-    "type": "ChimpTest",
-    "input": "10",
-    "answer": ""
-  },
-  {
-    "type": "ChimpTest",
-    "input": "12",
-    "answer": ""
-  },
-  {
     "type": "Music",
     "input": "dynamite1,dynamite2,dynamite3",
     "answer": "BTS - Dynamite"
