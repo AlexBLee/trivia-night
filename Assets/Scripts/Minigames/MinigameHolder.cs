@@ -18,7 +18,8 @@ public enum MinigameType
     BombOrBonus,
     Wheel,
     CardFlip,
-    PictureGuessing
+    PictureGuessing,
+    Kahoot
 }
 
 public class MinigameHolder : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler

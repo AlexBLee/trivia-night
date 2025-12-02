@@ -50,27 +50,27 @@
     "answer": "Nothing"
   },
   {
-    "type": "Question",
+    "type": "Kahoot",
+    "input": "A?,1.png,A,B,C,D",
+    "answer": "ZZZ"
+  },
+  {
+    "type": "Kahoot",
     "input": "What major sporting event did Vancouver co-host in 2010?",
     "answer": "The Winter Olympics"
   },
   {
-    "type": "Question",
+    "type": "Kahoot",
     "input": "What major sporting event did Vancouver co-host in 2010?",
     "answer": "The Winter Olympics"
   },
   {
-    "type": "Question",
+    "type": "Kahoot",
     "input": "What major sporting event did Vancouver co-host in 2010?",
     "answer": "The Winter Olympics"
   },
   {
-    "type": "Question",
-    "input": "What major sporting event did Vancouver co-host in 2010?",
-    "answer": "The Winter Olympics"
-  },
-  {
-    "type": "Question",
+    "type": "Kahoot",
     "input": "What major sporting event did Vancouver co-host in 2010?",
     "answer": "The Winter Olympics"
   },
