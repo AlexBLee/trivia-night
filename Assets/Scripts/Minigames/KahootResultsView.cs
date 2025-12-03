@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class KahootResultsView : MonoBehaviour
@@ -11,7 +12,9 @@ public class KahootResultsView : MonoBehaviour
 
     public void CalculateScore(List<KahootAnswer> teamAnswers)
     {
-        foreach (var kahootAnswer in teamAnswers)
+        var sortedAnswers = teamAnswers.OrderByDescending(answer => answer.Score).ToList();
+
+        foreach (var kahootAnswer in sortedAnswers)
         {
             var teamAnswerLabel = Instantiate(_teamAnswerLabel, _teamResultsContainer);
             _teamAnswerLabels.Add(teamAnswerLabel);

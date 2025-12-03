@@ -92,9 +92,7 @@ public class KahootMinigame : Minigame
         var timeDiff = (kahootAnswer.TimeTaken - _startTime).TotalSeconds;
 
         float bonus = Mathf.Clamp01((float) (1f - timeDiff / _questionTime));
-        Debug.Log(bonus);
         var score = Mathf.RoundToInt(_scoreAmount + _scoreAmount * bonus);
-        Debug.Log(score);
         return score;
     }
 

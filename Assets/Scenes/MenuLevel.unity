@@ -1086,6 +1086,10 @@ PrefabInstance:
       propertyPath: _minigameSpawner
       value: 
       objectReference: {fileID: 83781193}
+    - target: {fileID: 311877165351633741, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: _messageManager
+      value: 
+      objectReference: {fileID: 1592205889}
     - target: {fileID: 369788100158497703, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

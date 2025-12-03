@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class KahootQuestionView : MonoBehaviour
 {
+    [SerializeField] private MessageManager _messageManager;
     [SerializeField] private KahootScoreView _kahootScoreView;
     [SerializeField] private KahootResultsView _kahootResultsView;
 
@@ -47,6 +48,8 @@ public class KahootQuestionView : MonoBehaviour
 
     private void OpenScores()
     {
+        _messageManager.SendMessageToServer("home");
+
         _questionImage.gameObject.SetActive(false);
         _kahootScoreView.gameObject.SetActive(true);
 
