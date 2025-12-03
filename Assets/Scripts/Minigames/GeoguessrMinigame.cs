@@ -4,12 +4,13 @@ using Cysharp.Threading.Tasks;
 using Fleck;
 using Mapbox.Unity.Utilities;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GeoguessrMinigame : Minigame
 {
     [SerializeField] private GeoguessrMapView _geoguessrMapView;
-    [SerializeField] private GeoguessrResult _geoguessrResultPrefab;
+    [FormerlySerializedAs("_geoguessrResultPrefab")] [SerializeField] private TeamAnswerLabel teamAnswerLabelPrefab;
     [SerializeField] private GameObject _resultParent;
     [SerializeField] private Timer _timer;
 
@@ -24,7 +25,7 @@ public class GeoguessrMinigame : Minigame
 
     [SerializeField] private Button _closeButton;
 
-    private List<GeoguessrResult> _resultPrefabs = new List<GeoguessrResult>();
+    private List<TeamAnswerLabel> _resultPrefabs = new List<TeamAnswerLabel>();
 
     private Dictionary<Team, string> _guesses = new();
     private Dictionary<Team, int> _results = new();
@@ -117,7 +118,7 @@ public class GeoguessrMinigame : Minigame
 
         for (int i = 0; i < resultsList.Count; i++)
         {
-            var resultPrefab = Instantiate(_geoguessrResultPrefab, _resultParent.transform);
+            var resultPrefab = Instantiate(teamAnswerLabelPrefab, _resultParent.transform);
             var result = resultsList[i];
 
             resultPrefab.SetLabel(result.Key.TeamName, result.Value);

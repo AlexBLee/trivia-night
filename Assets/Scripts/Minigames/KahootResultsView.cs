@@ -1,16 +1,30 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class KahootResultsView : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private TeamAnswerLabel _teamAnswerLabel;
+    [SerializeField] private Transform _teamResultsContainer;
+
+    private List<TeamAnswerLabel> _teamAnswerLabels = new List<TeamAnswerLabel>();
+
+    public void CalculateScore(List<KahootAnswer> teamAnswers)
     {
-        
+        foreach (var kahootAnswer in teamAnswers)
+        {
+            var teamAnswerLabel = Instantiate(_teamAnswerLabel, _teamResultsContainer);
+            _teamAnswerLabels.Add(teamAnswerLabel);
+            teamAnswerLabel.SetLabel(kahootAnswer.Team.TeamName, kahootAnswer.Score);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        foreach (var teamAnswerLabel in _teamAnswerLabels)
+        {
+            Destroy(teamAnswerLabel.gameObject);
+        }
+        _teamAnswerLabels.Clear();
     }
 }

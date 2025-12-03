@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Fleck;
 using UnityEngine;
@@ -11,6 +12,12 @@ public class KahootMinigame : Minigame
     [SerializeField] private KahootResultsView _kahootResultsView;
 
     private List<string> _answers = new();
+    private List<KahootAnswer> _teamAnswers = new();
+
+    private float _questionTime = 10f;
+    private int _scoreAmount = 100;
+    private DateTime _startTime;
+    private int _answerIndex;
 
     public override void Initialize(MinigameData minigameData)
     {
@@ -27,8 +34,12 @@ public class KahootMinigame : Minigame
             _answers.Add(minigameInputData[i]);
         }
 
+        _answerIndex = int.Parse(minigameData.Answer);
+
         _kahootInitialQuestionView.Initialize(question, OpenQuestionView);
-        _kahootQuestionView.Initialize(question, picture, _answers, OpenResultView);
+        _kahootQuestionView.Initialize(question, picture, _answers, _answerIndex);
+
+        _kahootQuestionView.UpdateAnswers(_teamAnswers);
 
         _finishButton.onClick.AddListener(FinishGame);
     }
@@ -39,15 +50,38 @@ public class KahootMinigame : Minigame
         _kahootQuestionView.gameObject.SetActive(true);
     }
 
-    private void OpenResultView()
-    {
-        _kahootQuestionView.gameObject.SetActive(false);
-        _kahootResultsView.gameObject.SetActive(true);
-    }
-
     protected override void ReceiveMessage(IWebSocketConnection socket, string message)
     {
         base.ReceiveMessage(socket, message);
+
+        var team = _teamManager.GetTeam(socket);
+        var kahootAnswer = new KahootAnswer()
+        {
+            Team = team,
+            AnswerIndex = int.Parse(message),
+            TimeTaken = DateTime.Now,
+        };
+
+        kahootAnswer.Score = CalculateScore(kahootAnswer);
+
+        _teamAnswers.Add(kahootAnswer);
+        _kahootQuestionView.UpdateAnswers(_teamAnswers);
+    }
+
+    private int CalculateScore(KahootAnswer kahootAnswer)
+    {
+        if (kahootAnswer.AnswerIndex != _answerIndex)
+        {
+            return 0;
+        }
+
+        var score = 0;
+        var timeDiff = (kahootAnswer.TimeTaken - _startTime).TotalSeconds;
+
+        float bonus = Mathf.Clamp01((float) (1f - timeDiff / _questionTime));
+        score = Mathf.RoundToInt(_scoreAmount + _scoreAmount * bonus);
+
+        return score;
     }
 
     protected override void FinishGame()

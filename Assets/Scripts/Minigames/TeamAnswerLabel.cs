@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class GeoguessrResult : MonoBehaviour
+public class TeamAnswerLabel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _teamName;
     [SerializeField] private TextMeshProUGUI _score;
