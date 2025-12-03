@@ -63,6 +63,7 @@ export function WebSocketServer({ children }) {
                     case "geoguessr": return "geoguessr";
                     case "zoomin": return "zoomin";
                     case "chimpTest": return "chimpTest";
+                    case "kahoot": return "kahoot";
                     default: return prev;
                 }
             });

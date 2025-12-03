@@ -8,6 +8,7 @@ import GeoguessrGame from './GeoguessrGame';
 import ZoomInMinigame from './ZoomInMinigame';
 import Lobby from './Lobby';
 import ChimpTestGame from './ChimpTestGame';
+import KahootMinigame from './KahootMinigame';
 
 export default function App() {
   const { view } = useWebSocket();
@@ -20,7 +21,8 @@ export default function App() {
     music: <MusicGame />,
     geoguessr: <GeoguessrGame />,
     zoomin: <ZoomInMinigame/>,
-    chimpTest: <ChimpTestGame/>
+    chimpTest: <ChimpTestGame/>,
+    kahoot: <KahootMinigame/>,
   };
 
   return (
