@@ -8,10 +8,12 @@ public class KahootBar : MonoBehaviour
 
     [SerializeField] private float _addedHeight = 50f;
 
+    private float _defaultHeight = 10f;
+
     public void SubmitScore(int total)
     {
         _text.text = total.ToString();
 
-        _rectTransform.sizeDelta = new Vector2(_rectTransform.sizeDelta.x,  _addedHeight * total);
+        _rectTransform.sizeDelta = new Vector2(_rectTransform.sizeDelta.x,  Mathf.Max(_defaultHeight, _addedHeight * total));
     }
 }
