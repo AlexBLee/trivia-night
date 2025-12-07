@@ -9,6 +9,7 @@ public class KahootMinigame : Minigame
     [SerializeField] private Button _finishButton;
     [SerializeField] private KahootInitialQuestionView _kahootInitialQuestionView;
     [SerializeField] private KahootQuestionView _kahootQuestionView;
+    [SerializeField] private KahootResultsView _kahootResultsView;
 
     private List<string> _answers = new();
     private List<KahootAnswer> _teamAnswers = new();
@@ -22,7 +23,7 @@ public class KahootMinigame : Minigame
     {
         base.Initialize(minigameData);
 
-        string[] minigameInputData = minigameData.Input.Split(',');
+        string[] minigameInputData = minigameData.Input.Split(';');
         var question = minigameInputData[0];
         var picture = Resources.Load<Sprite>(minigameInputData[1]);
 
@@ -99,6 +100,12 @@ public class KahootMinigame : Minigame
     protected override void FinishGame()
     {
         base.FinishGame();
+
+        _kahootInitialQuestionView.gameObject.SetActive(true);
+        _kahootQuestionView.gameObject.SetActive(false);
+        _kahootResultsView.gameObject.SetActive(false);
+
+        _answers.Clear();
         _finishButton.onClick.RemoveListener(FinishGame);
     }
 }

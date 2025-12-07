@@ -2060,6 +2060,7 @@ MonoBehaviour:
   _finishButton: {fileID: 1578081221066028838}
   _kahootInitialQuestionView: {fileID: 1466845252386498865}
   _kahootQuestionView: {fileID: 3244886119697287018}
+  _kahootResultsView: {fileID: 4158501822757158325}
 --- !u!1 &8258540314467131149
 GameObject:
   m_ObjectHideFlags: 0

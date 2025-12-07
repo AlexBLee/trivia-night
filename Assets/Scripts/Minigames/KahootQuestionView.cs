@@ -21,16 +21,29 @@ public class KahootQuestionView : MonoBehaviour
 
     private int _correctAnswerIndex;
     private List<KahootAnswer> _teamAnswers = new();
+    private int _originalWidth = 1700;
 
     public void Initialize(string question, Sprite questionImage, List<string> answers, int correctAnswerIndex)
     {
         _questionText.text = question;
         _questionImage.sprite = questionImage;
+        _timerLine.sizeDelta = new Vector2(_originalWidth, _timerLine.sizeDelta.y);
+
+        _questionImage.gameObject.SetActive(true);
+        _kahootScoreView.gameObject.SetActive(false);
 
         if (answers.Count != _answerTexts.Count)
         {
             Debug.LogWarning("Wrong number of answers");
             return;
+        }
+
+        for (int i = 0; i < _answerButtons.Count; i++)
+        {
+            if (i != _correctAnswerIndex)
+            {
+                _answerButtons[i].interactable = true;
+            }
         }
 
         for (int i = 0; i < answers.Count; i++)
