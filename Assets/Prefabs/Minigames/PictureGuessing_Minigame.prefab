@@ -341,7 +341,6 @@ MonoBehaviour:
   _finishButton: {fileID: 1578081221066028838}
   _image: {fileID: 9023413032504170671}
   _resultImage: {fileID: 8376541581910849819}
-  _resultText: {fileID: 0}
 --- !u!1 &9180486846141969514
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,10 +370,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 549750547388421669}
-  - {fileID: 8439521594691478655}
   - {fileID: 7912056027532316827}
   - {fileID: 2205075077832121299}
   - {fileID: 5964699404665354685}
+  - {fileID: 8439521594691478655}
   m_Father: {fileID: 1410650790392468356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}

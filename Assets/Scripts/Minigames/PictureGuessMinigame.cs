@@ -8,7 +8,6 @@ public class PictureGuessMinigame : Minigame
     [SerializeField] private Button _finishButton;
     [SerializeField] private Image _image;
     [SerializeField] private Image _resultImage;
-    [SerializeField] private TextMeshProUGUI _resultText;
 
     public override void Initialize(MinigameData minigameData)
     {
@@ -16,13 +15,15 @@ public class PictureGuessMinigame : Minigame
         SendMessageToServer("pictureGuess");
         _finishButton.onClick.AddListener(FinishGame);
 
-        _image.sprite = Resources.Load<Sprite>(minigameData.Input);
-        _resultImage.sprite = Resources.Load<Sprite>(minigameData.Answer);
-        // _resultText.text = minigameData.Answer;
+        _resultImage.gameObject.SetActive(false);
 
-        _uiManager.ShowCharacters();
+        var inputSprite = Resources.Load<Sprite>($"NotChristmas/{minigameData.Input}");
+        _image.rectTransform.sizeDelta = inputSprite.rect.size;
+        _image.sprite = inputSprite;
 
-        // _resultText.gameObject.SetActive(false);
+        var resultSprite = Resources.Load<Sprite>($"NotChristmas/{minigameData.Answer}");
+        _resultImage.rectTransform.sizeDelta = resultSprite.rect.size;
+        _resultImage.sprite = resultSprite;
     }
 
     private void Update()
@@ -46,7 +47,6 @@ public class PictureGuessMinigame : Minigame
     private void RevealAnswer()
     {
         _resultImage.gameObject.SetActive(true);
-        // _resultText.gameObject.SetActive(true);
     }
 
     protected override void ReceiveMessage(IWebSocketConnection socket, string message)
@@ -57,7 +57,6 @@ public class PictureGuessMinigame : Minigame
     protected override void FinishGame()
     {
         base.FinishGame();
-        _uiManager.ShowCharacters(false);
         _finishButton.onClick.RemoveListener(FinishGame);
     }
 }

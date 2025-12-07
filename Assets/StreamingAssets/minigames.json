@@ -76,28 +76,28 @@
   },
   {
     "type": "PictureGuessing",
-    "input": "guess1",
-    "answer": "guess2"
+    "input": "1",
+    "answer": "2"
   },
   {
     "type": "PictureGuessing",
-    "input": "3.png",
-    "answer": "4.png"
+    "input": "3",
+    "answer": "4"
   },
   {
     "type": "PictureGuessing",
-    "input": "5.png",
-    "answer": "6.png"
+    "input": "5",
+    "answer": "6"
   },
   {
     "type": "PictureGuessing",
-    "input": "7.png",
-    "answer": "8.png"
+    "input": "7",
+    "answer": "8"
   },
   {
     "type": "PictureGuessing",
-    "input": "9.png",
-    "answer": "10.png"
+    "input": "9",
+    "answer": "10"
   },
   {
     "type": "Music",
