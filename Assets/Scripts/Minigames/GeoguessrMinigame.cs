@@ -49,7 +49,7 @@ public class GeoguessrMinigame : Minigame
         _endResultContainer.gameObject.SetActive(false);
         _finishDisplayingMapButton.gameObject.SetActive(false);
 
-        var image = Resources.Load<Sprite>(minigameData.Input);
+        var image = Resources.Load<Sprite>($"Geoguessr/{minigameData.Input}");
         _image.sprite = image;
 
         var coords = minigameData.Answer.Split(',');
@@ -136,6 +136,7 @@ public class GeoguessrMinigame : Minigame
             Destroy(resultPrefab.gameObject);
         }
         _resultPrefabs.Clear();
+        _guesses.Clear();
 
         _finishButton.onClick.RemoveListener(DisplayGuesses);
         _finishDisplayingMapButton.onClick.RemoveListener(FinishDisplayingMap);

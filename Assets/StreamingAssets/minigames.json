@@ -51,27 +51,27 @@
   },
   {
     "type": "Kahoot",
-    "input": "Where does the tradition of hanging stockings come from?,kahoot1.png,Santa’s workshop,A legend about a generous man,Medieval churches,Victorian novels",
+    "input": "Where does the tradition of hanging stockings come from?;kahoot1.png;Santa’s workshop;A legend about a generous man;Medieval churches;Victorian novels",
     "answer": "0"
   },
   {
     "type": "Kahoot",
-    "input": "What was Nintendo originally?,kahoot3.png,Candy company,Trading card company,Toy store,Arcade distributor",
+    "input": "What was Nintendo originally?;kahoot3.png;Candy company;Trading card company;Toy store;Arcade distributor",
     "answer": "1"
   },
   {
     "type": "Kahoot",
-    "input": "How many gifts were given in TOTAL in the song '12 Days of Christmas?',kahoot3.png,37,256,364,12",
+    "input": "How many gifts were given in TOTAL in the song '12 Days of Christmas?';kahoot3.png;37;256;364;12",
     "answer": "2"
   },
   {
     "type": "Kahoot",
-    "input": "If a pancake always lands syrup-side down, a cat always lands on its feet, and Steve the parrot is sitting on the pancake while it falls off a counter, what is the most logical outcome?,kahoot4.png,Cat and pancake land normally,Cat hovers,Pancake flies off with parrot,Everything explodes",
+    "input": "If a pancake always lands syrup-side down, a cat always lands on its feet, and Steve the parrot is sitting on the pancake while it falls off a counter, what is the most logical outcome?;kahoot4.png;Cat and pancake land normally;Cat hovers;Pancake flies off with parrot;Everything explodes",
     "answer": "0"
   },
   {
     "type": "Kahoot",
-    "input": "If you put a slice of bread on the floor, which way would it fall??,kahoot5.png,Butter side down,Butter side up,Sideways,Into a parallel universe",
+    "input": "If you put a slice of bread on the floor, which way would it fall??;kahoot5.png;Butter side down;Butter side up;Sideways;Into a parallel universe",
     "answer": "0"
   },
   {
@@ -127,26 +127,31 @@
   {
     "type": "Geoguessr",
     "input": "guess1",
-    "answer": "49.273162, -123.100321"
+    "answer": "49.2301858,-123.0048911"
   },
   {
     "type": "Geoguessr",
     "input": "guess2",
-    "answer": "49.2870575,-123.1119877"
+    "answer": "49.2901787,-123.1211305"
   },
   {
     "type": "Geoguessr",
     "input": "guess3",
-    "answer": "49.1626446,-123.158738"
+    "answer": "49.1693035,-123.1727972"
   },
   {
     "type": "Geoguessr",
     "input": "guess4",
-    "answer": "49.3093472,-123.0792739"
+    "answer": "49.131833,-122.8907405"
   },
   {
     "type": "Geoguessr",
     "input": "guess5",
-    "answer": "49.2350715,-122.864719"
+    "answer": "49.2676065,-123.2520047"
+  },
+  {
+    "type": "Geoguessr",
+    "input": "guess6",
+    "answer": "49.0537103,-123.4025362"
   }
 ]
