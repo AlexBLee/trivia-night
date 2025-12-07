@@ -15,6 +15,10 @@ function QuestionMinigame() {
       if (message === "reenable") {
         setIsDisabled(false);
       }
+
+      if (message === "disable") {
+        setIsDisabled(true);
+      }
     };
 
     const cleanup = addMessageListener(handleMessage);
@@ -35,8 +39,11 @@ function QuestionMinigame() {
     <>
       <h1>Question!</h1>
       <div className="card">
-        <button onClick={handleClick} disabled={isDisabled}>
-          Guess!
+        <button onClick={handleClick} disabled={isDisabled} className="image-button">
+          <img 
+            src={isDisabled ? "/button-down.png" : "/button-up.png"} 
+            alt="Guess button"
+          />
         </button>
       </div>
     </>

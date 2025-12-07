@@ -49,6 +49,11 @@ public class BasicQuestionMinigame : Minigame
     protected override void ReceiveMessage(IWebSocketConnection socket, string message)
     {
         base.ReceiveMessage(socket, message);
+
+        if (message == "button_clicked")
+        {
+            SendMessageToServer("disable");
+        }
     }
 
     protected override void FinishGame()

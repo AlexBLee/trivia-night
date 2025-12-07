@@ -12,7 +12,7 @@ public class PictureGuessMinigame : Minigame
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
-        SendMessageToServer("pictureGuess");
+        SendMessageToServer("question");
         _finishButton.onClick.AddListener(FinishGame);
 
         _resultImage.gameObject.SetActive(false);
@@ -52,6 +52,11 @@ public class PictureGuessMinigame : Minigame
     protected override void ReceiveMessage(IWebSocketConnection socket, string message)
     {
         base.ReceiveMessage(socket, message);
+
+        if (message == "button_clicked")
+        {
+            SendMessageToServer("disable");
+        }
     }
 
     protected override void FinishGame()
