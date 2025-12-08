@@ -18,6 +18,8 @@ public class LobbyManager : MonoBehaviour
 
     public void Start()
     {
+        AudioManager.Instance.PlayMusic("JeopardyMusic");
+
         _server.OnConnected += OnConnected;
         _server.OnDisconnected += OnDisconnected;
 

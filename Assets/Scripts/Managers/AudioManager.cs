@@ -1,11 +1,23 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
+
     [SerializeField] private AudioBank _audioBank;
 
     [SerializeField] private AudioSource _musicAudioSource;
     [SerializeField] private AudioSource _sfxAudioSource;
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     public void PlayMusic(string key)
     {
@@ -16,6 +28,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        _musicAudioSource.volume = 1f;
         _musicAudioSource.clip = music;
         _musicAudioSource.Play();
     }
@@ -30,6 +43,27 @@ public class AudioManager : MonoBehaviour
         }
 
         _sfxAudioSource.PlayOneShot(sfx);
+    }
+
+    public void FadeOutMusic(float duration)
+    {
+        StartCoroutine(FadeOutMusicAndStop(duration));
+    }
+
+    private IEnumerator FadeOutMusicAndStop(float duration)
+    {
+        float startVolume = _musicAudioSource.volume;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            _musicAudioSource.volume = Mathf.Lerp(startVolume, 0f, elapsed / duration);
+            yield return null;
+        }
+
+        _musicAudioSource.volume = 0f;
+        _musicAudioSource.Stop();
     }
 
     public void StopMusic()

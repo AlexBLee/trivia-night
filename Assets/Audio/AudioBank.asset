@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: AudioBank
   m_EditorClassIdentifier: Assembly-CSharp::AudioBank
   _audioClips:
-    _serializedList: []
+    _serializedList:
+    - Key: JeopardyMusic
+      Value: {fileID: 8300000, guid: fa5aec3c94f612b4da8bcfb03a41acfd, type: 3}

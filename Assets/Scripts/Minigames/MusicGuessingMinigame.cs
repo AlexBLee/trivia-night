@@ -14,6 +14,7 @@ public class MusicGuessingMinigame : SingleGuessMinigame
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
+        AudioManager.Instance.FadeOutMusic(1f);
 
         _audioClips.Clear();
 
@@ -53,5 +54,6 @@ public class MusicGuessingMinigame : SingleGuessMinigame
         }
 
         _finishButton.onClick.RemoveListener(FinishGame);
+        AudioManager.Instance.PlayMusic("JeopardyMusic");
     }
 }
