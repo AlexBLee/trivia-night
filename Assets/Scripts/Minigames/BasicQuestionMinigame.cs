@@ -18,8 +18,6 @@ public class BasicQuestionMinigame : SingleGuessMinigame
         _questionText.text = minigameData.Input;
         _answerText.text = minigameData.Answer;
 
-        _uiManager.ShowCharacters();
-
         _answerText.gameObject.SetActive(false);
     }
 
@@ -49,7 +47,6 @@ public class BasicQuestionMinigame : SingleGuessMinigame
     protected override void FinishGame()
     {
         base.FinishGame();
-        _uiManager.ShowCharacters(false);
         _finishButton.onClick.RemoveListener(FinishGame);
     }
 }
