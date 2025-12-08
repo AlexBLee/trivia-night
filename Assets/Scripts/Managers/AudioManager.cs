@@ -21,6 +21,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic(string key)
     {
+        StopAllCoroutines();
+
         var music = _audioBank.GetAudioClip(key);
         if (music == null)
         {
@@ -45,9 +47,11 @@ public class AudioManager : MonoBehaviour
         _sfxAudioSource.PlayOneShot(sfx);
     }
 
-    public void FadeOutMusic(float duration)
+    public void FadeOutMusic(float duration, string nextClip = "")
     {
-        StartCoroutine(FadeOutMusicAndStop(duration));
+        StartCoroutine(nextClip == string.Empty
+            ? FadeOutMusicAndStop(duration)
+            : FadeOutMusicAndStartNext(duration, nextClip));
     }
 
     private IEnumerator FadeOutMusicAndStop(float duration)
@@ -64,6 +68,21 @@ public class AudioManager : MonoBehaviour
 
         _musicAudioSource.volume = 0f;
         _musicAudioSource.Stop();
+    }
+
+    private IEnumerator FadeOutMusicAndStartNext(float duration, string nextClip)
+    {
+        float startVolume = _musicAudioSource.volume;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            _musicAudioSource.volume = Mathf.Lerp(startVolume, 0f, elapsed / duration);
+            yield return null;
+        }
+
+        PlayMusic(nextClip);
     }
 
     public void StopMusic()

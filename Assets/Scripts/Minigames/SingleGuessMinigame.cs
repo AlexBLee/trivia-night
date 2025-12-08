@@ -16,6 +16,7 @@ public abstract class SingleGuessMinigame : Minigame, ISingleGuessGame
 
             await UniTask.SwitchToMainThread();
 
+            AudioManager.Instance.PlaySfx("GenericBuzz");
             var team = _teamManager.GetTeam(socket);
             OnGuessClicked?.Invoke(team, _points);
         }

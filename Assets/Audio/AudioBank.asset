@@ -16,3 +16,11 @@ MonoBehaviour:
     _serializedList:
     - Key: JeopardyMusic
       Value: {fileID: 8300000, guid: fa5aec3c94f612b4da8bcfb03a41acfd, type: 3}
+    - Key: GeoguessrMusic
+      Value: {fileID: 8300000, guid: 48d9e933c6d40634ab645ee92fe7a6f4, type: 3}
+    - Key: GeoguessrAmbiance
+      Value: {fileID: 8300000, guid: 43baa472d2ef36a43bd0d2250b6f1ad7, type: 3}
+    - Key: KahootRevealNoise
+      Value: {fileID: 8300000, guid: decce398c6911c14ea2fabf96c99de51, type: 3}
+    - Key: GenericBuzz
+      Value: {fileID: 8300000, guid: 8a17947750c5aaf4f92b39535f040686, type: 3}

@@ -61,6 +61,7 @@ public class KahootQuestionView : MonoBehaviour
 
     private void OpenScores()
     {
+        AudioManager.Instance.PlaySfx("KahootRevealNoise");
         _messageManager.SendMessageToServer("home");
 
         _questionImage.gameObject.SetActive(false);

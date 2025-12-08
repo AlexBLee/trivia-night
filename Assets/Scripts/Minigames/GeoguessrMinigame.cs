@@ -37,6 +37,7 @@ public class GeoguessrMinigame : Minigame
     {
         base.Initialize(minigameData);
         SendMessageToServer("geoguessr");
+        AudioManager.Instance.FadeOutMusic(1f, "GeoguessrMusic");
 
         _isFirstGuess = true;
 
@@ -58,6 +59,9 @@ public class GeoguessrMinigame : Minigame
 
     private void DisplayGuesses()
     {
+        var fadeOutDuration = 0.5f;
+        AudioManager.Instance.FadeOutMusic(fadeOutDuration, "GeoguessrAmbiance");
+
         _mapContainer.SetActive(true);
         _finishDisplayingMapButton.gameObject.SetActive(true);
         _background.gameObject.SetActive(false);
@@ -144,5 +148,6 @@ public class GeoguessrMinigame : Minigame
         _timer.OnTimerEnd -= DisplayGuesses;
 
         _timer.gameObject.SetActive(false);
+        AudioManager.Instance.FadeOutMusic(1f, "JeopardyMusic");
     }
 }

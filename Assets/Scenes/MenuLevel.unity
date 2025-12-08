@@ -2210,6 +2210,10 @@ PrefabInstance:
       propertyPath: _minigameSpawner
       value: 
       objectReference: {fileID: 83781193}
+    - target: {fileID: 8537796239004710047, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8572851448200857397, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
       propertyPath: _minigameSpawner
       value: 
