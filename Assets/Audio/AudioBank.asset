@@ -16,6 +16,8 @@ MonoBehaviour:
     _serializedList:
     - Key: JeopardyMusic
       Value: {fileID: 8300000, guid: fa5aec3c94f612b4da8bcfb03a41acfd, type: 3}
+    - Key: GeoguessrTimer
+      Value: {fileID: 8300000, guid: 96a13805db6298a42894b54c72d4b8a8, type: 3}
     - Key: GeoguessrMusic
       Value: {fileID: 8300000, guid: 48d9e933c6d40634ab645ee92fe7a6f4, type: 3}
     - Key: GeoguessrAmbiance

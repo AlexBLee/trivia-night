@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
   _timerText: {fileID: 3257170884787529048}
-  _defaultTimerDurationInSeconds: 90
+  _defaultTimerDurationInSeconds: 15
 --- !u!1 &8973251964604288665
 GameObject:
   m_ObjectHideFlags: 0
