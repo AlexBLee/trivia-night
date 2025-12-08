@@ -1,51 +1,61 @@
 [
   {
     "type": "Question",
+    "points": "100",
     "input": "What country produces the most real Christmas trees in the world?",
     "answer": "The United States"
   },
   {
     "type": "Question",
+    "points": "200",
     "input": "Which country started the tradition of putting up a Christmas tree?",
     "answer": "Germany"
   },
   {
     "type": "Question",
+    "points": "300",
     "input": "The original name of the character later known as Rudolph the Red-Nosed Reindeer was what?",
     "answer": "Rollo (and later Reginald)"
   },
   {
     "type": "Question",
+    "points": "400",
     "input": "What is the minimum temperature at which the classic six-sided snowflake crystal structure begins to form in the atmosphere?",
     "answer": "-10 C"
   },
   {
     "type": "Question",
+    "points": "500",
     "input": "What historical figure is partly responsible for the tradition of Santa coming down the chimney?",
     "answer": "The Norse god Odin"
   },
   {
     "type": "Question",
+    "points": "100",
     "input": "Food that tastes like your financial situation.",
     "answer": "Ramen"
   },
   {
     "type": "Question",
+    "points": "200",
     "input": "A movie where a child is left alone long enough to become a warlord.",
     "answer": "Home Alone"
   },
   {
     "type": "Question",
+    "points": "300",
     "input": "The invisible force everyone worships until it buffers once.",
     "answer": "Wi-Fi"
   },
   {
     "type": "Question",
+    "points": "400",
     "input": "Soft white rectangles that define civilization, especially in emergencies.",
     "answer": "Toilet paper"
   },
   {
     "type": "Question",
+    "points": "500",
     "input": "Creamy liquid that makes humans feel festive and questionable.",
     "answer": "Eggnog"
   },
@@ -76,51 +86,61 @@
   },
   {
     "type": "PictureGuessing",
+    "points": "100",
     "input": "1",
     "answer": "2"
   },
   {
     "type": "PictureGuessing",
+    "points": "200",
     "input": "3",
     "answer": "4"
   },
   {
     "type": "PictureGuessing",
+    "points": "300",
     "input": "5",
     "answer": "6"
   },
   {
     "type": "PictureGuessing",
+    "points": "400",
     "input": "7",
     "answer": "8"
   },
   {
     "type": "PictureGuessing",
+    "points": "500",
     "input": "9",
     "answer": "10"
   },
   {
     "type": "Music",
+    "points": "100",
     "input": "AIWFC1,AIWFC2,AIWFC3",
     "answer": "Mariah Carey - All I Want For Christmas Is You"
   },
   {
     "type": "Music",
+    "points": "200",
     "input": "gods1,gods2,gods3",
     "answer": "Riot Games - GODS ft. NewJeans"
   },
   {
     "type": "Music",
+    "points": "300",
     "input": "creep1,creep2,creep3",
     "answer": "Radiohead - Creep"
   },
   {
     "type": "Music",
+    "points": "400",
     "input": "omg1,omg2,omg3",
     "answer": "New Jeans - OMG"
   },
   {
     "type": "Music",
+    "points": "500",
     "input": "campanella1,campanella2,campanella3",
     "answer": "Lizst - La Campanella"
   },

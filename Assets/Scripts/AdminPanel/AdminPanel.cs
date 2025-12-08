@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class AdminPanel : MonoBehaviour
 {
+    [SerializeField] private GuessPanel _guessPanel;
     [SerializeField] private TeamOptions _teamOptionsPrefab;
     [SerializeField] private GameObject _teamOptionsParent;
 
@@ -14,6 +15,7 @@ public class AdminPanel : MonoBehaviour
     [SerializeField] private Button _addPlayersToLobbyButton;
 
     private List<TeamOptions> _teamOptions = new();
+    private ISingleGuessGame _currentSingleGuessGame;
 
     private bool _showFinalJeopardy = false;
     private bool _showEndGameScreen = false;
@@ -40,6 +42,17 @@ public class AdminPanel : MonoBehaviour
         {
             _uiManager.AddLobbyLabel();
         });
+    }
+
+    public void SetCurrentGuessGame(ISingleGuessGame singleGuessGame)
+    {
+        _currentSingleGuessGame = singleGuessGame;
+        _currentSingleGuessGame.OnGuessClicked += OnGuessClicked;
+    }
+
+    private void OnGuessClicked(Team team, int points)
+    {
+        _guessPanel.SetCurrentTeamAndPoints(team, points);
     }
 
     public void AssignTeams(List<Team> team)

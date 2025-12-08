@@ -1,13 +1,14 @@
-using Fleck;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BasicQuestionMinigame : Minigame
+public class BasicQuestionMinigame : SingleGuessMinigame
 {
     [SerializeField] private Button _finishButton;
     [SerializeField] private TextMeshProUGUI _questionText;
     [SerializeField] private TextMeshProUGUI _answerText;
+    public Action<Team, int> OnGuessClicked { get; set; }
 
     public override void Initialize(MinigameData minigameData)
     {
@@ -44,16 +45,6 @@ public class BasicQuestionMinigame : Minigame
     private void RevealAnswer()
     {
         _answerText.gameObject.SetActive(true);
-    }
-
-    protected override void ReceiveMessage(IWebSocketConnection socket, string message)
-    {
-        base.ReceiveMessage(socket, message);
-
-        if (message == "button_clicked")
-        {
-            SendMessageToServer("disable");
-        }
     }
 
     protected override void FinishGame()

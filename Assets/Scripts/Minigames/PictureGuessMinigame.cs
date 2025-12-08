@@ -1,13 +1,13 @@
-using Fleck;
-using TMPro;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PictureGuessMinigame : Minigame
+public class PictureGuessMinigame : SingleGuessMinigame
 {
     [SerializeField] private Button _finishButton;
     [SerializeField] private Image _image;
     [SerializeField] private Image _resultImage;
+    public Action<Team, int> OnGuessClicked { get; set; }
 
     public override void Initialize(MinigameData minigameData)
     {
@@ -49,19 +49,10 @@ public class PictureGuessMinigame : Minigame
         _resultImage.gameObject.SetActive(true);
     }
 
-    protected override void ReceiveMessage(IWebSocketConnection socket, string message)
-    {
-        base.ReceiveMessage(socket, message);
-
-        if (message == "button_clicked")
-        {
-            SendMessageToServer("disable");
-        }
-    }
-
     protected override void FinishGame()
     {
         base.FinishGame();
         _finishButton.onClick.RemoveListener(FinishGame);
     }
+
 }

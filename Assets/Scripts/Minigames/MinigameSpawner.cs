@@ -10,12 +10,14 @@ public class MinigameData
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public MinigameType Type { get; set; }
+    public int Points { get; set; }
     public string Input { get; set; }
     public string Answer { get; set; }
 }
 
 public class MinigameSpawner : MonoBehaviour
 {
+    [SerializeField] private AdminPanel _adminPanel;
     [SerializeField] private SerializedDictionary<MinigameType, Minigame> _minigames;
 
     private MinigameData[] _minigameData;
@@ -39,5 +41,10 @@ public class MinigameSpawner : MonoBehaviour
 
         minigame.gameObject.SetActive(true);
         _minigames[minigameData.Type].Initialize(minigameData);
+
+        if (_minigames[minigameData.Type] is ISingleGuessGame game)
+        {
+            _adminPanel.SetCurrentGuessGame(game);
+        }
     }
 }

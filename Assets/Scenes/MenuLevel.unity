@@ -2499,6 +2499,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
+      propertyPath: _adminPanel
+      value: 
+      objectReference: {fileID: 52159807}
+    - target: {fileID: 7706006305034405604, guid: a7731fa60ab689c4c8a29bf2c630082b, type: 3}
       propertyPath: _minigames._serializedList.Array.size
       value: 13
       objectReference: {fileID: 0}

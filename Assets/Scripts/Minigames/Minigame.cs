@@ -8,10 +8,12 @@ public abstract class Minigame : MonoBehaviour
     [SerializeField] protected TeamManager _teamManager;
     [SerializeField] protected UIManager _uiManager;
     [SerializeField] protected float _scaleAnimationTime = 0.35f;
+    [SerializeField] protected int _points = 0;
 
     public virtual void Initialize(MinigameData minigameData)
     {
         _messageManager.OnMessageReceived += ReceiveMessage;
+        _points = minigameData.Points;
         gameObject.SetActive(true);
         gameObject.transform.localScale = Vector3.zero;
         gameObject.transform.DOScale(Vector3.one, _scaleAnimationTime);

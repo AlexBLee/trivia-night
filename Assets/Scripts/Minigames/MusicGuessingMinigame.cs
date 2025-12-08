@@ -1,14 +1,16 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MusicGuessingMinigame : Minigame
+public class MusicGuessingMinigame : SingleGuessMinigame
 {
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private List<Button> _playAudioButtons;
     [SerializeField] private Button _finishButton;
 
     private List<AudioClip> _audioClips = new();
+    public Action<Team, int> OnGuessClicked { get; set; }
 
     public override void Initialize(MinigameData minigameData)
     {
