@@ -7,7 +7,6 @@ public class PictureGuessMinigame : SingleGuessMinigame
     [SerializeField] private Button _finishButton;
     [SerializeField] private Image _image;
     [SerializeField] private Image _resultImage;
-    public Action<Team, int> OnGuessClicked { get; set; }
 
     public override void Initialize(MinigameData minigameData)
     {

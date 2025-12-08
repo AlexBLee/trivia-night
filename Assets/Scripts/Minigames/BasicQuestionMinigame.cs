@@ -8,7 +8,6 @@ public class BasicQuestionMinigame : SingleGuessMinigame
     [SerializeField] private Button _finishButton;
     [SerializeField] private TextMeshProUGUI _questionText;
     [SerializeField] private TextMeshProUGUI _answerText;
-    public Action<Team, int> OnGuessClicked { get; set; }
 
     public override void Initialize(MinigameData minigameData)
     {

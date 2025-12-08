@@ -10,7 +10,6 @@ public class MusicGuessingMinigame : SingleGuessMinigame
     [SerializeField] private Button _finishButton;
 
     private List<AudioClip> _audioClips = new();
-    public Action<Team, int> OnGuessClicked { get; set; }
 
     public override void Initialize(MinigameData minigameData)
     {
