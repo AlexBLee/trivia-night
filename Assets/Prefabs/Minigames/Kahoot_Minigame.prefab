@@ -2057,6 +2057,7 @@ MonoBehaviour:
   _teamManager: {fileID: 0}
   _uiManager: {fileID: 0}
   _scaleAnimationTime: 0.35
+  _points: 0
   _finishButton: {fileID: 1578081221066028838}
   _kahootInitialQuestionView: {fileID: 1466845252386498865}
   _kahootQuestionView: {fileID: 3244886119697287018}
@@ -2209,8 +2210,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 377}
-  m_SizeDelta: {x: 1102.9858, y: 247.8601}
+  m_AnchoredPosition: {x: 0, y: 392.87524}
+  m_SizeDelta: {x: 1102.9858, y: 144.6714}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8245013530449256520
 CanvasRenderer:
