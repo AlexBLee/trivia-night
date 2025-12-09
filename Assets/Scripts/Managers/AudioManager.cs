@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource _musicAudioSource;
     [SerializeField] private AudioSource _sfxAudioSource;
 
+    private string _currentMusic;
+
     public void Awake()
     {
         if (Instance == null)
@@ -30,6 +32,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        _currentMusic = key;
         _musicAudioSource.volume = 1f;
         _musicAudioSource.clip = music;
         _musicAudioSource.Play();
@@ -49,6 +52,11 @@ public class AudioManager : MonoBehaviour
 
     public void FadeOutMusic(float duration, string nextClip = "")
     {
+        if (_currentMusic == nextClip)
+        {
+            return;
+        }
+
         StartCoroutine(nextClip == string.Empty
             ? FadeOutMusicAndStop(duration)
             : FadeOutMusicAndStartNext(duration, nextClip));
