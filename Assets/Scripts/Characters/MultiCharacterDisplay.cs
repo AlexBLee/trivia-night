@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using DG.Tweening;
 using UnityEngine;
 
@@ -31,11 +32,23 @@ public class MultiCharacterDisplay : MonoBehaviour
 
             teamDisplay.ChangeLabel(team.TeamName, Color.white);
             teamDisplay.SetCharacter(character, characterDisplay);
+            teamDisplay.SetTeam(team);
 
             _teamDisplayList.Add(teamDisplay);
         }
 
         gameObject.transform.DOLocalMoveY(_characterDisplayShowHeight, 1f);
+    }
+
+    public void AnimateCharacterJump(Team team)
+    {
+        var teamDisplay = _teamDisplayList.FirstOrDefault(t => t.Team == team);
+        if (teamDisplay == null)
+        {
+            return;
+        }
+
+        teamDisplay.AnimateCharacterAnswer();
     }
 
     public void HideCharacters()

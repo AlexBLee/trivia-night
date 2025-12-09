@@ -34,6 +34,11 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void AnimateCharacter(Team team)
+    {
+        _multiCharacterDisplay.AnimateCharacterJump(team);
+    }
+
     public void ShowFinalJeopardy(bool show)
     {
         foreach (var button in _finalJeopardyButtons)

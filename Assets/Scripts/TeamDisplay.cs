@@ -12,6 +12,9 @@ public class TeamDisplay : MonoBehaviour
     [SerializeField] private float _jumpHeight = 3f;
     [SerializeField] private float _jumpDuration = 0.5f;
     private Character _character;
+    private Team _team;
+
+    public Team Team => _team;
 
     public void ChangeLabel(string nameText, Color color)
     {
@@ -31,6 +34,11 @@ public class TeamDisplay : MonoBehaviour
 
         _characterImage.gameObject.SetActive(true);
         _characterImage.sprite = character.GetSprite(display);
+    }
+
+    public void SetTeam(Team team)
+    {
+        _team = team;
     }
 
     public void AnimateCharacterAnswer()
