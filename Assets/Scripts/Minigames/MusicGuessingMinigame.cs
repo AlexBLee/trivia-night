@@ -36,7 +36,7 @@ public class MusicGuessingMinigame : SingleGuessMinigame
             _playAudioButtons[i].onClick.AddListener(() => PlayAudioClip(_audioClips[audioIndex]));
         }
 
-        SendMessageToServer("music");
+        SendMessageToServer("question");
         _finishButton.onClick.AddListener(FinishGame);
     }
 
