@@ -28,6 +28,7 @@ public class GeoguessrMapView : MonoBehaviour
         _point = new Vector2d(latitude, longitude);
         _points.Clear();
 
+        _spawnMarkersOnMap.ClearPoints();
         _map.SetCenterLatitudeLongitude(_point);
         SpawnMarkerOnMap(_point);
     }

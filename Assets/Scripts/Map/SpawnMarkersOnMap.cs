@@ -51,7 +51,7 @@ public class SpawnMarkersOnMap : MonoBehaviour
 		}
 	}
 
-	private void OnDisable()
+	public void ClearPoints()
 	{
 		foreach (var spawnedObject in _spawnedObjects)
 		{
