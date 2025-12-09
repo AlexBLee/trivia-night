@@ -148,6 +148,5 @@ public class GeoguessrMinigame : Minigame
         _timer.OnTimerEnd -= DisplayGuesses;
 
         _timer.gameObject.SetActive(false);
-        AudioManager.Instance.FadeOutMusic(1f, "JeopardyMusic");
     }
 }

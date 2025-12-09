@@ -49,6 +49,7 @@ public class KahootMinigame : Minigame
         _kahootQuestionView.gameObject.SetActive(true);
         _startTime = DateTime.Now;
         SendMessageToServer("kahoot");
+        AudioManager.Instance.PlayMusic("KahootMusic");
     }
 
     protected override void ReceiveMessage(IWebSocketConnection socket, string message)

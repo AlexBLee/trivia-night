@@ -38,5 +38,6 @@ public abstract class Minigame : MonoBehaviour
         });
         _uiManager.ShowGameSelection(true);
         SendMessageToServer("home");
+        AudioManager.Instance.FadeOutMusic(1f, "JeopardyMusic");
     }
 }
