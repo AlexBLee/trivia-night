@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private LobbyView _lobbyView;
     [SerializeField] private TeamManager _teamManager;
 
+    [SerializeField] private GameObject _mainCanvasObject;
     [SerializeField] private GameObject _gameSelectionContainer;
     [SerializeField] private GameObject _endGameContainer;
     [SerializeField] private GameObject[] _finalJeopardyButtons;
@@ -50,6 +51,7 @@ public class UIManager : MonoBehaviour
     public void ShowEndGameScreen(bool show)
     {
         _gameSelectionContainer.gameObject.SetActive(!show);
+        _mainCanvasObject.gameObject.SetActive(!show);
         _endGameContainer.gameObject.SetActive(show);
     }
 }

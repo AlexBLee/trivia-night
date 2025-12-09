@@ -304,6 +304,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5091092352844952305, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
   m_PrefabInstance: {fileID: 3642024022477136643}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1581709287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4608909309781613069, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+  m_PrefabInstance: {fileID: 3642024022477136643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1592205889 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2361521454524397287, guid: 02288363e5ae4bb4987cb730b4c3d595, type: 3}
@@ -2739,6 +2744,10 @@ PrefabInstance:
       propertyPath: _endGameContainer
       value: 
       objectReference: {fileID: 758545987}
+    - target: {fileID: 4394484628955811389, guid: 15753d104131938448772ea00c63ab19, type: 3}
+      propertyPath: _mainCanvasObject
+      value: 
+      objectReference: {fileID: 1581709287}
     - target: {fileID: 4394484628955811389, guid: 15753d104131938448772ea00c63ab19, type: 3}
       propertyPath: _multiCharacterDisplay
       value: 

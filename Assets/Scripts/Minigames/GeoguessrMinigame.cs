@@ -148,5 +148,6 @@ public class GeoguessrMinigame : Minigame
         _timer.OnTimerEnd -= DisplayGuesses;
 
         _timer.gameObject.SetActive(false);
+        _geoguessrMapView.SetMapAndCameraState(false);
     }
 }

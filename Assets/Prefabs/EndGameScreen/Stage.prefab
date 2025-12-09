@@ -49,10 +49,10 @@ MonoBehaviour:
   _placementPrefab: {fileID: 1088723322737720589, guid: b3184a3a3609d5546b1a1d7c6b9cf290, type: 3}
   _startPosition: {x: -13, y: 41, z: 0}
   _placementGap: {x: 4.5, y: 0.84, z: 0}
-  _spriteSpawnPositionOffset: {x: 0, y: 20, z: 0}
+  _spriteSpawnPositionOffset: {x: 0, y: 30, z: 0}
   _spritePlacementOffset: {x: 0, y: 9.3, z: 0}
   _spriteTeamLabel: {fileID: 5784808955557113280, guid: c400283877f802c4dbdf97c00fadf405, type: 3}
-  _timeToFall: 0.5
+  _timeToFall: 0.4
 --- !u!1 &1713082127982850450
 GameObject:
   m_ObjectHideFlags: 0

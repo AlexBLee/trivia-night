@@ -23,6 +23,8 @@ public class GeoguessrMapView : MonoBehaviour
 
     public void Initialize(string[] coords)
     {
+        SetMapAndCameraState(true);
+
         var latitude = Convert.ToDouble(coords[0]);
         var longitude = Convert.ToDouble(coords[1]);
         _point = new Vector2d(latitude, longitude);
@@ -150,5 +152,11 @@ public class GeoguessrMapView : MonoBehaviour
         }
 
         _map.UpdateMap(coord, targetZoom);
+    }
+
+    public void SetMapAndCameraState(bool state)
+    {
+        _map.gameObject.SetActive(state);
+        _mapCamera.gameObject.SetActive(state);
     }
 }
