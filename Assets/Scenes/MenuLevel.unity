@@ -1458,6 +1458,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2389807136883384525, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2394392417106819496, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
       propertyPath: _uiManager
       value: 
@@ -1788,6 +1792,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906969937555687043, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5091092352844952305, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5115932452566907975, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
@@ -2186,6 +2194,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8002200160201837426, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8006979136325837777, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
       propertyPath: _uiManager
       value: 
@@ -2198,6 +2210,10 @@ PrefabInstance:
       propertyPath: _messageManager
       value: 
       objectReference: {fileID: 1592205889}
+    - target: {fileID: 8093594178160939908, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8193748576172670545, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
       propertyPath: _minigameSpawner
       value: 
@@ -2282,6 +2298,14 @@ PrefabInstance:
       propertyPath: _minigameSpawner
       value: 
       objectReference: {fileID: 83781193}
+    - target: {fileID: 9151026333838609048, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187129817165732145, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9218607099582544707, guid: c6d5ecb2ecbccf8459bdee62023c2ac8, type: 3}
       propertyPath: _uiManager
       value: 
