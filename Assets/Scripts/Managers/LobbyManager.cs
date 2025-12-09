@@ -31,7 +31,7 @@ public class LobbyManager : MonoBehaviour
     {
         for (int i = 0; i < _connectedPlayers.Count; i++)
         {
-            if (_connectedPlayers[i] == null)
+            if (_connectedPlayers[i] == null || _connectedPlayers[i] == player)
             {
                 _connectedPlayers[i] = player;
                 return;

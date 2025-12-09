@@ -49,6 +49,7 @@ public class Server : MonoBehaviour
             Debug.Log($"Closing existing connection for client: {clientId}");
             existingSocket.Close();
             _clients.TryRemove(clientId, out _);
+            OnDisconnected?.Invoke(existingSocket);
         }
 
         if (_teamManager.TrySearchForExistingTeamByIp(socket))

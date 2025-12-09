@@ -31,6 +31,7 @@ public class KahootQuestionView : MonoBehaviour
 
         _questionImage.gameObject.SetActive(true);
         _kahootScoreView.gameObject.SetActive(false);
+        _teamAnswers.Clear();
 
         if (answers.Count != _answerTexts.Count)
         {

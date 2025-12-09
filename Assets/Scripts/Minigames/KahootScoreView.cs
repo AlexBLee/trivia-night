@@ -8,9 +8,7 @@ public class KahootScoreView : MonoBehaviour
 
     public void SubmitScores(List<KahootAnswer> playerScores)
     {
-        int maxIndex = playerScores.Max(a => a.AnswerIndex);
-
-        List<int> counts = Enumerable.Range(0, maxIndex + 1)
+        List<int> counts = Enumerable.Range(0, playerScores.Count)
             .Select(i => playerScores.Count(a => a.AnswerIndex == i))
             .ToList();
 
