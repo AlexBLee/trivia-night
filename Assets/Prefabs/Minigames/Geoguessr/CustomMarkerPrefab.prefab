@@ -229,6 +229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapMarker
   _text: {fileID: 5129853645034117747}
   _lineRenderer: {fileID: 8764438548564041501}
+  _spriteRenderer: {fileID: 3676104970901996939}
+  _textBorder: {fileID: 2063469935681491055}
   _yPadding: 5
 --- !u!1 &1526995308356438894
 GameObject:
@@ -331,7 +333,7 @@ GameObject:
   - component: {fileID: 2781797328595065409}
   - component: {fileID: 285095235668908450}
   m_Layer: 10
-  m_Name: Plate
+  m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

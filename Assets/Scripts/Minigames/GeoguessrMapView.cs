@@ -33,9 +33,9 @@ public class GeoguessrMapView : MonoBehaviour
         SpawnMarkerOnMap(_point);
     }
 
-    public void SpawnMarkerOnMap(Vector2d point, string teamName = "")
+    public void SpawnMarkerOnMap(Vector2d point, string teamName = "", string characterName = "")
     {
-        _spawnMarkersOnMap.SetMarker(point, teamName);
+        _spawnMarkersOnMap.SetMarker(point, teamName, characterName);
         _points.Add(point);
     }
 

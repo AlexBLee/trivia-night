@@ -75,7 +75,7 @@ public class GeoguessrMinigame : Minigame
                 _results[guess.Key] = score;
             }
 
-            _geoguessrMapView.SpawnMarkerOnMap(Conversions.StringToLatLon(guess.Value), guess.Key.TeamName);
+            _geoguessrMapView.SpawnMarkerOnMap(Conversions.StringToLatLon(guess.Value), guess.Key.TeamName, guess.Key.CharacterName);
             guess.Key.AddScore(score);
         }
 

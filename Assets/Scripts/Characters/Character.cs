@@ -8,13 +8,15 @@ public class Character : ScriptableObject
     {
         Front,
         Back,
-        Answer
+        Answer,
+        Icon,
     }
 
     [SerializeField] private string _characterName;
     [SerializeField] private Sprite _frontSprite;
     [SerializeField] private Sprite _backSprite;
     [SerializeField] private Sprite _answerSprite;
+    [SerializeField] private Sprite _iconSprite;
 
     public Sprite GetSprite(CharacterDisplay display)
     {
@@ -23,6 +25,7 @@ public class Character : ScriptableObject
             CharacterDisplay.Front => _frontSprite,
             CharacterDisplay.Back => _backSprite,
             CharacterDisplay.Answer => _answerSprite,
+            CharacterDisplay.Icon => _iconSprite,
             _ => throw new ArgumentOutOfRangeException(nameof(display), display, null)
         };
     }

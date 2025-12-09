@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 public class SpawnMarkersOnMap : MonoBehaviour
 {
+	[SerializeField] private CharacterGetter _characterGetter;
 	[SerializeField] private AbstractMap _map;
 	[SerializeField] private Camera _mapCamera;
 	[SerializeField] private float _spawnScale = 100f;
@@ -21,15 +22,23 @@ public class SpawnMarkersOnMap : MonoBehaviour
 		SpawnMarker(vectorCoordinate, teamName);
 	}
 
-	public void SetMarker(Vector2d coordinate, string teamName = "")
+	public void SetMarker(Vector2d coordinate, string teamName = "", string characterName = "")
 	{
-		SpawnMarker(coordinate, teamName);
+		Sprite characterSprite = null;
+
+		var character = _characterGetter.GetCharacter(characterName);
+		if (character != null)
+		{
+			characterSprite = character.GetSprite(Character.CharacterDisplay.Icon);
+		}
+
+		SpawnMarker(coordinate, teamName, characterSprite);
 	}
 
-	private void SpawnMarker(Vector2d coordinate, string teamName = "")
+	private void SpawnMarker(Vector2d coordinate, string teamName = "", Sprite sprite = null)
 	{
 		var mapMarker = Instantiate(_mapMarker);
-		mapMarker.Initialize(_mapCamera, teamName);
+		mapMarker.Initialize(_mapCamera, teamName, sprite);
 		mapMarker.transform.localPosition = _map.GeoToWorldPosition(coordinate, true);
 		mapMarker.transform.localScale = new Vector3(_spawnScale, _spawnScale, _spawnScale);
 

@@ -16,3 +16,4 @@ MonoBehaviour:
   _frontSprite: {fileID: 21300000, guid: 636d3bd91fd70014bb768c323f262b8c, type: 3}
   _backSprite: {fileID: 21300000, guid: 8a39d7dfc2003624abbf5324a83141a1, type: 3}
   _answerSprite: {fileID: 21300000, guid: d2e4f801ddcfc604fad45a8e76393486, type: 3}
+  _iconSprite: {fileID: 21300000, guid: 3a6beeccb6b4b884b9ccf64eebb93307, type: 3}

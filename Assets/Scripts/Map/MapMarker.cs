@@ -5,15 +5,27 @@ public class MapMarker : MonoBehaviour
 {
     [SerializeField] private TextMeshPro _text;
     [SerializeField] private LineRenderer _lineRenderer;
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private GameObject _textBorder;
     [SerializeField] private float _yPadding = 5f;
 
     private Camera _camera;
     private GameObject _objectToRenderLineTowards;
 
-    public void Initialize(Camera camera, string text)
+    public void Initialize(Camera camera, string text, Sprite sprite = null)
     {
         _camera = camera;
         _text.text = text;
+
+        if (text == string.Empty)
+        {
+            _textBorder.SetActive(false);
+        }
+
+        if (sprite != null)
+        {
+            _spriteRenderer.sprite = sprite;
+        }
     }
 
     public void RenderLineTowards(GameObject obj)
