@@ -12,7 +12,11 @@ function Lobby() {
     // Define your images
     const images = [
         { name: 'Stickman', url: 'stickman-front.png' },
-        { name: 'Ocean', url: 'https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=400&h=250&fit=crop' }
+        { name: 'Slimey', url: 'slimey-front.png' },
+        { name: 'Chimken', url: 'chimken-front.png' },
+        { name: 'TopHatMan', url: 'tophatman-front.png' },
+        { name: 'Ghosty', url: 'ghosty-front.png' },
+        { name: 'Miku', url: 'miku-front.png' },
     ];
 
     const handleChange = (e) => {
