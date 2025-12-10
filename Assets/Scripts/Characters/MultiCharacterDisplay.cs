@@ -16,7 +16,7 @@ public class MultiCharacterDisplay : MonoBehaviour
 
     public void DisplayCharacters(List<Team> teams, Character.CharacterDisplay characterDisplay = Character.CharacterDisplay.Front)
     {
-        if (_teamDisplayList.Count >= teams.Count)
+        if (_teamDisplayList.Count > teams.Count)
         {
             return;
         }
