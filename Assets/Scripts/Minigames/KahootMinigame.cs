@@ -102,6 +102,11 @@ public class KahootMinigame : Minigame
     {
         base.FinishGame();
 
+        foreach (var answer in _teamAnswers)
+        {
+            answer.Team.AddScore(answer.Score);
+        }
+
         _kahootInitialQuestionView.gameObject.SetActive(true);
         _kahootQuestionView.gameObject.SetActive(false);
         _kahootResultsView.gameObject.SetActive(false);

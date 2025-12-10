@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 public class Team
 {
@@ -25,12 +26,14 @@ public class Team
 
     public void AddScore(int score)
     {
+        Debug.Log($"{TeamName} - Score Added: {_score} -> {_score + score}");
         _score += score;
         OnScoreChanged?.Invoke(_score);
     }
 
     public void SetScore(int score)
     {
+        Debug.Log($"{TeamName} - Score Set: {_score} -> {score}");
         _score = score;
         OnScoreChanged?.Invoke(_score);
     }
