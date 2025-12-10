@@ -1,27 +1,38 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MusicGuessingMinigame : SingleGuessMinigame
 {
-    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private List<Button> _playAudioButtons;
     [SerializeField] private Button _finishButton;
+    [SerializeField] private TextMeshProUGUI _songText;
 
     private List<AudioClip> _audioClips = new();
+    private AudioClip _fullAudioClip;
 
     public override void Initialize(MinigameData minigameData)
     {
         base.Initialize(minigameData);
+
         AudioManager.Instance.FadeOutMusic(1f);
 
+        _songText.text = minigameData.Answer;
         _audioClips.Clear();
 
         string[] audioClips = minigameData.Input.Split(',');
         for (int i = 0; i < audioClips.Length; i++)
         {
-            var clip = Resources.Load<AudioClip>(audioClips[i]);
+            var clip = Resources.Load<AudioClip>($"MusicGuessing/{audioClips[i]}");
+
+            if (i == audioClips.Length - 1)
+            {
+                _fullAudioClip = clip;
+                break;
+            }
+
             _audioClips.Add(clip);
         }
 
@@ -33,16 +44,20 @@ public class MusicGuessingMinigame : SingleGuessMinigame
             }
 
             var audioIndex = i;
-            _playAudioButtons[i].onClick.AddListener(() => PlayAudioClip(_audioClips[audioIndex]));
+            _playAudioButtons[i].onClick.AddListener(() => AudioManager.Instance.PlaySfx(_audioClips[audioIndex], 0.5f));
         }
 
         SendMessageToServer("question");
         _finishButton.onClick.AddListener(FinishGame);
     }
 
-    private void PlayAudioClip(AudioClip audioClip)
+    private void Update()
     {
-        _audioSource.PlayOneShot(audioClip);
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            _songText.gameObject.SetActive(true);
+            AudioManager.Instance.PlaySfx(_fullAudioClip, 0.5f);
+        }
     }
 
     protected override void FinishGame()
@@ -54,6 +69,8 @@ public class MusicGuessingMinigame : SingleGuessMinigame
         }
 
         _finishButton.onClick.RemoveListener(FinishGame);
+        _songText.gameObject.SetActive(false);
+        AudioManager.Instance.StopAllSfx();
         AudioManager.Instance.PlayMusic("JeopardyMusic");
     }
 }

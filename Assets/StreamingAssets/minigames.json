@@ -117,32 +117,32 @@
   {
     "type": "Music",
     "points": "100",
-    "input": "AIWFC1,AIWFC2,AIWFC3",
+    "input": "AIWFC1,AIWFC2,AIWFC3,AIWFC4",
     "answer": "Mariah Carey - All I Want For Christmas Is You"
   },
   {
     "type": "Music",
     "points": "200",
-    "input": "gods1,gods2,gods3",
-    "answer": "Riot Games - GODS ft. NewJeans"
+    "input": "golden1,golden2,golden3,golden4",
+    "answer": "Huntrix - Golden"
   },
   {
     "type": "Music",
     "points": "300",
-    "input": "creep1,creep2,creep3",
-    "answer": "Radiohead - Creep"
+    "input": "poke1,poke2,poke3,poke4",
+    "answer": "Pokemon Gym Leader Battle Theme"
   },
   {
     "type": "Music",
     "points": "400",
-    "input": "omg1,omg2,omg3",
-    "answer": "New Jeans - OMG"
+    "input": "YJM1,YJM2,YJM3,YJM4",
+    "answer": "Yu-Ching Fei - Yi Jian Mei"
   },
   {
     "type": "Music",
     "points": "500",
-    "input": "campanella1,campanella2,campanella3",
-    "answer": "Lizst - La Campanella"
+    "input": "BTM1,BTM2,BTM3,BTM4",
+    "answer": "Beneath The Mask - Persona 5"
   },
   {
     "type": "Geoguessr",

@@ -50,6 +50,18 @@ public class AudioManager : MonoBehaviour
         _sfxAudioSource.PlayOneShot(sfx);
     }
 
+    public void PlaySfx(AudioClip clip, float volume = 1f)
+    {
+        if (clip == null)
+        {
+            Debug.LogWarning("Sfx is null!");
+            return;
+        }
+
+        _sfxAudioSource.volume = volume;
+        _sfxAudioSource.PlayOneShot(clip);
+    }
+
     public void FadeOutMusic(float duration, string nextClip = "")
     {
         if (_currentMusic == nextClip)
