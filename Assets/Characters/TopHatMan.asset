@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e1588ac2e2a7c445a38d6d703a70c6e, type: 3}
+  m_Name: TopHatMan
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  _characterName: Stickman
+  _frontSprite: {fileID: 21300000, guid: 3537ec183ec5bae48ac27534775ec714, type: 3}
+  _backSprite: {fileID: 21300000, guid: b5725ce466cc33c469dc6168fa107ca7, type: 3}
+  _answerSprite: {fileID: 21300000, guid: 06dc1ed724a7a2348b2864c0af2dcdad, type: 3}
+  _iconSprite: {fileID: 21300000, guid: 1921e9259bf20d3458b3ff26b53acfa5, type: 3}
