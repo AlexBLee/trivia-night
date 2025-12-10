@@ -25,7 +25,7 @@ public class KahootMinigame : Minigame
 
         string[] minigameInputData = minigameData.Input.Split(';');
         var question = minigameInputData[0];
-        var picture = Resources.Load<Sprite>(minigameInputData[1]);
+        var picture = Resources.Load<Sprite>($"Kahoot/{minigameInputData[1]}");
 
         int startingAnswersIndex = 2;
         for (int i = startingAnswersIndex; i < minigameInputData.Length; i++)
