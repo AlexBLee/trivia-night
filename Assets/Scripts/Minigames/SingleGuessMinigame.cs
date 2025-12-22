@@ -1,6 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using Fleck;
+using UnityEngine;
 
 public abstract class SingleGuessMinigame : Minigame, ISingleGuessGame
 {
@@ -28,7 +29,22 @@ public abstract class SingleGuessMinigame : Minigame, ISingleGuessGame
             OnGuessClicked?.Invoke(team, _points);
 
             _uiManager.AnimateCharacter(team);
+            _uiManager.DarkenAllCharactersExcept(team);
         }
+    }
+
+    protected virtual void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ReenableGuess();
+        }
+    }
+
+    private void ReenableGuess()
+    {
+        SendMessageToServer("reenable");
+        _uiManager.BrightenAllCharacters();
     }
 
     protected override void FinishGame()
@@ -36,6 +52,4 @@ public abstract class SingleGuessMinigame : Minigame, ISingleGuessGame
         base.FinishGame();
         _uiManager.ShowCharacters(false);
     }
-
-
 }

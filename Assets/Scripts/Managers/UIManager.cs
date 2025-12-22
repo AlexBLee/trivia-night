@@ -40,6 +40,16 @@ public class UIManager : MonoBehaviour
         _multiCharacterDisplay.AnimateCharacterJump(team);
     }
 
+    public void DarkenAllCharactersExcept(Team team)
+    {
+        _multiCharacterDisplay.DarkenAllTeamsExcept(team);
+    }
+
+    public void BrightenAllCharacters()
+    {
+        _multiCharacterDisplay.BrightenAllCharacters();
+    }
+
     public void ShowFinalJeopardy(bool show)
     {
         foreach (var button in _finalJeopardyButtons)

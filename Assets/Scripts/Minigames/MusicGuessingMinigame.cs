@@ -53,6 +53,8 @@ public class MusicGuessingMinigame : SingleGuessMinigame
 
     private void Update()
     {
+        base.Update();
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             _songText.gameObject.SetActive(true);

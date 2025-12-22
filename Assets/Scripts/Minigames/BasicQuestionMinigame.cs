@@ -23,20 +23,12 @@ public class BasicQuestionMinigame : SingleGuessMinigame
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ReenableGuess();
-        }
+        base.Update();
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
             RevealAnswer();
         }
-    }
-
-    private void ReenableGuess()
-    {
-        SendMessageToServer("reenable");
     }
 
     private void RevealAnswer()

@@ -11,6 +11,9 @@ public class TeamDisplay : MonoBehaviour
 
     [SerializeField] private float _jumpHeight = 3f;
     [SerializeField] private float _jumpDuration = 0.5f;
+
+    private Color _darkenedColour = new Color(0.5f, 0.5f, 0.5f, 1f);
+
     private Character _character;
     private Team _team;
 
@@ -50,5 +53,15 @@ public class TeamDisplay : MonoBehaviour
             {
                 _characterImage.sprite = _character.GetSprite(Character.CharacterDisplay.Back);
             });
+    }
+
+    public void DarkenCharacter()
+    {
+        _characterImage.color = _darkenedColour;
+    }
+
+    public void BrightenCharacter()
+    {
+        _characterImage.color = new Color(1f,1f,1f, 1f);
     }
 }

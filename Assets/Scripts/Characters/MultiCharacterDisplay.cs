@@ -51,6 +51,27 @@ public class MultiCharacterDisplay : MonoBehaviour
         teamDisplay.AnimateCharacterAnswer();
     }
 
+    public void DarkenAllTeamsExcept(Team team)
+    {
+        foreach (var teamDisplay in _teamDisplayList)
+        {
+            if (teamDisplay.Team == team)
+            {
+                continue;
+            }
+
+            teamDisplay.DarkenCharacter();
+        }
+    }
+
+    public void BrightenAllCharacters()
+    {
+        foreach (var teamDisplay in _teamDisplayList)
+        {
+            teamDisplay.BrightenCharacter();
+        }
+    }
+
     public void HideCharacters()
     {
         gameObject.transform.DOLocalMoveY(_characterDisplayHideHeight, 1f);
