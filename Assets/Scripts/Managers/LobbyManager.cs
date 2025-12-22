@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using Fleck;
 using UnityEngine;
@@ -46,6 +47,12 @@ public class LobbyManager : MonoBehaviour
         var index = _connectedPlayers.IndexOf(player);
         _connectedPlayers[index] = null;
 
+        var existingTeam = _teams.FirstOrDefault(t => t.Socket == player);
+        if (existingTeam != null)
+        {
+            _teams.Remove(existingTeam);
+        }
+
         await UniTask.SwitchToMainThread();
         _lobbyView.ChangeTeamDisplay(index, "Team", Color.white);
     }
@@ -64,8 +71,20 @@ public class LobbyManager : MonoBehaviour
                 var team = new Team();
                 team.AssignTeamName(teamName);
                 team.AssignCharacterName(characterName);
+                team.AssignSocket(socket);
 
-                _teams.Add(team);
+                var existingTeam = _teams.FirstOrDefault(t => t.Socket == socket);
+                if (existingTeam != null)
+                {
+                    if (index <= _teams.Count - 1)
+                    {
+                        _teams[index] = team;
+                    }
+                }
+                else
+                {
+                    _teams.Add(team);
+                }
 
                 await UniTask.SwitchToMainThread();
                 _lobbyView.ChangeTeamDisplay(index, teamName, Color.yellow, characterName);

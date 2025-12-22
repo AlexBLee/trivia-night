@@ -1,8 +1,10 @@
 using System;
+using Fleck;
 using UnityEngine;
 
 public class Team
 {
+    private IWebSocketConnection _socket;
     private string _teamName = "Team";
     private string _characterName = "";
     private int _score;
@@ -11,8 +13,16 @@ public class Team
     public string CharacterName => _characterName;
     public int CurrentScore => _score;
 
+    public IWebSocketConnection Socket => _socket;
+
     public Action<int> OnScoreChanged;
     public Action<bool> OnConnectionStatusChanged;
+
+    // TODO: REMOVE LATER, TEMPORARY MEASURE FOR SAFETY
+    public void AssignSocket(IWebSocketConnection socket)
+    {
+        _socket = socket;
+    }
 
     public void AssignTeamName(string teamName)
     {
