@@ -46,7 +46,7 @@ public class EndGameStageSetter : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             if (_tweens.Count <= 0 || _currentIndex >= _tweens.Count)
             {
